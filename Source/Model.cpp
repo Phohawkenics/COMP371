@@ -121,25 +121,29 @@ bool Model::ParseLine(const std::vector<ci_string> &token)
 		}
         else if (token[0] == "particlesystem")
         {
-            assert(token.size() > 2);
-            assert(token[1] == "=");
-            assert(token[2] == "\"fire\"" || token[2] == "\"fountain\""); // only to hardcoded particle systems
+			assert(token.size() > 2);
+			assert(token[1] == "=");
+			assert(token[2] == "\"fire\"" || token[2] == "\"fountain\""); // only to hardcoded particle systems
 
-            
-            ParticleEmitter* emitter = new ParticleEmitter(vec3(0.0f, 0.0f, 0.0f), this);
-            ParticleDescriptor* desc = new ParticleDescriptor();
-            
-            if (token[2] == "\"fire\"")
-            {
-                desc->SetFireDescriptor();
-            }
-            else if (token[2] == "\"fountain\"")
-            {
-                desc->SetFountainDescriptor();
-            }
-            
-            mParticleSystem = new ParticleSystem(emitter, desc);
-            World::GetInstance()->AddParticleSystem(mParticleSystem);
+
+			ParticleEmitter* emitter;
+			ParticleDescriptor* desc;
+
+			if (token[2] == "\"fire\"")
+			{
+				emitter = new ParticleEmitter(vec3(-15.5f, 0.75f, 0.0f), this); //move fire
+				desc = new ParticleDescriptor();
+				desc->SetFireDescriptor();
+			}
+			else if (token[2] == "\"fountain\"")
+			{
+				emitter = new ParticleEmitter(vec3(-15.5f, 8.0f, 0.0f), this);//move smoke
+				desc = new ParticleDescriptor();
+				desc->SetFountainDescriptor();
+			}
+
+			mParticleSystem = new ParticleSystem(emitter, desc);
+			World::GetInstance()->AddParticleSystem(mParticleSystem);
         }
 		else
 		{

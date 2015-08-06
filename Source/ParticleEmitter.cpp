@@ -10,6 +10,7 @@
 #include "ParticleEmitter.h"
 #include "Model.h"
 
+
 using namespace glm;
 
 ParticleEmitter::ParticleEmitter(glm::vec3 position, const Model* parent)
@@ -28,9 +29,7 @@ glm::vec3 ParticleEmitter::GetRandomPosition()
     //
     // Return the position where the particle is emitted.
     // If the emitter is parented, the position is relative to its parent
-
-    glm::vec3 position = mPosition;
-    
+	vec3 position = vec3(mpParent->GetWorldMatrix()[3][0], mpParent->GetWorldMatrix()[3][1], mpParent->GetWorldMatrix()[3][2]);
     
     return position;
 }

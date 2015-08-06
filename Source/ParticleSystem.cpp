@@ -14,6 +14,7 @@
 #include "World.h"
 
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/rotate_vector.hpp>
 #include <glm/common.hpp>
 
 using namespace glm;
@@ -86,8 +87,27 @@ void ParticleSystem::Update(float dt)
         // Step 2 : You can rotate the result in step 1 by an random angle from 0 to
         //          360 degrees about the original velocity vector
 
+		float v1 = dot(vec3(0.0f,1.0f,0.0f),newParticle->velocity);
+		float v2 = dot(vec3(1.0f, 0.0f, 0.0f), newParticle->velocity);
+		vec3 axis;
+		if (v1 < v2){
+			axis = normalize(cross(vec3(0.0f, 1.0f, 0.0f), newParticle->velocity));
+		}
+		else
+			axis = normalize(cross(vec3(1.0f, 0.0f, 0.0f), newParticle->velocity));
+
+
+		float random1 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / mpDescriptor->velocityDeltaAngle));
+		vec3 rotate1 = rotate(newParticle->velocity, random1, axis);
+
+		float random2 = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 360.0f));
+		vec3 rotate2 = rotate(rotate1, random2, newParticle->velocity);
+
+		newParticle->velocity = rotate2;
+
         
         World::GetInstance()->AddBillboard(&newParticle->billboard);
+
     }
     
     
@@ -97,7 +117,7 @@ void ParticleSystem::Update(float dt)
 		p->currentTime += dt;
 
         // @TODO 5 - Update each particle's parameter
-        //
+
         // Update the velocity and position of the particle from the acceleration of the descriptor
         // Update the size of the particle according to its growth
         // Update The color is also updated in 3 phases
@@ -109,9 +129,18 @@ void ParticleSystem::Update(float dt)
                 
         
         // ...
-        p->billboard.position += p->velocity * dt;
-        p->billboard.color = vec4(1.0f, 1.0f, 1.0f, 1.0f);
-        p->billboard.size += 0.01f;
+		p->velocity += mpDescriptor->acceleration * dt;
+		p->billboard.position += p->velocity * dt;
+		p->billboard.size += mpDescriptor->sizeGrowthVelocity*dt;
+
+		if (p->currentTime >= 0.0f && p->currentTime <= mpDescriptor->fadeInTime)
+			p->billboard.color = mix(mpDescriptor->initialColor, mpDescriptor->midColor, (p->currentTime / mpDescriptor->fadeInTime));
+
+		else if(p->currentTime >= mpDescriptor->fadeInTime && p->currentTime <= p->lifeTime-mpDescriptor->fadeOutTime)
+			p->billboard.color = mpDescriptor->midColor;
+
+		else if (p->currentTime >= p->lifeTime - mpDescriptor->fadeOutTime && p->currentTime <= p->lifeTime)
+			p->billboard.color = mix(mpDescriptor->midColor, mpDescriptor->endColor, (p->currentTime - (p->lifeTime - mpDescriptor->fadeOutTime) / (p->currentTime <= p->lifeTime) - (p->lifeTime - mpDescriptor->fadeOutTime)));
         // ...
         
         
