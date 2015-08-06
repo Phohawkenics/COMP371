@@ -1,4 +1,5 @@
 Build/
+Bin/
 *.log
 
 # Compiled Object files
