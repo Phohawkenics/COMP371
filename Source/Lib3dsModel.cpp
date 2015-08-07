@@ -14,14 +14,17 @@
 
 // Include GLEW - OpenGL Extension Wrangler
 #include <GL/glew.h>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/common.hpp>
 
 #include <lib3ds.h>
 
 #include <memory>
+#include <algorithm>
 
 using namespace glm;
 
-Lib3dsModel::Lib3dsModel() : PhysicalModel()
+Lib3dsModel::Lib3dsModel() : Model()
 {
 }
 
@@ -32,52 +35,11 @@ Lib3dsModel::~Lib3dsModel()
 	glDeleteVertexArrays(1, &mVertexArrayID);
 }
 
-q3BodyDef Lib3dsModel::GetBodyDef(){
-	q3BodyDef def;
+void Lib3dsModel::Update(float dt){}
 
-	if (GetName().c_str()[0] != '_'){
-		def.bodyType = eDynamicBody;
-	}
-
-	def.axis     = g2q(GetRotationAxis());			// Initial world transformation.
-	def.angle    = q3PI * (GetRotationAngle()/180);				// Initial world transformation. Radians.
-	def.position = g2q(GetPosition());		// Initial world transformation.
-		
-	def.angularVelocity.Set(0, 0, 0);
-	def.linearVelocity.Set(0, 0, 0);
-	
-	return def;
-}
-
-// TODO getBoxDef*S*
-q3BoxDef Lib3dsModel::GetBoxDef(){
-	q3BoxDef def;
-
-	if (GetName().c_str()[0] == '_'){
-		def.SetRestitution(0);
-	}
-
-	q3Transform tx;
-	q3Identity(tx);
-
-	// Set the extents of the box
-	def.Set(tx, g2q( GetScaling() ));
-
-	return def;
-}
-
-void Lib3dsModel::Update(float dt)
-{
-	// If you are curious, un-comment this line to have spinning cubes!
-	// That will only work if your world transform is correct...
-	// mRotationAngleInDegrees += 90 * dt; // spins by 90 degrees per second
-
-	Model::Update(dt);
-}
 
 void Lib3dsModel::Draw()
 {
-
 	// Draw the Vertex Buffer
 	// Note this draws a unit Cube
 	// The Model View Projection transforms are computed in the Vertex Shader
@@ -153,9 +115,58 @@ bool Lib3dsModel::ParseLine(const std::vector<ci_string> &token)
 			return true;
 		}
 		else{
-			return PhysicalModel::ParseLine(token);
+			return Model::ParseLine(token);
 		}
 	}
+}
+
+/**
+ *  Process the set of mesh indices generated from the config file.
+ *
+ *  If the set is empty, then fill it with every valid mesh index.
+ *
+ *  If the set is non-empty remove any invalid index from it.
+ *
+ *  Valid indices are those in the range [0, nmeshes)
+ *
+ */
+static void preprocess_mesh_indices(int nmeshes, std::set<int> & meshIndices){
+	// If no meshes were specified, then we will render them all
+	if (meshIndices.size() == 0){
+		for (int i = 0; i < nmeshes; ++i){
+			meshIndices.insert(i);
+		}
+	}
+	else{
+		// Build the set of invalid indices to remove
+		std::set<int> toRemove;
+		std::copy_if(
+			meshIndices.begin(), meshIndices.end(),
+			std::inserter(toRemove, toRemove.end()),
+			[nmeshes](int v){ return v >= nmeshes; });
+		
+		// Build the output as the set difference between the original set and the
+		// elements to remove
+		std::set<int> output;
+		std::set_difference(
+			meshIndices.begin(), meshIndices.end(),
+			toRemove.begin(), toRemove.end(),
+			std::inserter(output, output.end()));
+
+		meshIndices = output;
+	}
+}
+
+static int count_vertices(Lib3dsMesh ** meshes, const std::set<int> & meshIndices){
+
+	int total_nvertices = 0;
+	// Count up all the vertices that we will need
+	for (auto m = meshIndices.begin(); m != meshIndices.end(); ++m){
+		total_nvertices += meshes[*m]->nfaces * 3;
+	}
+
+	return total_nvertices;
+
 }
 
 void Lib3dsModel::LoadModel(){
@@ -173,40 +184,35 @@ void Lib3dsModel::LoadModel(){
 			<< "  name: " << f->name << std::endl
 			<< "  meshes: " << f->nmeshes << std::endl;
 
-		int total_nvertices = 0;
-		
 		int nmeshes = f->nmeshes;
-		
-		// If no meshes were specified, then we will render them all
-		if (mMeshes.size() == 0){
-			for (int i = 0; i < nmeshes; ++i){
-				mMeshes.insert(i);
-			}
-		}
-		
 		Lib3dsMesh ** meshes = f->meshes;
+
+		// Verify the set of mesh indices which we will draw
+		preprocess_mesh_indices(nmeshes, mMeshes);
+		// Count the number of vertices needed for the meshes
+		mNVertices = count_vertices(meshes, mMeshes);
 		
-		// Count up all the vertices that we will need
-		for (auto m = mMeshes.begin(); m != mMeshes.end(); ++m){
-			total_nvertices += meshes[*m]->nfaces * 3;
-		}
+		std::cout << "  vertices: " << mNVertices << std::endl;
 
-		std::cout << "  vertices: " << total_nvertices << std::endl;
-
-		mNVertices = total_nvertices;
-
-		std::unique_ptr<Vertex[]> vertexBuffer(new Vertex[total_nvertices]);
-
-		std::cout << "  Processing Meshes" << std::endl;
-				
+		// Allocate a vertexBuffer big enough for all of those vertices
+		std::unique_ptr<Vertex[]>  vertexBuffer (new Vertex[mNVertices]);
+		
+		// global index into the vertex buffer
 		int total_vert_i = 0;
 
+		// Write all of the vertices into the vertexBuffer
 		for (auto m = mMeshes.begin(); m != mMeshes.end(); ++m){
 			std::cout << "    mesh " << *m << std::endl;
-			RenderMesh(meshes[*m], vertexBuffer.get(), total_vert_i);
+			
+			RenderMesh(
+				meshes[*m],         // the m-th mesh
+				vertexBuffer.get(), // the raw pointer to the vertex buffer
+				total_vert_i);      // the current vertex index, by reference
 		}
+		// Assert that we exactly filled the vertxBuffer
+		assert(total_vert_i == mNVertices);
 
-		assert(total_vert_i == total_nvertices);
+		// ----------- Taken from Assignment Framework -------------
 
 		// Create a vertex array
 		glGenVertexArrays(1, &mVertexArrayID);
@@ -214,7 +220,7 @@ void Lib3dsModel::LoadModel(){
 		// Upload Vertex Buffer to the GPU, keep a reference to it (mVertexBufferID)
 		glGenBuffers(1, &mVertexBufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, mVertexBufferID);
-		glBufferData(GL_ARRAY_BUFFER, mNVertices, vertexBuffer.get(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, mNVertices * sizeof(Vertex), vertexBuffer.get(), GL_STATIC_DRAW);
 
 		lib3ds_file_free(f);
 
@@ -245,41 +251,58 @@ static void transform_vertices(float t[4][4], float(*vertices)[3], int nvertices
 
 void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int &total_vert_i){
 
-	int nfaces = mesh->nfaces;
+	// The array of vertices in the mesh
 	float(*vertices)[3] = mesh->vertices;
 	int nvertices = mesh->nvertices;
+
+	// The array of faces in the mesh, each face refers to its 3 vertices by their
+	// index in the vertex array
 	Lib3dsFace * faces = mesh->faces;
+	int nfaces = mesh->nfaces;
 
 	std::cout << "      name: " << mesh->name << std::endl;
 	std::cout << "      faces: " << nfaces << std::endl;
 	std::cout << "      transform:" << std::endl;
 
-	for (int i = 0; i < 4; ++i){
-		std::cout << "      ";
-		for (int j = 0; j < 4; ++j){
-			std::cout << "  " << mesh->matrix[i][j];
-		}
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
-
+	// Transform all of the vertices in the mesh by the mesh's transform
+	// TODO - is this necessary? I guess so...
 	//transform_vertices(mesh->matrix, vertices, nvertices);
 
-	// Build normals
+	// Allocate an arry to store the vertex normals
 	std::unique_ptr<float[][3]> normals(new float[nfaces * 3][3]);
-
+	// Ensure that we were able to allocate it
 	assert(normals.get());
+	// generate the normals for the mesh
 	lib3ds_mesh_calculate_vertex_normals(mesh, normals.get());
 
+#if 1
+	// debugging - keep track of the min, max and average vertex position
 	float x = 0, y = 0, z = 0;
 	float xm = INFINITY, ym = INFINITY, zm = INFINITY;
 	float xM = -INFINITY, yM = -INFINITY, zM = -INFINITY;
 
+	// debugging - alternate colors of faces
+	glm::vec3 colors[] = {
+		glm::vec3(1, 0, 0),
+		glm::vec3(1, 1, 0),
+		glm::vec3(0, 1, 0),
+		glm::vec3(0, 1, 1),
+		glm::vec3(0, 0, 1),
+		glm::vec3(1, 0, 1),
+	};
+#endif
 	for (int face_i = 0; face_i < nfaces; ++face_i){
+		// Draw out each face
+		RenderFace(
+			faces[face_i],       // The face to draw
+			vertices,            // The mesh's vertex array
+			&normals[3*face_i],  // An offset into the normal array for the current face
+			vertexBuffer,        // The global vertex buffer
+			total_vert_i,        // The global vertex buffer index by reference
+			colors[face_i % 6]); // the color to use
+#if 1
 
 		Lib3dsFace face = faces[face_i];
-
-		RenderFace(face, vertices, &normals[3*face_i], vertexBuffer, total_vert_i);
 		x += vertices[face.index[0]][0];
 		y += vertices[face.index[0]][1];
 		z += vertices[face.index[0]][2];
@@ -291,11 +314,13 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int &tota
 		xM = max(xM, vertices[face.index[0]][0]);
 		yM = max(yM, vertices[face.index[0]][1]);
 		zM = max(zM, vertices[face.index[0]][2]);
+#endif
 	}
-
+#if 1
 	std::cout << x / nfaces << " " << y / nfaces << " " << z / nfaces << std::endl;
 	std::cout << xm << " " << ym << " " << zm << std::endl;
 	std::cout << xM << " " << yM << " " << zM << std::endl;
+#endif
 }
 
 
@@ -304,21 +329,16 @@ void Lib3dsModel::RenderFace(
 	float(*vertices)[3],
 	float(*normal)[3],
 	Vertex * vertexBuffer,
-	int &total_vert_i)
+	int &total_vert_i,
+	glm::vec3 & color)
 {
 	//std::cout << "Face:" << std::endl;
 	for (int i = 0; i < 3; ++i, ++total_vert_i){
-		// TODO apply file-level transform to each vertex?
 		vertexBuffer[total_vert_i].position =
 			vec3(
 			vertices[face.index[i]][0], // / 1000.0f,
 			vertices[face.index[i]][1], // / 1000.0f,
 			vertices[face.index[i]][2]);// / 1000.0f);
-
-		/*std::cout << "    "
-			<< vertices[face.index[i]][0] << " "
-			<< vertices[face.index[i]][1] << " "
-			<< vertices[face.index[i]][2] << std::endl;*/
 
 		vertexBuffer[total_vert_i].normal =
 			vec3(0, 0, 0);
@@ -326,7 +346,6 @@ void Lib3dsModel::RenderFace(
 //				normal[i][1],
 //				normal[i][2]);
 
-		vertexBuffer[total_vert_i].color =
-			vec3(0.9f, 0.5f, 0.7f); // purplish
+		vertexBuffer[total_vert_i].color = color;
 	}
 }

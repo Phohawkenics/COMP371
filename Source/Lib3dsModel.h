@@ -17,7 +17,7 @@
 
 // http://www.turbosquid.com/search/index.cfm?keyword=&max_price=0&min_price=0&file_type=114
 
-class Lib3dsModel : public PhysicalModel
+class Lib3dsModel : public Model
 {
 public:
 	Lib3dsModel();
@@ -27,9 +27,6 @@ public:
 	virtual void Draw();
 
 	void LoadModel();
-
-	virtual q3BoxDef  GetBoxDef();
-	virtual q3BodyDef GetBodyDef();
 
 protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
@@ -49,7 +46,8 @@ private:
 		float(*vertices)[3],
 		float (*normal) [3],
 		Vertex * vertexBuffer,
-		int & total_vert_i);
+		int & total_vert_i,
+		glm::vec3 & color);
 
 	unsigned int mVertexArrayID;
 	unsigned int mVertexBufferID;
