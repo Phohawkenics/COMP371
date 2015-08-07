@@ -26,6 +26,7 @@
 #include "ParticleEmitter.h"
 #include "ParticleSystem.h"
 
+#include <q3.h>
 
 using namespace std;
 using namespace glm;
@@ -34,6 +35,7 @@ World* World::instance;
 
 
 World::World()
+ : mPhysics(new q3Scene(1.0f / 120.0f)) // this is the dt of one frame (I guess)
 {
     instance = this;
 
@@ -56,35 +58,6 @@ World::World()
 
     mpBillboardList = new BillboardList(2048, billboardTextureID);
 
-    
-    // TODO - You can un-comment out these 2 temporary billboards and particle system
-    // That can help you debug billboards, you can set the billboard texture to billboardTest.png
-    /*    Billboard *b = new Billboard();
-     b->size  = glm::vec2(2.0, 2.0);
-     b->position = glm::vec3(0.0, 3.0, 0.0);
-     b->color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-     
-     Billboard *b2 = new Billboard();
-     b2->size  = glm::vec2(2.0, 2.0);
-     b2->position = glm::vec3(0.0, 3.0, 1.0);
-     b2->color = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-
-     mpBillboardList->AddBillboard(b);
-     mpBillboardList->AddBillboard(b2);
-
-     
-     ParticleDescriptor* fountainDescriptor = new ParticleDescriptor();
-     fountainDescriptor->SetFireDescriptor();
-     
-     ParticleDescriptor* fireDescriptor = new ParticleDescriptor();
-     fireDescriptor->SetFireDescriptor();
-     
-     ParticleEmitter* emitter = new ParticleEmitter(vec3(0.0f, 0.0f, 0.0f));
-     
-     ParticleSystem* ps = new ParticleSystem(emitter, fountainDescriptor);
-     AddParticleSystem(ps);
-
-     */    // TMP
 }
 
 World::~World()
@@ -119,6 +92,8 @@ World::~World()
 	mCamera.clear();
 
 	delete mpBillboardList;
+
+	delete mPhysics;
 }
 
 World* World::GetInstance()
@@ -173,6 +148,10 @@ void World::Update(float dt)
 
 	// Update current Camera
 	mCamera[mCurrentCamera]->Update(dt);
+
+	// updatePhysics
+
+	mPhysics->Step();
 
 	// Update models
 	for (vector<Model*>::iterator it = mModel.begin(); it < mModel.end(); ++it)
@@ -278,6 +257,16 @@ void World::LoadScene(const char * scene_path)
 				CubeModel* cube = new CubeModel();
 				cube->Load(iss);
 				mModel.push_back(cube);
+
+				// We associate the Graphical Model to the Physical Body
+				q3BodyDef def = cube->GetBodyDef();
+				q3Body * body = mPhysics->CreateBody(def);
+				body->AddBox(cube->GetBoxDef());
+				cube->SetBody(body);
+
+				cube->GetWorldMatrix();
+				mPhysics->Step();
+				cube->GetWorldMatrix();
 			}
             else if( result == "sphere" )
             {

@@ -79,9 +79,9 @@ animation = "CycleAnim"
 #############Outdoors#############
 
 [Cube]
-name     = "Skybox"
-scaling  = 100.0 100.0 100.0
-position = 0.0 50.0 0.0
+name     = _Floor
+scaling  = 100.0 0.5 100.0
+position = 0.0 -0.25 0.0
 
 [Cube]
 name = "RightWall"

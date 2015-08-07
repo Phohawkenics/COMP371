@@ -14,6 +14,8 @@
 #include "Billboard.h"
 #include <vector>
 
+#include <q3.h>
+
 class Camera;
 class Model;
 class Animation;
@@ -44,6 +46,8 @@ public:
 private:
     static World* instance;
     
+	q3Scene * mPhysics;
+
 	std::vector<Model*> mModel;
     std::vector<Animation*> mAnimation;
     std::vector<AnimationKey*> mAnimationKey;

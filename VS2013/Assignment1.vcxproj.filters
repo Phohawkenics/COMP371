@@ -53,6 +53,12 @@
     <None Include="..\Assets\Shaders\Texture.vertexshader">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="q3_glm_conversions.h">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\Assets\Scenes\StupidSimple.scene">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Assets\Textures\BillboardTest.bmp">
@@ -111,6 +117,9 @@
     <ClInclude Include="..\Source\Billboard.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\PhysicalModel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\CubeModel.cpp">
@@ -159,6 +168,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\PhysicalModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

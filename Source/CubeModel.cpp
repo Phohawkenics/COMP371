@@ -10,12 +10,14 @@
 #include "CubeModel.h"
 #include "Renderer.h"
 
+#include "q3_glm_conversions.h"
+
 // Include GLEW - OpenGL Extension Wrangler
 #include <GL/glew.h>
 
 using namespace glm;
 
-CubeModel::CubeModel(vec3 size) : Model()
+CubeModel::CubeModel(vec3 size) : PhysicalModel()
 {
 	// Create Vertex Buffer for all the verices of the Cube
 	vec3 halfSize = size * 0.5f;
@@ -84,6 +86,56 @@ CubeModel::~CubeModel()
 	// Free the GPU from the Vertex Buffer
 	glDeleteBuffers(1, &mVertexBufferID);
 	glDeleteVertexArrays(1, &mVertexArrayID);
+}
+
+static void print(const q3Vec3 & v, const char * name){
+	std::cout << "=== " << name << " ===" << std::endl;
+
+	for (int i = 0; i < 3; ++i){
+		std::cout << v[i] << ' ';
+	}
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+}
+
+q3BodyDef CubeModel::GetBodyDef(){
+	q3BodyDef def;
+
+	if (GetName().c_str()[0] != '_'){
+		def.bodyType = eDynamicBody;
+	}
+
+	def.axis     = g2q(GetRotationAxis());			// Initial world transformation.
+	def.angle    = q3PI * (GetRotationAngle()/180);				// Initial world transformation. Radians.
+	def.position = g2q(GetPosition());		// Initial world transformation.
+	
+	//print(def.axis, "Axis");
+	//print(def.position, "Position");
+	
+	def.angularVelocity.Set(0, 0, 0);
+	def.linearVelocity.Set(0, 0, 0);
+	
+	return def;
+}
+
+// TODO getBoxDef*S*
+q3BoxDef CubeModel::GetBoxDef(){
+	q3BoxDef def;
+
+	std::cout << GetName().c_str()[0] << std::endl;
+	if (GetName().c_str()[0] == '_'){
+		std::cout << "SkyBox Online!!" << std::endl;
+		def.SetRestitution(0);
+	}
+
+	q3Transform tx;
+	q3Identity(tx);
+
+	// Set the extents of the box
+	def.Set(tx, g2q( GetScaling() ));
+
+	return def;
 }
 
 void CubeModel::Update(float dt)

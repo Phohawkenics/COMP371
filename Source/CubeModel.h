@@ -9,9 +9,9 @@
 
 #pragma once
 
-#include "Model.h"
+#include "PhysicalModel.h"
 
-class CubeModel : public Model
+class CubeModel : public PhysicalModel
 {
 public:
 	CubeModel(glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f));
@@ -19,6 +19,9 @@ public:
 
 	virtual void Update(float dt);
 	virtual void Draw();
+
+	virtual q3BoxDef  GetBoxDef();
+	virtual q3BodyDef GetBodyDef();
 
 protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
