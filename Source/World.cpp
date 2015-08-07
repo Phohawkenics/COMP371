@@ -16,6 +16,7 @@
 
 #include "CubeModel.h"
 #include "SphereModel.h"
+#include "Lib3dsModel.h"
 #include "Animation.h"
 #include "Billboard.h"
 #include <GLFW/glfw3.h>
@@ -251,7 +252,14 @@ void World::LoadScene(const char * scene_path)
 		ci_string result;
 		if( std::getline( iss, result, ']') )
 		{
-			if( result == "cube" )
+			if (result == "object")
+			{
+				Lib3dsModel * object = new Lib3dsModel();
+				object->Load(iss);
+				object->LoadModel();
+				mModel.push_back(object);
+			}
+			else if( result == "cube" )
 			{
 				// Box attributes
 				CubeModel* cube = new CubeModel();
@@ -263,10 +271,6 @@ void World::LoadScene(const char * scene_path)
 				q3Body * body = mPhysics->CreateBody(def);
 				body->AddBox(cube->GetBoxDef());
 				cube->SetBody(body);
-
-				cube->GetWorldMatrix();
-				mPhysics->Step();
-				cube->GetWorldMatrix();
 			}
             else if( result == "sphere" )
             {
