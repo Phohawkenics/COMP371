@@ -123,9 +123,7 @@ q3BodyDef CubeModel::GetBodyDef(){
 q3BoxDef CubeModel::GetBoxDef(){
 	q3BoxDef def;
 
-	std::cout << GetName().c_str()[0] << std::endl;
 	if (GetName().c_str()[0] == '_'){
-		std::cout << "SkyBox Online!!" << std::endl;
 		def.SetRestitution(0);
 	}
 
