@@ -1,7 +1,5 @@
 *.sdf
-*.lib
 *.ilk
-*.pdb
 *.exe
 *.obj
 *.tlog
@@ -23,10 +21,6 @@
 *.idb
 *.vcproj
 *.vcproj.filters
-*.dll
-*.so
-*.lib
-*.a
 *.sln
 *.bin
 *.vcxproj
