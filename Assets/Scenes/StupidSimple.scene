@@ -1,4 +1,20 @@
 [Object]
+3dsfile = ../Assets/Objects/paperclip.3ds
+# which meshes to draw
+meshes = 1
+scaling  = 0.01 0.01 0.01
+position = 0.0 0.0 0.0
+rotation = 0.0 0.0 1.0 0.0
+
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+# which meshes to draw
+#smeshes = 1
+scaling  = 0.05 0.05 0.05
+position = 0.0 0.0 0.0
+rotation = 1.0 0.0 0.0 -90.0
+
+[Object]
 3dsfile = ../Assets/Objects/candy_cane.3ds
 # which meshes to draw
 #smeshes = 1
