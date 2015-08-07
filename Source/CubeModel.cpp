@@ -88,17 +88,6 @@ CubeModel::~CubeModel()
 	glDeleteVertexArrays(1, &mVertexArrayID);
 }
 
-static void print(const q3Vec3 & v, const char * name){
-	std::cout << "=== " << name << " ===" << std::endl;
-
-	for (int i = 0; i < 3; ++i){
-		std::cout << v[i] << ' ';
-	}
-
-	std::cout << std::endl;
-	std::cout << std::endl;
-}
-
 q3BodyDef CubeModel::GetBodyDef(){
 	q3BodyDef def;
 
@@ -109,10 +98,6 @@ q3BodyDef CubeModel::GetBodyDef(){
 	def.axis     = g2q(GetRotationAxis());			// Initial world transformation.
 	def.angle    = q3PI * (GetRotationAngle()/180);				// Initial world transformation. Radians.
 	def.position = g2q(GetPosition());		// Initial world transformation.
-	
-	//print(def.axis, "Axis");
-	//print(def.position, "Position");
-	
 	def.angularVelocity.Set(0, 0, 0);
 	def.linearVelocity.Set(0, 0, 0);
 	
