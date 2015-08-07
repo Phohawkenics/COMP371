@@ -84,143 +84,143 @@ scaling  = 100.0 0.5 100.0
 position = 0.0 -0.25 0.0
 
 [Cube]
-name = "RightWall"
+name = _RightWall"
 position = 16.0 3.0 -6.75
 scaling = 20.0 6.0 0.5
 rotation = 0.0 1.0 0.0 90.0
 
 [Cube]
-name = "LeftWall"
+name = _LeftWall"
 position = -16.0 3.0 -6.75
 scaling = 20.0 6.0 0.5
 rotation = 0.0 1.0 0.0 90.0
 
 [Cube]
-name = "FrontWallLBottom"
+name = _FrontWallLBottom"
 position = -7.0 1.0 3.0
 scaling = 18.5 2.0 0.5
 
 [Cube]
-name = "FrontWallRBottom"
+name = _FrontWallRBottom"
 position = 10.75 1.0 3.0
 scaling = 11.0 2.0 0.5
 
 [Cube]
-name = "FrontWallR"
+name = _FrontWallR"
 position = -13.25 3.0 3.0
 scaling = 6.0 6.0 0.5
 
 [Cube]
-name = "FrontWallRCorner"
+name = _FrontWallRCorner"
 position = -0.75 3.0 3.0
 scaling = 6.0 6.0 0.5
 
 [Cube]
-name = "FrontWallL"
+name = _FrontWallL"
 position = 8.0 3.0 3.0
 scaling = 6.0 6.0 0.5
 
 [Cube]
-name = "FrontWallLCorner"
+name = _FrontWallLCorner"
 position = 15.25 3.0 3.0
 scaling = 2.0 6.0 0.5
 
 
 
 [Cube]
-name = "FrontWallLLeft"
+name = _FrontWallLLeft"
 position = 0.0 0.0 0.0
 scaling = 5.0 6.0 0.5
 
-name = "FrontWallTop"
+name = _FrontWallTop"
 position = 0.0 5.25 3.0
 scaling = 32.5 1.5 0.5
 
 [Cube]
-name = "RearWall"
+name = _RearWall"
 position = 1.25 3.0 -16.5
 scaling = 30.0 6.0 0.5
 
 [Cube]
-name = "RearWallTop"
+name = _RearWallTop"
 position = -15.0 5.0 -16.5
 scaling = 2.5 2.0 0.5
 
 [Cube]
-name = "Ceiling"
+name = _Ceiling"
 position = 0.0 6.25 -6.75
 scaling = 32.5 20.0 0.5
 rotation = 1.0 0.0 0.0 -90.0
 
 [Cube]
-name = "YardLeft"
+name = _YardLeft"
 position = -16.0 1.0 -19.25
 scaling = 5.0 2.0 0.5
 rotation = 0.0 1.0 0.0 90.0
 
 [Cube]
-name = "YardRight"
+name = _YardRight"
 position = -2.0 1.0 -19.25
 scaling = 5.0 2.0 0.5
 rotation = 0.0 1.0 0.0 90.0
 
 [Cube]
-name = "YardRear"
+name = _YardRear"
 position = -9.0 1.0 -21.5
 scaling = 14.5 2.0 0.5
 
 #############Indoors#############
 
 [Cube]
-name = "LivingRoomWall"
+name = _LivingRoomWall"
 position = 0.0 3.0 -2.0
 scaling = 10.0 6.0 0.5
 rotation = 0.0 1.0 0.0 90.0
 
 [Cube]
-name = "BedroomWall1"
+name = _BedroomWall1"
 position = 6.0 3.0 -2.0
 scaling = 10.0 6.0 0.5
 rotation = 0.0 1.0 0.0 90.0
 
 [Cube]
-name = "BedroomWall2"
+name = _BedroomWall2"
 position = 12.0 3.0 -6.75
 scaling = 7.5 6.0 0.5
 
 [Cube]
-name = "BedroomWallTop"
+name = _BedroomWallTop"
 position = 7.1 5.0 -6.75
 scaling = 2.5 2.0 0.5
 
 #############Fireplace#############
 [Cube]
-name = "FireplaceBottom"
+name = _FireplaceBottom"
 position = -15.5 0.25 0.0
 scaling = 0.75 1.0 2.5
 
 [Cube]
-name = "FireplaceLeft"
+name = _FireplaceLeft"
 position = -15.5 0.25 1.0
 scaling = 0.75 4.0 0.5
 
 [Cube]
-name = "FireplaceRight"
+name = _FireplaceRight"
 position = -15.5 0.25 -1.0
 scaling = 0.75 4.0 0.5
 
 [Cube]
-name = "FireplaceTop"
+name = _FireplaceTop"
 position = -15.5 2.25 0.0
 scaling = 0.75 0.5 2.5
 
 [Cube]
-name = "InsideChimney"
+name = _InsideChimney"
 position = -15.5 4.0 0.0
 scaling = 0.75 4.0 1.0
 
 [Cube]
-name = "OutsideChimney"
+name = _OutsideChimney"
 position = -15.5 7.0 0.0
 scaling = 0.75 1.0 1.0
 particleSystem = "Fountain"
