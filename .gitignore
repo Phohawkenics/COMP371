@@ -2,7 +2,8 @@ Build/
 Bin/
 *.log
 
-*opensdf
+*.opensdf
+*.suo
 
 # Compiled Object files
 *.slo
