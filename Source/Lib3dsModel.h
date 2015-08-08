@@ -33,9 +33,10 @@ protected:
 
 private:
 
-	void RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int & total_vert_i);
+	void RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Vertex * vertexBuffer, int & total_vert_i);
 	void RenderFace(
 		Lib3dsFace & face,
+		Lib3dsMaterial ** materials,
 		float(*vertices)[3],
 		float (*normal) [3],
 		Vertex * vertexBuffer,

@@ -132,6 +132,9 @@ void Lib3dsModel::LoadModel(){
 		int nmeshes = f->nmeshes;
 		Lib3dsMesh ** meshes = f->meshes;
 
+		int nmaterials = f->nmaterials;
+		Lib3dsMaterial ** materials = f->materials;
+
 		// Verify the set of mesh indices which we will draw
 		preprocess_mesh_indices(nmeshes, mMeshes);
 		// Count the number of vertices needed for the meshes
@@ -151,6 +154,7 @@ void Lib3dsModel::LoadModel(){
 			
 			RenderMesh(
 				meshes[*m],         // the m-th mesh
+				materials,
 				vertexBuffer.get(), // the raw pointer to the vertex buffer
 				total_vert_i);      // the current vertex index, by reference
 		}
@@ -190,7 +194,7 @@ static void transform_vertices(float t[4][4], float(*vertices)[3], int nvertices
 	}
 }
 
-void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int &total_vert_i){
+void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Vertex * vertexBuffer, int &total_vert_i){
 
 	// The array of vertices in the mesh
 	float(*vertices)[3] = mesh->vertices;
@@ -236,6 +240,7 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int &tota
 		// Draw out each face
 		RenderFace(
 			faces[face_i],       // The face to draw
+			materials,
 			vertices,            // The mesh's vertex array
 			&normals[3*face_i],  // An offset into the normal array for the current face
 			vertexBuffer,        // The global vertex buffer
@@ -267,12 +272,15 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int &tota
 
 void Lib3dsModel::RenderFace(
 	Lib3dsFace & face,
+	Lib3dsMaterial ** materials,
 	float(*vertices)[3],
 	float(*normal)[3],
 	Vertex * vertexBuffer,
 	int &total_vert_i,
 	glm::vec3 & color)
 {
+
+	Lib3dsMaterial * material = materials[face.material];
 	//std::cout << "Face:" << std::endl;
 	for (int i = 0; i < 3; ++i, ++total_vert_i){
 		vertexBuffer[total_vert_i].position =
@@ -287,6 +295,12 @@ void Lib3dsModel::RenderFace(
 				normal[i][1],
 				normal[i][2]);
 
-		vertexBuffer[total_vert_i].color = color;
+		// TODO store all of the zillion parameters of the material
+		// with each vertex
+		vertexBuffer[total_vert_i].color =
+			vec3(
+			material->diffuse[0],
+			material->diffuse[1],
+			material->diffuse[2]);
 	}
 }
