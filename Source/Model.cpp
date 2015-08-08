@@ -21,7 +21,7 @@ using namespace glm;
 
 Model::Model() 
 : mName("UNNAMED"), mPosition(0.0f, 0.0f, 0.0f), mScaling(1.0f, 1.0f, 1.0f), mRotationAxis(0.0f, 1.0f, 0.0f),
-mRotationAngleInDegrees(0.0f), mAnimation(nullptr), mParticleSystem(nullptr)
+mRotationAngleInDegrees(0.0f), mAnimation(nullptr), mParticleSystem(nullptr), mPhysicsType(None)
 {
 }
 
@@ -79,6 +79,29 @@ bool Model::ParseLine(const std::vector<ci_string> &token)
 			assert(token[1] == "=");
 
 			mName = token[2];	
+		}
+		else if (token[0] == "physics"){
+			assert(token.size() > 2);
+			assert(token[1] == "=");
+
+			auto physics_type = token[2];
+
+			if (physics_type == "none"){
+				mPhysicsType = None;
+			}
+			else if (physics_type == "dynamic"){
+				mPhysicsType = Dynamic;
+			}
+			else if (physics_type == "static"){
+				mPhysicsType = Static;
+			}
+			else if (physics_type == "kinematic"){
+				mPhysicsType = Kinematic;
+			}
+			else{
+				assert(!"physics type invalid!");
+			}
+
 		}
 		else if (token[0] == "position")
 		{

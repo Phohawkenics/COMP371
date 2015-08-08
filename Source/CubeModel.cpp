@@ -83,15 +83,15 @@ CubeModel::~CubeModel()
 q3BoxDef CubeModel::GetBoxDef(){
 	q3BoxDef def;
 
-	if (GetName().c_str()[0] == '_'){
-		def.SetRestitution(0);
-	}
-
 	q3Transform tx;
 	q3Identity(tx);
 
 	// Set the extents of the box
 	def.Set(tx, g2q( GetScaling() ));
+
+	def.SetDensity(mDensity);
+	def.SetFriction(mFriction);
+	def.SetRestitution(mRestitution);
 
 	return def;
 }
@@ -110,6 +110,6 @@ bool CubeModel::ParseLine(const std::vector<ci_string> &token)
 	}
 	else
 	{
-		return Model::ParseLine(token);
+		return PhysicalModel::ParseLine(token) || SolidModel::ParseLine(token);
 	}
 }

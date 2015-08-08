@@ -36,7 +36,7 @@ World* World::instance;
 
 
 World::World()
- : mPhysics(new q3Scene(1.0f / 2000.0f)), // this is the dt of one frame (I guess)
+ : mPhysics(new q3Scene(1.0f / 200.0f)), // this is the dt of one frame (I guess)
 lightColor(1.0f, 1.0f, 1.0f),
 lightKc(0.0f),
 lightKl(0.0f),
@@ -273,11 +273,13 @@ void World::LoadScene(const char * scene_path)
 				object->LoadModel();
 				mModel.push_back(object);
 
-				// We associate the Graphical Model to the Physical Body
-				q3BodyDef def = object->GetBodyDef();
-				q3Body * body = mPhysics->CreateBody(def);
-				body->AddBox(object->GetBoxDef());
-				object->SetBody(body);
+				if (object->hasPhysics()){
+					// We associate the Graphical Model to the Physical Body
+					q3BodyDef def = object->GetBodyDef();
+					q3Body * body = mPhysics->CreateBody(def);
+					body->AddBox(object->GetBoxDef());
+					object->SetBody(body);
+				}
 			}
 			else if( result == "cube" )
 			{
@@ -286,11 +288,13 @@ void World::LoadScene(const char * scene_path)
 				cube->Load(iss);
 				mModel.push_back(cube);
 
-				// We associate the Graphical Model to the Physical Body
-				q3BodyDef def = cube->GetBodyDef();
-				q3Body * body = mPhysics->CreateBody(def);
-				body->AddBox(cube->GetBoxDef());
-				cube->SetBody(body);
+				if (cube->hasPhysics()){
+					// We associate the Graphical Model to the Physical Body
+					q3BodyDef def = cube->GetBodyDef();
+					q3Body * body = mPhysics->CreateBody(def);
+					body->AddBox(cube->GetBoxDef());
+					cube->SetBody(body);
+				}
 			}
             else if( result == "sphere" )
             {

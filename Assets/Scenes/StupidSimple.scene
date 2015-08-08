@@ -1,38 +1,45 @@
 [Object]
 name = goblin
+physics = dynamic
 3dsfile = ../Assets/Objects/goblin_3ds.3ds
 scaling = 0.05 0.05 0.05
 position = 0 60 0
 
 [Object]
 name = Bulbasaur
+physics = dynamic
 3dsfile = ../Assets/Objects/Lightbulb.3ds
 scaling  = 4 4 4
 position = 0.0 40.0 0.0
 
 [Object]
 name = Bulbasaur2
+physics = dynamic
 3dsfile = ../Assets/Objects/Lightbulb.3ds
 scaling  = 2 2 2
 position = 0.0 35.0 0.0
 
 [Object]
 name = Bulbasaur3
+physics = dynamic
 3dsfile = ../Assets/Objects/Lightbulb.3ds
 scaling  = 1 1 1
 position = 0.0 30.0 0.0
 
 [Cube]
 name = _slope"
+physics  = static
+restitution = 0
+friction = 0
 scaling = 30 1 30
 position = 0 20 0
 rotation = 1 0 0 45
 
-
-
-
 [Cube]
-name     = _Ground"
+name     = Ground"
+physics  = static
+restitution = 0
+friction = 10
 scaling  = 100.0 1.0 100.0
 position = 0.0 -0.5 0.0
 rotation = 0.0 0.0 1.0 0.0

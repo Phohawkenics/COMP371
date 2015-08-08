@@ -20,8 +20,17 @@ public:
 	virtual q3BoxDef  GetBoxDef() = 0;
 	virtual q3BodyDef GetBodyDef();
 
+	bool hasPhysics();
+
 protected:
+
+	virtual bool ParseLine(const std::vector<ci_string> &token) = 0;
+
 	q3Body * mBody;
+
+	float mFriction;
+	float mRestitution;
+	float mDensity;
 
 };
 

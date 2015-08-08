@@ -42,6 +42,16 @@ public:
     ci_string GetName()                 { return mName; }
 
 protected:
+
+	enum PhysicsType {
+		None,
+		Static,
+		Dynamic,
+		Kinematic
+	};
+
+	PhysicsType mPhysicsType;
+
 	virtual bool ParseLine(const std::vector<ci_string> &token) = 0;
 
 	ci_string mName; // The model name is mainly for debugging

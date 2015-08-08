@@ -51,14 +51,14 @@ return {
 q3BoxDef  Lib3dsModel::GetBoxDef(){
 	q3BoxDef def;
 
-	if (GetName().c_str()[0] == '_'){
-		def.SetRestitution(0);
-	}
-
 	q3Transform tx;
 	q3Identity(tx);
 
 	def.Set(tx, GetExtents());
+
+	def.SetDensity(mDensity);
+	def.SetFriction(mFriction);
+	def.SetRestitution(mRestitution);
 
 	return def;
 }
@@ -89,7 +89,7 @@ bool Lib3dsModel::ParseLine(const std::vector<ci_string> &token)
 			return true;
 		}
 		else{
-			return Model::ParseLine(token);
+			PhysicalModel::ParseLine(token) || SolidModel::ParseLine(token);
 		}
 	}
 }

@@ -5,9 +5,49 @@
 
 #include "q3_glm_conversions.h"
 
-PhysicalModel::PhysicalModel() : mBody(nullptr)
+PhysicalModel::PhysicalModel()
+: mBody(nullptr)
+, mFriction(0.4f)
+, mRestitution(0.2f)
+, mDensity(1.0f)
 {
 }
+
+bool PhysicalModel::ParseLine(const std::vector<ci_string> &token){
+	if (token.empty())
+	{
+		return true;
+	}
+	else
+	{
+		if (token[0] == "restitution"){
+			assert(token[1] == "=");
+
+			mRestitution = atof(token[2].c_str());
+
+			return true;
+		}
+		if (token[0] == "friction"){
+			assert(token[1] == "=");
+
+			mFriction = atof(token[2].c_str());
+
+			return true;
+		}
+		if (token[0] == "density"){
+			assert(token[1] == "=");
+
+			mDensity = atof(token[2].c_str());
+
+			return true;
+		}
+		else{
+			return Model::ParseLine(token);
+		}
+	}
+
+}
+
 
 
 PhysicalModel::~PhysicalModel()
@@ -31,13 +71,26 @@ glm::mat4 PhysicalModel::GetWorldMatrix() const{
 
 }
 
+// TODO, this makes no fkin sense
+bool PhysicalModel::hasPhysics(){
+	return mPhysicsType != None;
+}
+
 // body needs to be added in *world* coordinates
 
 q3BodyDef PhysicalModel::GetBodyDef(){
 	q3BodyDef def;
 
-	if (GetName().c_str()[0] != '_'){
+	switch (mPhysicsType){
+	case Dynamic:
 		def.bodyType = eDynamicBody;
+		break;
+	case Static:
+		def.bodyType = eStaticBody;
+		break;
+	case Kinematic:
+		def.bodyType = eKinematicBody;
+		break;
 	}
 
 	def.axis = g2q(GetRotationAxis());			// Initial world transformation.
