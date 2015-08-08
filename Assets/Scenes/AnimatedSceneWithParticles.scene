@@ -18,43 +18,52 @@ key      = "KeyForth"     time = 4.0f
 
 [AnimationKey]
 name     = "KeyCycle1"
-position = 10.0 15.0 0.0
-scaling = 1.0 0.1 0.5
+position = 10.0 30.0 0.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
 
 [AnimationKey]
 name     = "KeyCycle2"
-position = 7.07 15.0 7.07
-scaling = 1.0 0.1 0.5
+position = 7.07 30.0 7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 [AnimationKey]
 name     = "KeyCycle3"
-position = 0.0 15.0 10.0
-scaling = 1.0 0.1 0.5
+position = 0.0 30.0 10.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 [AnimationKey]
 name     = "KeyCycle4"
-position = -7.07 15.0 7.07
-scaling = 1.0 0.1 0.5
+position = -7.07 30.0 7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 [AnimationKey]
 name     = "KeyCycle5"
-position = -10.0 15.0 0.0
-scaling = 1.0 0.1 0.5
+position = -10.0 30.0 0.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 [AnimationKey]
 name     = "KeyCycle6"
-position = -7.07 15.0 -7.07
-scaling = 1.0 0.1 0.5
+position = -7.07 30.0 -7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 [AnimationKey]
 name     = "KeyCycle7"
-position = 0.0 15.0 -10.0
-scaling = 1.0 0.1 0.5
+position = 0.0 30.0 -10.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 [AnimationKey]
 name     = "KeyCycle8"
-position = 7.07 15.0 -7.07
-scaling = 1.0 0.1 0.5
+position = 7.07 30.0 -7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
 
 
 [Animation]
@@ -70,182 +79,226 @@ key      = "KeyCycle8"  time = 7.0f
 key      = "KeyCycle1"  time = 8.0f
 
 
-[Sphere]
+[Object]
+3dsfile = ../Assets/Objects/bird.3ds
 name     = "Bird"
 position = 10.0 20.0 0.0
 animation = "CycleAnim"
 
+##############Garage#############
+
+[Object]
+3dsfile = ../Assets/Objects/car.3ds
+name     = "Car"
+position = -15.0 2.0 15.0
+scaling  = 0.25 0.25 0.25
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = -19.0 11.5 0.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
 
 #############Outdoors#############
-
 [Cube]
-name     = _Floor
-scaling  = 100.0 0.5 100.0
-position = 0.0 -0.25 0.0
+name     = _Ground"
+scaling  = 100.0 1.0 100.0
+position = 0.0 0.5 0.0
+rotation = 0.0 0.0 1.0 0.0
 
-[Cube]
-name = _RightWall"
-position = 16.0 3.0 -6.75
-scaling = 20.0 6.0 0.5
-rotation = 0.0 1.0 0.0 90.0
-
-[Cube]
-name = _LeftWall"
-position = -16.0 3.0 -6.75
-scaling = 20.0 6.0 0.5
-rotation = 0.0 1.0 0.0 90.0
-
-[Cube]
-name = _FrontWallLBottom"
-position = -7.0 1.0 3.0
-scaling = 18.5 2.0 0.5
-
-[Cube]
-name = _FrontWallRBottom"
-position = 10.75 1.0 3.0
-scaling = 11.0 2.0 0.5
-
-[Cube]
-name = _FrontWallR"
-position = -13.25 3.0 3.0
-scaling = 6.0 6.0 0.5
-
-[Cube]
-name = _FrontWallRCorner"
-position = -0.75 3.0 3.0
-scaling = 6.0 6.0 0.5
-
-[Cube]
-name = _FrontWallL"
-position = 8.0 3.0 3.0
-scaling = 6.0 6.0 0.5
-
-[Cube]
-name = _FrontWallLCorner"
-position = 15.25 3.0 3.0
-scaling = 2.0 6.0 0.5
-
+[Object]
+3dsfile = ../Assets/Objects/house.3ds
+position = 0.0 1.0 0.0
+scaling = 0.5 0.5 0.5
 
 
 [Cube]
-name = _FrontWallLLeft"
-position = 0.0 0.0 0.0
-scaling = 5.0 6.0 0.5
-
-name = _FrontWallTop"
-position = 0.0 5.25 3.0
-scaling = 32.5 1.5 0.5
+position = -6.0 26.0 -4.0
+scaling = 0.0 0.0 0.0
+particleSystem = "fountain"
 
 [Cube]
-name = _RearWall"
-position = 1.25 3.0 -16.5
-scaling = 30.0 6.0 0.5
+position = -12.5 26.0 8.0
+scaling = 0.0 0.0 0.0
+particleSystem = "fountain"
 
 [Cube]
-name = _RearWallTop"
-position = -15.0 5.0 -16.5
-scaling = 2.5 2.0 0.5
+position = 15.0 23.0 -3.0
+scaling = 0.0 0.0 0.0
+particleSystem = "fountain"
 
-[Cube]
-name = _Ceiling"
-position = 0.0 6.25 -6.75
-scaling = 32.5 20.0 0.5
-rotation = 1.0 0.0 0.0 -90.0
-
-[Cube]
-name = _YardLeft"
-position = -16.0 1.0 -19.25
-scaling = 5.0 2.0 0.5
-rotation = 0.0 1.0 0.0 90.0
-
-[Cube]
-name = _YardRight"
-position = -2.0 1.0 -19.25
-scaling = 5.0 2.0 0.5
-rotation = 0.0 1.0 0.0 90.0
-
-[Cube]
-name = _YardRear"
-position = -9.0 1.0 -21.5
-scaling = 14.5 2.0 0.5
-
-#############Indoors#############
-
-[Cube]
-name = _LivingRoomWall"
-position = 0.0 3.0 -2.0
-scaling = 10.0 6.0 0.5
-rotation = 0.0 1.0 0.0 90.0
-
-[Cube]
-name = _BedroomWall1"
-position = 6.0 3.0 -2.0
-scaling = 10.0 6.0 0.5
-rotation = 0.0 1.0 0.0 90.0
-
-[Cube]
-name = _BedroomWall2"
-position = 12.0 3.0 -6.75
-scaling = 7.5 6.0 0.5
-
-[Cube]
-name = _BedroomWallTop"
-position = 7.1 5.0 -6.75
-scaling = 2.5 2.0 0.5
 
 #############Fireplace#############
-[Cube]
-name = _FireplaceBottom"
-position = -15.5 0.25 0.0
-scaling = 0.75 1.0 2.5
+[Object]
+3dsfile = ../Assets/Objects/fireplace.3ds
+position = -12.25 1.5 -17.0
+scaling = 0.05 0.05 0.05
+rotation = 0.0 1.0 0.0 90.0
 
-[Cube]
-name = _FireplaceLeft"
-position = -15.5 0.25 1.0
-scaling = 0.75 4.0 0.5
-
-[Cube]
-name = _FireplaceRight"
-position = -15.5 0.25 -1.0
-scaling = 0.75 4.0 0.5
-
-[Cube]
-name = _FireplaceTop"
-position = -15.5 2.25 0.0
-scaling = 0.75 0.5 2.5
-
-[Cube]
-name = _InsideChimney"
-position = -15.5 4.0 0.0
-scaling = 0.75 4.0 1.0
-
-[Cube]
-name = _OutsideChimney"
-position = -15.5 7.0 0.0
-scaling = 0.75 1.0 1.0
-particleSystem = "Fountain"
-
-[Cube]
-name = "Log1"
-position = -15.5 0.8 0.0
-scaling = 0.1 0.75 0.1
-rotation = 1.0 0.0 1.0 75.0
+[Object]
+3dsfile = ../Assets/Objects/log.3ds
+position = -12.25 0.85 -18.3
+scaling = 0.05 0.05 0.05
 particleSystem = "Fire"
+rotation = 0.0 1.0 0.0 85.0
+##################################################################Add light source
 
 
-[Cube]
-name = "Log2"
-position = -15.5 0.8 0.0
-scaling = 0.1 0.75 0.1
-rotation = 1.0 0.0 0.0 -75.0
+[Object]
+3dsfile = ../Assets/Objects/log.3ds
+position = -12.25 0.75 -18.4
+scaling = 0.05 0.05 0.05
 particleSystem = "Fire"
+rotation = 1.0 0.0 0.0 35.0
+##################################################################Add light source
 
-[Cube]
-name = "Log3"
-position = -15.5 0.8 0.0
-scaling = 0.1 0.75 0.1
-rotation = 1.0 0.0 1.0 -75.0
+[Object]
+3dsfile = ../Assets/Objects/log.3ds
+position = -12.25 0.75 -18.7
+scaling = 0.05 0.05 0.05
 particleSystem = "Fire"
+rotation = 1.0 0.0 0.0 35.0
+##################################################################Add light source
+
+#############Living Room#############
+[Object]
+3dsfile = ../Assets/Objects/CoffeeTable.3ds
+position = 0.0 1.5 -17.0
+scaling = 0.05 0.05 0.05
+
+
+[Object]
+3dsfile = ../Assets/Objects/Couch.3ds
+position = 7.5 1.5 -17.0
+scaling = 0.01 0.01 0.01
+rotation = 0.0 1.0 0.0 -75.0
+
+
+[Object]
+3dsfile = ../Assets/Objects/Flatscreen.3ds
+position = -11.25 6.0 -18.3
+scaling = 0.03 0.03 0.03
+rotation = 0.0 1.0 0.0 90.0
+
+[Object]
+3dsfile = ../Assets/Objects/Bookshelf.3ds
+position = -8.0 1.0 -5.25
+scaling = 0.03 0.03 0.03
+rotation = 0.0 1.0 0.0 180.0
+
+#Entrance
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 4.0 11.5 2.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Living room
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 0.0 11.5 -14.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+#############Kitchen#############
+[Object]
+3dsfile = ../Assets/Objects/kitchen.3ds
+position = -27.0 4.0 -14.0
+scaling = 1.2 1.2 1.2
+rotation = 0.0 1.0 0.0 90.0
+
+#Kitchen
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = -19.0 11.5 -12.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#############Bedrooms#############
+#Bedroom1
+[Object]
+3dsfile = ../Assets/Objects/Bed.3ds
+position = 24.0 1.0 10.0
+scaling = 0.004 0.004 0.004
+rotation = 0.0 1.0 0.0 -90.0
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 15.0 11.5 -14.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Bedroom2
+[Object]
+3dsfile = ../Assets/Objects/Bed.3ds
+position = 24.0 1.0 -13.0
+scaling = 0.004 0.004 0.004
+rotation = 0.0 1.0 0.0 -90.0
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 19.0 11.5 0.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Bedroom3
+[Object]
+3dsfile = ../Assets/Objects/Bed.3ds
+position = -10.0 1.0 6.0
+scaling = 0.004 0.004 0.004
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = -8.0 11.5 12.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#############Bathroom#############
+[Object]
+3dsfile = ../Assets/Objects/toilet.3ds
+position = 19.0 1.0 -2.0 
+scaling = 0.1 0.1 0.1
+rotation = 0.0 1.0 0.0 -90.0
+
+[Object]
+3dsfile = ../Assets/Objects/sink.3ds
+position = 23.5 1.0 4.5 
+scaling = 0.1 0.1 0.1
+rotation = 0.0 1.0 0.0 -135.0
+
+#Bathroom
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 19.0 11.5 11.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+#############Lights#############
+
+
+
+#Bedroom1
+
+
+#Bedroom2
+
+
+#Bedroom3
+
+
+
+
+
+
+
+
+
 
 
 

@@ -41,7 +41,7 @@ lightColor(1.0f, 1.0f, 1.0f),
 lightKc(0.0f),
 lightKl(0.0f),
 lightKq(1.0f),
-lightPosition(5.0f, 5.0f, 5.0f, 1.0f)
+lightPosition(0.0f, 40.0f, 0.0f, 1.0f)
 {
     instance = this;
 
