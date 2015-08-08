@@ -14,17 +14,17 @@
 #include <set>
 
 #include "PhysicalModel.h"
+#include "SolidModel.h"
 
 // http://www.turbosquid.com/search/index.cfm?keyword=&max_price=0&min_price=0&file_type=114
 
-class Lib3dsModel : public Model
+class Lib3dsModel : public SolidModel
 {
 public:
 	Lib3dsModel();
 	virtual ~Lib3dsModel();
 
 	virtual void Update(float dt);
-	virtual void Draw();
 
 	void LoadModel();
 
@@ -32,13 +32,6 @@ protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
 
 private:
-	// The vertex format could be different for different types of models
-	struct Vertex
-	{
-		glm::vec3 position;
-		glm::vec3 normal;
-		glm::vec3 color;
-	};
 
 	void RenderMesh(Lib3dsMesh * mesh, Vertex * vertexBuffer, int & total_vert_i);
 	void RenderFace(
@@ -48,9 +41,6 @@ private:
 		Vertex * vertexBuffer,
 		int & total_vert_i,
 		glm::vec3 & color);
-
-	unsigned int mVertexArrayID;
-	unsigned int mVertexBufferID;
 
 	unsigned int mNVertices;
 

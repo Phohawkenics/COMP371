@@ -30,7 +30,12 @@ struct CompareBillboardAlongZ{
 class BillboardList
 {
 public:
-    BillboardList(unsigned int maxNumBillboards, int textureID);
+	BillboardList(unsigned int maxNumBillboards, int textureID,
+		float mMaterialAmbient = 0.2f,
+		float mMaterialDiffuse = 0.8f,
+		float mMaterialSpecular = 0.0f,
+		float mMaterialSpecularExponent = 2
+		);
     ~BillboardList();
     
     void AddBillboard(Billboard* b);
@@ -49,6 +54,11 @@ private:
         glm::vec2 textureCoordinate;
     };
 
+
+	float mMaterialAmbient;
+	float mMaterialDiffuse;
+	float mMaterialSpecular;
+	float mMaterialSpecularExponent;
     
     std::vector<BillboardVertex> mVertexBuffer;
     std::list<Billboard*> mBillboardList;

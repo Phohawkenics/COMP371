@@ -23,6 +23,12 @@ position = 0.0 0.0 0.0
 rotation = 0.0 0.0 1.0 0.0
 
 [Cube]
+name     = phystest
+scaling  = 2.0 2.0 2.0
+position = 0.0 100 0.0
+rotation = 0.0 0.0 1.0 0.0
+
+[Cube]
 name     = _Ground"
 scaling  = 100.0 1.0 100.0
 position = 0.0 -0.5 0.0

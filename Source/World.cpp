@@ -36,7 +36,12 @@ World* World::instance;
 
 
 World::World()
- : mPhysics(new q3Scene(1.0f / 120.0f)) // this is the dt of one frame (I guess)
+ : mPhysics(new q3Scene(1.0f / 120.0f)), // this is the dt of one frame (I guess)
+lightColor(1.0f, 1.0f, 1.0f),
+lightKc(0.0f),
+lightKl(0.0f),
+lightKq(1.0f),
+lightPosition(5.0f, 5.0f, 5.0f, 1.0f)
 {
     instance = this;
 
@@ -179,11 +184,14 @@ void World::Draw()
 	glUseProgram(Renderer::GetShaderProgramID());
 
 	// This looks for the MVP Uniform variable in the Vertex Program
-	GLuint VPMatrixLocation = glGetUniformLocation(Renderer::GetShaderProgramID(), "ViewProjectionTransform");
+	GLuint ViewMatrixID = glGetUniformLocation(Renderer::GetShaderProgramID(), "ViewTransform");
+	GLuint ProjMatrixID = glGetUniformLocation(Renderer::GetShaderProgramID(), "ProjectionTransform");
 
 	// Send the view projection constants to the shader
-	mat4 VP = mCamera[mCurrentCamera]->GetViewProjectionMatrix();
-	glUniformMatrix4fv(VPMatrixLocation, 1, GL_FALSE, &VP[0][0]);
+	mat4 V = mCamera[mCurrentCamera]->GetViewMatrix();
+	mat4 P = mCamera[mCurrentCamera]->GetProjectionMatrix();
+	glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &V[0][0]);
+	glUniformMatrix4fv(ProjMatrixID, 1, GL_FALSE, &P[0][0]);
 
 	// Draw models
 	for (vector<Model*>::iterator it = mModel.begin(); it < mModel.end(); ++it)
@@ -199,21 +207,27 @@ void World::Draw()
 	glUseProgram(Renderer::GetShaderProgramID());
 
 	// Send the view projection constants to the shader
-	VPMatrixLocation = glGetUniformLocation(Renderer::GetShaderProgramID(), "ViewProjectionTransform");
-	glUniformMatrix4fv(VPMatrixLocation, 1, GL_FALSE, &VP[0][0]);
+	ViewMatrixID = glGetUniformLocation(Renderer::GetShaderProgramID(), "ViewTransform");
+	ProjMatrixID = glGetUniformLocation(Renderer::GetShaderProgramID(), "ProjectionTransform");
+	glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &V[0][0]);
+	glUniformMatrix4fv(ProjMatrixID, 1, GL_FALSE, &P[0][0]);
 
 	for (vector<Animation*>::iterator it = mAnimation.begin(); it < mAnimation.end(); ++it)
 	{
-		mat4 VP = mCamera[mCurrentCamera]->GetViewProjectionMatrix();
-		glUniformMatrix4fv(VPMatrixLocation, 1, GL_FALSE, &VP[0][0]);
+		mat4 V = mCamera[mCurrentCamera]->GetViewMatrix();
+		mat4 P = mCamera[mCurrentCamera]->GetProjectionMatrix();
+		glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &V[0][0]);
+		glUniformMatrix4fv(ProjMatrixID, 1, GL_FALSE, &P[0][0]);
 
 		(*it)->Draw();
 	}
 
 	for (vector<AnimationKey*>::iterator it = mAnimationKey.begin(); it < mAnimationKey.end(); ++it)
 	{
-		mat4 VP = mCamera[mCurrentCamera]->GetViewProjectionMatrix();
-		glUniformMatrix4fv(VPMatrixLocation, 1, GL_FALSE, &VP[0][0]);
+		mat4 V = mCamera[mCurrentCamera]->GetViewMatrix();
+		mat4 P = mCamera[mCurrentCamera]->GetProjectionMatrix();
+		glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &V[0][0]);
+		glUniformMatrix4fv(ProjMatrixID, 1, GL_FALSE, &P[0][0]);
 
 		(*it)->Draw();
 	}

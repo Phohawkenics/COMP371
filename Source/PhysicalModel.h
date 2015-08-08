@@ -4,7 +4,7 @@
 #include <q3.h>
 
 
-class PhysicalModel : public Model
+class PhysicalModel : virtual public Model
 {
 public:
 	PhysicalModel();

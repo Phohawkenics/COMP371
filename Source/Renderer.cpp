@@ -78,8 +78,8 @@ void Renderer::Initialize()
 #endif
 
 	sShaderProgramID.push_back(
-                LoadShaders(shaderPathPrefix + "SolidColor.vertexshader",
-                            shaderPathPrefix + "SolidColor.fragmentshader")
+                LoadShaders(shaderPathPrefix + "SolidColor_Lighting.vertexshader",
+                            shaderPathPrefix + "SolidColor_Lighting.fragmentshader")
                                );
 	sShaderProgramID.push_back(
                 LoadShaders(shaderPathPrefix + "PathLines.vertexshader",
@@ -274,6 +274,8 @@ bool Renderer::PrintError()
     if( !retVal )
     {
         printf( "%s\n", errorString );
+		assert(false);
+
     }
     
     //

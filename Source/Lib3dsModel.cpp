@@ -24,71 +24,16 @@
 
 using namespace glm;
 
-Lib3dsModel::Lib3dsModel() : Model()
+Lib3dsModel::Lib3dsModel() : SolidModel(GL_TRIANGLES, 0)
 {
 }
 
 Lib3dsModel::~Lib3dsModel()
 {
-	// Free the GPU from the Vertex Buffer
-	glDeleteBuffers(1, &mVertexBufferID);
-	glDeleteVertexArrays(1, &mVertexArrayID);
 }
 
 void Lib3dsModel::Update(float dt){}
 
-
-void Lib3dsModel::Draw()
-{
-	// Draw the Vertex Buffer
-	// Note this draws a unit Cube
-	// The Model View Projection transforms are computed in the Vertex Shader
-	glBindVertexArray(mVertexArrayID);
-
-	GLuint WorldMatrixLocation = glGetUniformLocation(Renderer::GetShaderProgramID(), "WorldTransform"); 
-	glUniformMatrix4fv(WorldMatrixLocation, 1, GL_FALSE, &GetWorldMatrix()[0][0]);
-	
-	// 1st attribute buffer : vertex Positions
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, mVertexBufferID);
-	glVertexAttribPointer(	0,				// attribute. No particular reason for 0, but must match the layout in the shader.
-							3,				// size
-							GL_FLOAT,		// type
-							GL_FALSE,		// normalized?
-							sizeof(Vertex), // stride
-							(void*)0        // array buffer offset
-						);
-
-	// 2nd attribute buffer : vertex normal
-	glEnableVertexAttribArray(1);
-	glBindBuffer(GL_ARRAY_BUFFER, mVertexBufferID);
-	glVertexAttribPointer(	1,
-							3,
-							GL_FLOAT,
-							GL_FALSE,
-							sizeof(Vertex),
-							(void*)sizeof(vec3)    // Normal is Offseted by vec3 (see class Vertex)
-						);
-
-
-	// 3rd attribute buffer : vertex color
-	glEnableVertexAttribArray(2);
-	glBindBuffer(GL_ARRAY_BUFFER, mVertexBufferID);
-	glVertexAttribPointer(	2,
-							3,
-							GL_FLOAT,
-							GL_FALSE,
-							sizeof(Vertex),
-							(void*) (2* sizeof(vec3)) // Color is Offseted by 2 vec3 (see class Vertex)
-						);
-
-	// Draw the triangles !
-	glDrawArrays(GL_TRIANGLES, 0, mNVertices);
-
-	glDisableVertexAttribArray(2);
-	glDisableVertexAttribArray(1);
-	glDisableVertexAttribArray(0);
-}
 
 bool Lib3dsModel::ParseLine(const std::vector<ci_string> &token)
 {
@@ -214,12 +159,8 @@ void Lib3dsModel::LoadModel(){
 
 		// ----------- Taken from Assignment Framework -------------
 
-		// Create a vertex array
-		glGenVertexArrays(1, &mVertexArrayID);
+		mSize = mNVertices;
 
-		// Upload Vertex Buffer to the GPU, keep a reference to it (mVertexBufferID)
-		glGenBuffers(1, &mVertexBufferID);
-		glBindBuffer(GL_ARRAY_BUFFER, mVertexBufferID);
 		glBufferData(GL_ARRAY_BUFFER, mNVertices * sizeof(Vertex), vertexBuffer.get(), GL_STATIC_DRAW);
 
 		lib3ds_file_free(f);
@@ -341,10 +282,10 @@ void Lib3dsModel::RenderFace(
 			vertices[face.index[i]][2]);// / 1000.0f);
 
 		vertexBuffer[total_vert_i].normal =
-			vec3(0, 0, 0);
-//				normal[i][0],
-//				normal[i][1],
-//				normal[i][2]);
+			vec3(
+				normal[i][0],
+				normal[i][1],
+				normal[i][2]);
 
 		vertexBuffer[total_vert_i].color = color;
 	}

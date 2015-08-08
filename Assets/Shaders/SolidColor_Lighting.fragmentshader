@@ -1,0 +1,65 @@
+#version 330 core
+
+
+// Light and Material Uniform Variables
+uniform float materialAmbient; // Ambient Term
+uniform float materialDiffuse; // Diffuse Term
+uniform float materialSpecular; // Specular Term
+uniform float materialExponent; // Specular Exponent
+
+uniform vec3 lightColor;
+uniform vec3 lightAttenuation; // x: Constant  y: Linear  z: Quadratic
+
+
+// Inputs
+in vec4 v_color;		 // vertex color: also diffuse color
+
+in vec3 normal;          // Transformed normal in View Space
+in vec3 eyeVector;       // Vector from the vertex to the Camera in View Space
+in vec4 lightVector;     // Vector from the vertex to the Light in View Space
+						 // Length of lightVector is the distance between light and vertex
+						 // if w = 1: Point light, if w = 0: directional light
+
+// Ouput data
+out vec4 color;
+
+
+void main()
+{
+    
+    float lightPower = 50;
+    
+	// Implment Phong Shading based on the parameters above
+	// Remember that directional light don't have attenuation
+	
+    float costheta =
+        clamp(
+            dot(
+                normal,
+                normalize(lightVector.xyz)
+            )
+            , 0, 1
+        );
+    
+    
+    
+    // Eye vector (towards the camera)
+    vec3 eye_normal = normalize(eyeVector);
+    
+    // Direction in which the triangle reflects the light
+    vec3 reflected = normalize(reflect(-lightVector.xyz, normal));
+    // Cosine of the angle between the Eye vector and the Reflect vector,
+    // clamped to 0
+    //  - Looking into the reflection -> 1
+    //  - Looking elsewhere -> < 1
+    float cosalpha = clamp( dot( eye_normal, reflected ), 0,1 );
+    
+    float distance    = length(lightVector.xyz);
+    float attenuation = lightPower / dot(lightAttenuation, vec3(1, distance, distance * distance));
+    
+    vec3 ambient  = materialAmbient                * v_color.xyz;
+    vec3 diffuse  = materialDiffuse  * attenuation * costheta * lightColor * v_color.xyz;
+    vec3 specular = materialSpecular * attenuation * pow(cosalpha, materialExponent) * lightColor;
+    
+	color =vec4( ambient + diffuse + specular , 1);
+}

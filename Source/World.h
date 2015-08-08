@@ -42,11 +42,26 @@ public:
     void RemoveBillboard(Billboard* b);
     void AddParticleSystem(ParticleSystem* particleSystem);
     void RemoveParticleSystem(ParticleSystem* particleSystem);
-    
+
+	// Light Coefficients
+	const glm::vec3 & GetLightColor(){ return lightColor; };
+	float GetLightKc() { return lightKc; };
+	float GetLightKl() { return lightKl; };
+	float GetLightKq() { return lightKq; };
+	const glm::vec4 & GetLightPosition() { return lightPosition; }; // If w = 1.0f, we have a point light
+
+	
 private:
     static World* instance;
     
 	q3Scene * mPhysics;
+
+	// Light Coefficients
+	glm::vec3 lightColor;
+	float lightKc;
+	float lightKl;
+	float lightKq;
+	glm::vec4 lightPosition; // If w = 1.0f, we have a point light
 
 	std::vector<Model*> mModel;
     std::vector<Animation*> mAnimation;

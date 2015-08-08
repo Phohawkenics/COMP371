@@ -4,15 +4,19 @@
 layout(location = 0) in vec3 vertexPosition_modelspace;
 
 // Values that stay constant for the whole mesh.
-uniform mat4 ViewProjectionTransform;
 uniform mat4 WorldTransform;
+uniform mat4 ViewTransform;
+uniform mat4 ProjectionTransform;
 
 // Output to fragment shader
 out vec4 v_color;
 
 void main()
 {
+
+	mat4 MVP = ProjectionTransform * ViewTransform * WorldTransform;
+
 	// Output position of the vertex, in clip space : MVP * position
-	//gl_Position =  ViewProjectionTransform * WorldTransform * vec4(vertexPosition_modelspace,1);
+	gl_Position =  MVP * vec4(vertexPosition_modelspace,1);
 }
 
