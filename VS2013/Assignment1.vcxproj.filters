@@ -147,6 +147,9 @@
     <ClInclude Include="..\Source\SolidModel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\q3_glm_conversions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\CubeModel.cpp">

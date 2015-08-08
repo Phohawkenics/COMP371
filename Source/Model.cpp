@@ -170,7 +170,7 @@ glm::mat4 Model::GetWorldMatrix() const
     else
     {
         mat4 t = glm::translate(mat4(1.0f), mPosition);
-        mat4 r = glm::rotate(mat4(1.0f), mRotationAngleInDegrees, mRotationAxis);
+		mat4 r = glm::rotate(mat4(1.0f), mRotationAngleInDegrees, mRotationAxis) * glm::rotate(mat4(1.0f), -90.0f, vec3(1.0f,0.0f, 0.0f));
         mat4 s = glm::scale(mat4(1.0f), mScaling);
         worldMatrix = t * r * s;
     }
