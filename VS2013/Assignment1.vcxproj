@@ -98,7 +98,12 @@
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\Assets\Objects\broom.3DS" />
+    <None Include="..\Assets\Objects\candy_cane.3ds" />
     <None Include="..\Assets\Objects\goblin_3ds.3ds" />
+    <None Include="..\Assets\Objects\lego_block.3ds" />
+    <None Include="..\Assets\Objects\Lightbulb.3ds" />
+    <None Include="..\Assets\Objects\paperclip.3ds" />
     <None Include="..\Assets\Scenes\AnimatedScene.scene" />
     <None Include="..\Assets\Scenes\AnimatedSceneWithParticles.scene" />
     <None Include="..\Assets\Scenes\CoordinateSystem.scene" />

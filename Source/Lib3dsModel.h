@@ -18,7 +18,7 @@
 
 // http://www.turbosquid.com/search/index.cfm?keyword=&max_price=0&min_price=0&file_type=114
 
-class Lib3dsModel : public SolidModel
+class Lib3dsModel : public SolidModel//, public PhysicalModel
 {
 public:
 	Lib3dsModel();
@@ -27,6 +27,9 @@ public:
 	virtual void Update(float dt);
 
 	void LoadModel();
+
+	virtual q3BoxDef  GetBoxDef();
+
 
 protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
@@ -44,6 +47,9 @@ private:
 		glm::vec3 & color);
 
 	unsigned int mNVertices;
+
+	glm::vec3 mBBoxMin;
+	glm::vec3 mBBoxMax;
 
 	std::string mFileName;
 	std::set<int> mMeshes;

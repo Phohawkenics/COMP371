@@ -18,7 +18,7 @@ public:
 	void SetBody(q3Body * body);
 
 	virtual q3BoxDef  GetBoxDef() = 0;
-	virtual q3BodyDef GetBodyDef() = 0;
+	virtual q3BodyDef GetBodyDef();
 
 protected:
 	q3Body * mBody;

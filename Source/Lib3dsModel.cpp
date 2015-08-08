@@ -24,7 +24,10 @@
 
 using namespace glm;
 
-Lib3dsModel::Lib3dsModel() : SolidModel(GL_TRIANGLES, 0)
+Lib3dsModel::Lib3dsModel()
+	: SolidModel(GL_TRIANGLES, 0)
+	, mBBoxMin(INFINITY, INFINITY, INFINITY)
+	, mBBoxMax(-INFINITY, -INFINITY, -INFINITY)
 {
 }
 
@@ -33,6 +36,34 @@ Lib3dsModel::~Lib3dsModel()
 }
 
 void Lib3dsModel::Update(float dt){}
+
+
+q3BoxDef  Lib3dsModel::GetBoxDef(){
+	q3BoxDef def;
+
+	if (GetName().c_str()[0] == '_'){
+		def.SetRestitution(0);
+	}
+
+	q3Transform tx;
+	q3Identity(tx);
+
+	q3Vec3 extents = {
+		mBBoxMax.x - mBBoxMin.x,
+		mBBoxMax.y - mBBoxMin.y,
+		mBBoxMax.z - mBBoxMin.z,
+	};
+
+	std::cout << "extents are: " <<
+		extents[0] << ", " <<
+		extents[1] << ", " <<
+		extents[2] << std::endl;
+
+	// Set the extents of the box
+	def.Set(tx, extents);
+
+	return def;
+}
 
 
 bool Lib3dsModel::ParseLine(const std::vector<ci_string> &token)
@@ -283,11 +314,21 @@ void Lib3dsModel::RenderFace(
 	Lib3dsMaterial * material = materials[face.material];
 	//std::cout << "Face:" << std::endl;
 	for (int i = 0; i < 3; ++i, ++total_vert_i){
+		float x = vertices[face.index[i]][0];
+		float y = vertices[face.index[i]][1];
+		float z = vertices[face.index[i]][2];
+
+		mBBoxMax.x = max(mBBoxMax.x, x);
+		mBBoxMin.x = min(mBBoxMin.x, x);
+
+		mBBoxMax.y = max(mBBoxMax.y, y);
+		mBBoxMin.y = min(mBBoxMin.y, y);
+
+		mBBoxMax.z = max(mBBoxMax.z, z);
+		mBBoxMin.z = min(mBBoxMin.z, z);
+
 		vertexBuffer[total_vert_i].position =
-			vec3(
-			vertices[face.index[i]][0], // / 1000.0f,
-			vertices[face.index[i]][1], // / 1000.0f,
-			vertices[face.index[i]][2]);// / 1000.0f);
+			vec3(x, y, z);
 
 		vertexBuffer[total_vert_i].normal =
 			vec3(

@@ -21,7 +21,6 @@ public:
 	virtual void Update(float dt);
 	
 	virtual q3BoxDef  GetBoxDef();
-	virtual q3BodyDef GetBodyDef();
 
 protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);

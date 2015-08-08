@@ -65,6 +65,21 @@
     <None Include="..\Assets\Objects\goblin_3ds.3ds">
       <Filter>Resource Files\Objects</Filter>
     </None>
+    <None Include="..\Assets\Objects\broom.3DS">
+      <Filter>Resource Files\Objects</Filter>
+    </None>
+    <None Include="..\Assets\Objects\candy_cane.3ds">
+      <Filter>Resource Files\Objects</Filter>
+    </None>
+    <None Include="..\Assets\Objects\lego_block.3ds">
+      <Filter>Resource Files\Objects</Filter>
+    </None>
+    <None Include="..\Assets\Objects\Lightbulb.3ds">
+      <Filter>Resource Files\Objects</Filter>
+    </None>
+    <None Include="..\Assets\Objects\paperclip.3ds">
+      <Filter>Resource Files\Objects</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Assets\Textures\BillboardTest.bmp">
