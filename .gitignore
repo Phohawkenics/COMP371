@@ -4,6 +4,7 @@ Bin/
 
 *.opensdf
 *.suo
+*.sdf
 
 # Compiled Object files
 *.slo
