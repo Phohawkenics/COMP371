@@ -274,10 +274,10 @@ void World::LoadScene(const char * scene_path)
 				mModel.push_back(object);
 
 				// We associate the Graphical Model to the Physical Body
-//				q3BodyDef def = object->GetBodyDef();
-//				q3Body * body = mPhysics->CreateBody(def);
-//				body->AddBox(object->GetBoxDef());
-//				object->SetBody(body);
+				q3BodyDef def = object->GetBodyDef();
+				q3Body * body = mPhysics->CreateBody(def);
+				body->AddBox(object->GetBoxDef());
+				object->SetBody(body);
 			}
 			else if( result == "cube" )
 			{

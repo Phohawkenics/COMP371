@@ -18,7 +18,7 @@
 
 // http://www.turbosquid.com/search/index.cfm?keyword=&max_price=0&min_price=0&file_type=114
 
-class Lib3dsModel : public SolidModel//, public PhysicalModel
+class Lib3dsModel : public SolidModel, public PhysicalModel
 {
 public:
 	Lib3dsModel();
@@ -35,6 +35,10 @@ protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
 
 private:
+
+	q3Vec3 GetExtents();
+
+	void Reposition(Vertex * v);
 
 	void RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Vertex * vertexBuffer, int & total_vert_i);
 	void RenderFace(

@@ -1,17 +1,49 @@
-# This is a comment
+# This scene tests the physics of some simple objects
+
+
+[Object]
+name  = bulb
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01 
+position = 0 20 5
+rotation = 1 0 0 90
+
+[Object]
+name  = bulb
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01 
+position = 0 20 -5
+rotation = 1 0 0 -90
+
+[Object]
+name  = bulb
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01 
+position = 5 20 5
+rotation = 0 0 1 90
+
+[Object]
+name  = bulb
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01 
+position = 5 20 -5
+rotation = 0 0 1 -90
+
+[Object]
+name  = bulb
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01 
+position = 10 20 5
+rotation = 1 0 0 180
+
+[Object]
+name  = bulb
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01 
+position = 10 20 -5
+
 [Cube]
-name     = "Ground"
+name     = _Ground"
 scaling  = 100.0 1.0 100.0
 position = 0.0 -0.5 0.0
 rotation = 0.0 0.0 1.0 0.0
-
-
-[Cube]
-name     = "Cube"
-scaling  = 1.0 1.0 1.0
-position = 0.0 1.0 0.0
-rotation = 0.0 0.0 1.0 180
-
-[Sphere]
-name     = "Sphere"
-position = 10.0 2.0 0.0

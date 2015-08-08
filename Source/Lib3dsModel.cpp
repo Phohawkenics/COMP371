@@ -37,6 +37,16 @@ Lib3dsModel::~Lib3dsModel()
 
 void Lib3dsModel::Update(float dt){}
 
+q3Vec3 Lib3dsModel::GetExtents(){
+
+       // Object scale is {1,1,1} at this point
+
+return {
+		(mBBoxMax.x - mBBoxMin.x),
+		(mBBoxMax.y - mBBoxMin.y),
+		(mBBoxMax.z - mBBoxMin.z)
+	};
+}
 
 q3BoxDef  Lib3dsModel::GetBoxDef(){
 	q3BoxDef def;
@@ -48,19 +58,7 @@ q3BoxDef  Lib3dsModel::GetBoxDef(){
 	q3Transform tx;
 	q3Identity(tx);
 
-	q3Vec3 extents = {
-		mBBoxMax.x - mBBoxMin.x,
-		mBBoxMax.y - mBBoxMin.y,
-		mBBoxMax.z - mBBoxMin.z,
-	};
-
-	std::cout << "extents are: " <<
-		extents[0] << ", " <<
-		extents[1] << ", " <<
-		extents[2] << std::endl;
-
-	// Set the extents of the box
-	def.Set(tx, extents);
+	def.Set(tx, GetExtents());
 
 	return def;
 }
@@ -145,6 +143,14 @@ static int count_vertices(Lib3dsMesh ** meshes, const std::set<int> & meshIndice
 
 }
 
+static void prescale_vertices(float(*vertices)[3], int nvertices, const glm::vec3 & scale){
+	for (int i = 0; i < nvertices; ++i){
+		vertices[i][0] *= scale.x;
+		vertices[i][1] *= scale.y;
+		vertices[i][2] *= scale.z;
+	}
+}
+
 void Lib3dsModel::LoadModel(){
 	std::cout << "Loading 3DS object from file: '" << mFileName << "' ";
 
@@ -192,9 +198,13 @@ void Lib3dsModel::LoadModel(){
 		// Assert that we exactly filled the vertxBuffer
 		assert(total_vert_i == mNVertices);
 
-		// ----------- Taken from Assignment Framework -------------
-
 		mSize = mNVertices;
+
+		// Set unity scaling: at this point all the vertices have been pre-scaled
+		SetScaling(vec3(1, 1, 1));
+
+		// Center the object around the origin in modelspace
+		Reposition(vertexBuffer.get());
 
 		glBufferData(GL_ARRAY_BUFFER, mNVertices * sizeof(Vertex), vertexBuffer.get(), GL_STATIC_DRAW);
 
@@ -203,25 +213,15 @@ void Lib3dsModel::LoadModel(){
 	}
 }
 
-static void transform_vertices(float t[4][4], float(*vertices)[3], int nvertices){
+void Lib3dsModel::Reposition(Vertex * v){
 	
-	glm::mat4 T(
-		t[0][0], t[0][1], t[0][2], t[0][3],
-		t[1][0], t[1][1], t[1][2], t[1][3],
-		t[2][0], t[2][1], t[2][2], t[2][3],
-		t[3][0], t[3][1], t[3][2], t[3][3]);
 
-	for (int i = 0; i < nvertices; ++i){
-		glm::vec4 v(
-			vertices[i][0],
-			vertices[i][1],
-			vertices[i][2],
-			1);
-		v = T*v;
+	// create an offset that will translate the object so
+	// that it is centered 
+	glm::vec3 offset = - 0.5f * (mBBoxMax + mBBoxMin);
 
-		vertices[i][0] = v.x;
-		vertices[i][1] = v.y;
-		vertices[i][2] = v.z;
+	for (int i = 0; i < mNVertices; ++i){
+		v[i].position += offset;
 	}
 }
 
@@ -230,6 +230,10 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Ver
 	// The array of vertices in the mesh
 	float(*vertices)[3] = mesh->vertices;
 	int nvertices = mesh->nvertices;
+
+	// This simplifies life for calculating the bounding box
+	// for physics later
+	prescale_vertices(vertices, nvertices, GetScaling());
 
 	// The array of faces in the mesh, each face refers to its 3 vertices by their
 	// index in the vertex array
@@ -240,10 +244,6 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Ver
 	std::cout << "      faces: " << nfaces << std::endl;
 	std::cout << "      transform:" << std::endl;
 
-	// Transform all of the vertices in the mesh by the mesh's transform
-	// TODO - is this necessary? I guess so...
-	//transform_vertices(mesh->matrix, vertices, nvertices);
-
 	// Allocate an arry to store the vertex normals
 	std::unique_ptr<float[][3]> normals(new float[nfaces * 3][3]);
 	// Ensure that we were able to allocate it
@@ -253,9 +253,6 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Ver
 
 #if 1
 	// debugging - keep track of the min, max and average vertex position
-	float x = 0, y = 0, z = 0;
-	float xm = INFINITY, ym = INFINITY, zm = INFINITY;
-	float xM = -INFINITY, yM = -INFINITY, zM = -INFINITY;
 
 	// debugging - alternate colors of faces
 	glm::vec3 colors[] = {
@@ -277,7 +274,7 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Ver
 			vertexBuffer,        // The global vertex buffer
 			total_vert_i,        // The global vertex buffer index by reference
 			colors[face_i % 6]); // the color to use
-#if 1
+#if 0
 
 		Lib3dsFace face = faces[face_i];
 		x += vertices[face.index[0]][0];
@@ -293,7 +290,7 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Ver
 		zM = max(zM, vertices[face.index[0]][2]);
 #endif
 	}
-#if 1
+#if 0
 	std::cout << x / nfaces << " " << y / nfaces << " " << z / nfaces << std::endl;
 	std::cout << xm << " " << ym << " " << zm << std::endl;
 	std::cout << xM << " " << yM << " " << zM << std::endl;

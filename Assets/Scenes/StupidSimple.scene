@@ -1,17 +1,33 @@
 [Object]
-name = _Goblin
+name = goblin
 3dsfile = ../Assets/Objects/goblin_3ds.3ds
-scaling  = 0.1 0.1 0.1
-position = 0.0 0.0 0.0
-rotation = 1.0 0.0 0.0 -90.0
-
+scaling = 0.05 0.05 0.05
+position = 0 60 0
 
 [Object]
-name = _Bulbasaur
+name = Bulbasaur
 3dsfile = ../Assets/Objects/Lightbulb.3ds
-scaling  = 4.0 4.0 4.0
-position = 1.0 37.5 1.5
-rotation = 1.0 0.0 0.0 -90
+scaling  = 4 4 4
+position = 0.0 40.0 0.0
+
+[Object]
+name = Bulbasaur2
+3dsfile = ../Assets/Objects/Lightbulb.3ds
+scaling  = 2 2 2
+position = 0.0 35.0 0.0
+
+[Object]
+name = Bulbasaur3
+3dsfile = ../Assets/Objects/Lightbulb.3ds
+scaling  = 1 1 1
+position = 0.0 30.0 0.0
+
+[Cube]
+name = _slope"
+scaling = 30 1 30
+position = 0 20 0
+rotation = 1 0 0 45
+
 
 
 

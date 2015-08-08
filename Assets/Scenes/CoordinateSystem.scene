@@ -1,25 +1,52 @@
-# This should draw a coordinate system with 3 colored axes
+# This scene tests the proper positioning of objects
+[Object]
+name  = _Goblin
+3dsfile = ../Assets/Objects/lightbulb.3ds
+scaling = 4 4 4
+position = 0 0 0
+rotation = 0 0 1 90
+
+[Object]
+name  = _Goblin
+3dsfile = ../Assets/Objects/lightbulb.3ds
+scaling = 1 1 1 
+position = 5 5 5
+rotation = 1 0 0 90
+
+[Object]
+name  = _Goblin
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.01 0.01 0.01
+position = 10 10 10
+rotation = 0 1 0 90
+
+[Object]
+name  = _Goblin
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+scaling = 0.1 0.1 0.1
+position = 15 15 15
+rotation = 1 1 1 39
 
 [Cube]
-name = "X-axis"
-position = 0.5f 0.0f 0.0f
+name = _"X-axis"
+position = 0.0f 0.0f 0.0f
 rotation = 0.0f 0.0f 1.0f 0.0f
-scaling = 1.0f 0.1f 0.1f 
+scaling = 100.0f 0.1f 0.1f 
 
 [Cube]
-name = "Y-axis"
-position = 0.0f 0.5f 0.0f
+name = _"Y-axis"
+position = 0.0f 0.0f 0.0f
 rotation = 0.0f 0.0f 1.0f 90.0f
-scaling = 1.0f 0.1f 0.1f 
+scaling = 100.0f 0.1f 0.1f 
 
 [Cube]
-name = "Z-axis"
-position = 0.0f 0.0f 0.5f
+name = _"Z-axis"
+position = 0.0f 0.0f 0.0f
 rotation = 0.0f 1.0f 0.0f -90.0f
-scaling = 1.0f 0.1f 0.1f 
+scaling = 100.0f 0.1f 0.1f 
 
 [Cube]
-name = "Origin"
+name = _"Origin"
 position = 0.0f 0.0f 0.0f
 scaling = 0.12f 0.12f 0.12f
 

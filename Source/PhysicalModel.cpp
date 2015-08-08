@@ -30,6 +30,9 @@ glm::mat4 PhysicalModel::GetWorldMatrix() const{
 	}
 
 }
+
+// body needs to be added in *world* coordinates
+
 q3BodyDef PhysicalModel::GetBodyDef(){
 	q3BodyDef def;
 
