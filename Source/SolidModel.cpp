@@ -13,7 +13,8 @@ SolidModel::SolidModel(GLenum mode, GLsizei size, float materialAmbient,
 	mMaterialAmbient(materialAmbient),
 	mMaterialDiffuse(materialDiffuse),
 	mMaterialSpecular(materialSpecular),
-	mMaterialSpecularExponent(materialSpecularExponent)
+	mMaterialSpecularExponent(materialSpecularExponent),
+	mVisible(true)
 {
 	// Create a vertex array
 	glGenVertexArrays(1, &mVertexArrayID);
@@ -36,6 +37,9 @@ SolidModel::~SolidModel()
 
 void SolidModel::Draw()
 {
+
+	if (!mVisible) return;
+
 	// Draw the Vertex Buffer
 	// Note this draws a unit Cube
 	// The Model View Projection transforms are computed in the Vertex Shader
@@ -140,4 +144,28 @@ void SolidModel::Draw()
 	glDisableVertexAttribArray(2);
 	glDisableVertexAttribArray(1);
 	glDisableVertexAttribArray(0);
+}
+
+bool SolidModel::ParseLine(const std::vector<ci_string> &token){
+
+	if (token.empty())
+	{
+		return true;
+	}
+	else
+	{
+		if (token[0] == "visible"){
+			assert(token[1] == "=");
+
+			assert(token[2] == "true" || token[2] == "false");
+
+			mVisible = token[2].c_str() == "true";
+
+			return true;
+		}
+		else{
+			Model::ParseLine(token);
+		}
+	}
+
 }

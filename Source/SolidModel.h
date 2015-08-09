@@ -28,6 +28,10 @@ protected:
 		glm::vec3 color;
 	};
 
+	virtual bool ParseLine(const std::vector<ci_string> &token) = 0;
+
+	bool mVisible;
+
 	unsigned int mVertexArrayID;
 	unsigned int mVertexBufferID;
 
