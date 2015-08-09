@@ -41,14 +41,16 @@ public:
 	float     GetRotationAngle() const	{ return mRotationAngleInDegrees; }
     ci_string GetName()                 { return mName; }
 
-protected:
-
 	enum PhysicsType {
 		None,
 		Static,
 		Dynamic,
 		Kinematic
 	};
+	void SetPhysicsType(PhysicsType physics) { mPhysicsType = physics; }
+	PhysicsType GetPhysicsType() { return mPhysicsType; }
+
+protected:
 
 	PhysicsType mPhysicsType;
 

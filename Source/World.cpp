@@ -27,6 +27,12 @@
 #include "ParticleEmitter.h"
 #include "ParticleSystem.h"
 
+#include "q3_glm_conversions.h"
+
+#include "BulletModel.h"
+
+#include "ContactListener.h"
+
 #include <q3.h>
 
 using namespace std;
@@ -44,6 +50,8 @@ lightKq(1.0f),
 lightPosition(0.0f, 10.0f, 0.0f, 1.0f)
 {
     instance = this;
+
+	mPhysics->SetContactListener(new ContactListener());
 
 	// Setup Camera
 	mCamera.push_back(new FirstPersonCamera(vec3(3.0f, 1.0f, 5.0f)));
@@ -109,6 +117,8 @@ World* World::GetInstance()
 
 void World::Update(float dt)
 {
+	RemoveAllQueuedModels();
+	
 	// User Inputs
 	// 0 1 2 to change the Camera
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_1 ) == GLFW_PRESS)
@@ -129,6 +139,20 @@ void World::Update(float dt)
 			mCurrentCamera = 2;
 		}
 	}
+
+	//if (glfwGetKey(EventManager::GetWindow(), GLFW_) == GLFW_PRESS)
+	if (glfwGetMouseButton(EventManager::GetWindow(), GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+	{
+		Pickup(dt);
+	}
+	else{
+		Drop(dt);
+	}
+	if (glfwGetMouseButton(EventManager::GetWindow(), GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
+	{
+		Shoot(dt);
+	}
+
 
 	// Spacebar to change the shader
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_0 ) == GLFW_PRESS)
@@ -174,6 +198,53 @@ void World::Update(float dt)
     
     mpBillboardList->Update(dt);
 
+}
+
+void World::Pickup(float dt){
+
+}
+
+void World::Drop(float dt){
+
+}
+
+void World::Shoot(float dt){
+	const float COOLDOWN = 0.25;
+	static float time = 0;
+
+	time += dt;
+
+	if (time > COOLDOWN){
+		std::cout << "Shoot!!!" << std::endl;
+		time = 0;
+	}
+	else{
+		return;
+	}
+
+	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+
+	vec3 camLookAt = cam->GetLookAt();
+	vec3 camPos    = cam->GetPos();
+
+	// TODO move these settings to BulletModel ctor
+
+	// Box attributes
+	BulletModel* bullet = new BulletModel();
+	bullet->SetPhysicsType(Model::Dynamic);
+	bullet->SetScaling(vec3(0.5, 0.5, 0.5));
+	bullet->SetPosition(camPos - vec3(0, 0.5, 0)); // shoot from slightly below the camera
+	mModel.push_back(bullet);
+
+	// We associate the Graphical Model to the Physical Body
+	q3BodyDef def = bullet->GetBodyDef();
+	def.linearVelocity = g2q(50.0f * camLookAt);
+	def.userData = bullet;
+	q3Body * body = mPhysics->CreateBody(def);
+	q3BoxDef box = bullet->GetBoxDef();
+	box.SetDensity(1000);
+	body->AddBox(box);
+	bullet->SetBody(body);
 }
 
 void World::Draw()
@@ -384,4 +455,29 @@ void World::RemoveParticleSystem(ParticleSystem* particleSystem)
 {
     vector<ParticleSystem*>::iterator it = std::find(mParticleSystemList.begin(), mParticleSystemList.end(), particleSystem);
     mParticleSystemList.erase(it);
+}
+
+bool World::RemoveModel(Model * model){
+	mModelRemovalQueue.push_back(model);
+	return true;
+}
+
+void World::RemoveAllQueuedModels(){
+
+	for (auto it = mModelRemovalQueue.begin(), end = mModelRemovalQueue.end(); it != end; ++it){
+		mModel.erase(
+			std::find(mModel.begin(), mModel.end(), *it));
+
+		PhysicalModel * physModel = dynamic_cast<PhysicalModel *>(*it);
+
+		if (physModel){
+			q3Body * body = physModel->GetBody();
+
+			if (body) mPhysics->RemoveBody(body);
+		}
+
+		delete *it;
+	}
+
+	mModelRemovalQueue.clear();
 }

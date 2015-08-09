@@ -50,11 +50,18 @@ public:
 	float GetLightKq() { return lightKq; };
 	const glm::vec4 & GetLightPosition() { return lightPosition; }; // If w = 1.0f, we have a point light
 
+	bool RemoveModel(Model * model);
 	
 private:
     static World* instance;
     
 	q3Scene * mPhysics;
+
+	void Shoot(float dt);
+
+	void Pickup(float dt);
+
+	void Drop(float dt);
 
 	// Light Coefficients
 	glm::vec3 lightColor;
@@ -62,6 +69,10 @@ private:
 	float lightKl;
 	float lightKq;
 	glm::vec4 lightPosition; // If w = 1.0f, we have a point light
+
+	void RemoveAllQueuedModels();
+
+	std::vector<Model*> mModelRemovalQueue;
 
 	std::vector<Model*> mModel;
     std::vector<Animation*> mAnimation;

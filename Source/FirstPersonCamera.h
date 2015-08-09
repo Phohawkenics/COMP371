@@ -29,4 +29,9 @@ private:
 	float mAngularSpeed;    // Degrees per pixel
 
 	glm::vec3 mLookAt;
+
+public:
+	glm::vec3 GetPos() { return mPosition; };
+	glm::vec3 GetLookAt() { return mLookAt; };
+
 };

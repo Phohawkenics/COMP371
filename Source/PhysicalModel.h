@@ -16,11 +16,16 @@ public:
 
 	// ---- Physics ----
 	void SetBody(q3Body * body);
+	q3Body * GetBody() { return mBody; }
 
 	virtual q3BoxDef  GetBoxDef() = 0;
 	virtual q3BodyDef GetBodyDef();
 
 	bool hasPhysics();
+
+	virtual void handleBeginContact(q3Box * box){};
+
+	virtual void handleEndContact(q3Box * box){};
 
 protected:
 

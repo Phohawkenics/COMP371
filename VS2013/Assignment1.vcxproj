@@ -125,7 +125,9 @@
   <ItemGroup>
     <ClInclude Include="..\Source\Animation.h" />
     <ClInclude Include="..\Source\Billboard.h" />
+    <ClInclude Include="..\Source\BulletModel.h" />
     <ClInclude Include="..\Source\Camera.h" />
+    <ClInclude Include="..\Source\ContactListener.h" />
     <ClInclude Include="..\Source\CubeModel.h" />
     <ClInclude Include="..\Source\EventManager.h" />
     <ClInclude Include="..\Source\FirstPersonCamera.h" />
@@ -149,7 +151,9 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../ThirdParty/glew-1.10.0/include;../ThirdParty/FreeImage-3170/Source;../ThirdParty/glfw-3.0.4/include;../ThirdParty/glm;../ThirdParty/qu3e/src</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\Source\Billboard.cpp" />
+    <ClCompile Include="..\Source\BulletModel.cpp" />
     <ClCompile Include="..\Source\Camera.cpp" />
+    <ClCompile Include="..\Source\ContactListener.cpp" />
     <ClCompile Include="..\Source\CubeModel.cpp" />
     <ClCompile Include="..\Source\EventManager.cpp" />
     <ClCompile Include="..\Source\FirstPersonCamera.cpp" />
