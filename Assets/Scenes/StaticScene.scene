@@ -104,14 +104,14 @@ position = 0 2 0
 
 [Cube]
 name = smashy
-physics = static
+physics = kinematic
 breakable = true
 scaling = 2 2 2
 position = 0 8 0
 
 [Cube]
 name = smashy
-physics = static
+physics = kinematic
 breakable = true
 scaling = 2 2 2
 position = 0 5 0

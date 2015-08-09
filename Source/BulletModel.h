@@ -11,7 +11,7 @@ public:
 	virtual q3BoxDef  GetBoxDef();
 
 
-	virtual void handleEndContact(q3Box * box);
+	virtual void handleBeginContact(const q3ContactConstraint *contact);
 
 
 };

@@ -20,7 +20,6 @@ BulletModel::~BulletModel()
 {
 }
 
-void BulletModel::handleEndContact(q3Box * body){
-	std::cout << "Bullet end contact!!" << std::endl;
+void BulletModel::handleBeginContact(const q3ContactConstraint *contact){
 	World::GetInstance()->RemoveModel(this);
 }

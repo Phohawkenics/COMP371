@@ -17,6 +17,9 @@
 // Include GLEW - OpenGL Extension Wrangler
 #include <GL/glew.h>
 
+#include <dynamics/q3Contact.h>
+
+
 using namespace glm;
 
 CubeModel::CubeModel(vec3 size) : PhysicalModel(), SolidModel(GL_TRIANGLES, 36), mBreakable(false)
@@ -103,41 +106,81 @@ void CubeModel::Update(float dt)
 	Model::Update(dt);
 }
 
+// TODO - check kinetic energy of other object and only break above
+// some threshold
+void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
+	//box->body->GetLinearVelocity() * box->body->GetMass();
+	
+	//auto eKineticA = contact->
 
-void CubeModel::handleBeginContact(q3Box * box){
 	if (mBreakable){
-		
+#if 0
+		q3Vec3 eKineticA = contact->bodyA->GetLinearVelocity() * contact->bodyA->GetMass();
+		q3Vec3 eKineticB = contact->bodyB->GetLinearVelocity() * contact->bodyB->GetMass();
+
+		q3Vec3 eKineticDelta = eKineticA - eKineticB;
+
+		r32 explosion_power = q3Dot(eKineticDelta, eKineticDelta);
+		const r32 threshold = 5000;
+		/*
+		std::cout << "eKineticA: " << std::endl
+			<< "   " << eKineticA.x << ", " << eKineticA.y << ", " << eKineticA.z << std::endl
+			<< "   " << eKineticB.x << ", " << eKineticB.y << ", " << eKineticB.z << std::endl
+			<< "   power: " << explosion_power << std::endl;
+
+
 		std::cout << "Breakable model contact" << std::endl;
-		
+		*/
+		if (explosion_power < threshold){
+			return;
+		}
+#endif
+
 		// Queue this object's removal
 		World::GetInstance()->RemoveModel(this);
 
 		// break into 8 evenly sized pieces
 		vec3 size = mScaling / 2.0f;
 		vec3 pos = size / 2.0f;
-		for (int x = 0; x < 2; ++x){
-			for (int y = 0; y < 2; ++y){
-				for (int z = 0; z < 2; ++z){
-					CubeModel *shard = new CubeModel();
-					shard->SetPosition(mPosition +
-						glm::vec3(
+		size *= 0.98; // add some space for gaps
+
+//		bool sub_breakable = glm::dot(size, size) > 0.2;
+
+		if (true/*sub_breakable*/){
+
+			for (int x = 0; x < 2; ++x){
+				for (int y = 0; y < 2; ++y){
+					for (int z = 0; z < 2; ++z){
+						CubeModel *shard = new CubeModel();
+						
+						q3Vec3 parentPos = mBody->GetTransform().position;
+						
+						shard->SetPosition(q2g(parentPos) +
+							glm::vec3(
 							pos.x * (x ? 1 : -1),
 							pos.y * (y ? 1 : -1),
 							pos.z * (z ? 1 : -1)
-						));
-					shard->SetScaling(size);
-					shard->SetPhysicsType(Dynamic);
-					shard->SetBreakable(false);
+							));
+						shard->SetScaling(size);
+						shard->SetPhysicsType(Dynamic);
+						shard->SetBreakable(false/*sub_breakable*/);
 
-					auto body = new q3BodyDef(shard->GetBodyDef());
-					auto box = new q3BoxDef(shard->GetBoxDef());
+						auto body = new q3BodyDef(shard->GetBodyDef());
+						auto box = new q3BoxDef(shard->GetBoxDef());
 
-					auto transform = mBody->GetTransform();
-					transform.position = { 0, 0, 0 };
+						body->linearVelocity = {
+							float(rand()) / float(RAND_MAX),
+							float(rand()) / float(RAND_MAX),
+							float(rand()) / float(RAND_MAX)
+						};
 
-					box->Set(transform, g2q(size));
+						auto transform = mBody->GetTransform();
+						transform.position = { 0, 0, 0 };
 
-					World::GetInstance()->AddModel(shard, body, box);
+						box->Set(transform, g2q(size));
+
+						World::GetInstance()->AddModel(shard, body, box);
+					}
 				}
 			}
 		}

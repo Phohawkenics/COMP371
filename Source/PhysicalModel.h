@@ -23,9 +23,9 @@ public:
 
 	bool hasPhysics();
 
-	virtual void handleBeginContact(q3Box * box){};
+	virtual void handleBeginContact(const q3ContactConstraint *contact){};
 
-	virtual void handleEndContact(q3Box * box){};
+	virtual void handleEndContact(const q3ContactConstraint *contact){};
 
 protected:
 

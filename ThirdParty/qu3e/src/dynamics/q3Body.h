@@ -87,6 +87,12 @@ public:
 	i32 GetLayers( ) const;
 	const q3Quaternion GetQuaternion( ) const;
 
+    r32 GetMass() const;
+
+	bool IsStatic() const;
+	bool IsDynamic() const;
+	bool IsKinematic() const;
+
 	// Manipulating the transformation of a body manually will result in
 	// non-physical behavior. Contacts are updated upon the next call to
 	// q3Scene::Step( ). Parameters are in world space. All body types
@@ -100,7 +106,7 @@ public:
 	// Dump this rigid body and its shapes into a log file. The log can be
 	// used as C++ code to re-create an initial scene setup.
 	void Dump( FILE* file, i32 index ) const;
-
+    
 private:
 	// m_flags
 	enum

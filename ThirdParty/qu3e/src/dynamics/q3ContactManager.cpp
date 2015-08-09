@@ -197,7 +197,6 @@ void q3ContactManager::RemoveFromBroadphase( q3Body *body )
 void q3ContactManager::TestCollisions( void )
 {
 	q3ContactConstraint* constraint = m_contactList;
-	i32 constraintCount = 0;
 
 	while( constraint )
 	{

@@ -22,7 +22,7 @@ public:
 	
 	virtual q3BoxDef  GetBoxDef();
 
-	virtual void handleBeginContact(q3Box * box);
+	virtual void handleBeginContact(const q3ContactConstraint *contact);
 
 	void SetBreakable(bool breakable);
 

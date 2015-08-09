@@ -280,6 +280,7 @@ const q3Vec3 q3Body::GetLinearVelocity( ) const
 }
 
 
+
 //--------------------------------------------------------------------------------------------------
 void q3Body::SetLinearVelocity( const q3Vec3& v )
 {
@@ -379,6 +380,25 @@ const q3Quaternion q3Body::GetQuaternion( ) const
 {
 	return m_q;
 }
+
+//--------------------------------------------------------------------------------------------------
+r32 q3Body::GetMass() const {
+    return m_mass;
+}
+
+//--------------------------------------------------------------------------------------------------
+bool q3Body::IsStatic() const{
+    return (m_flags & eStatic) == eStatic;
+}
+//--------------------------------------------------------------------------------------------------
+bool q3Body::IsDynamic() const{
+	return (m_flags & eDynamic) == eDynamic;
+}
+//--------------------------------------------------------------------------------------------------
+bool q3Body::IsKinematic() const{
+    return (m_flags & eKinematic) == eKinematic;
+}
+
 
 //--------------------------------------------------------------------------------------------------
 void q3Body::Render( q3Render* render ) const

@@ -1,4 +1,7 @@
 #include "Grabber.h"
+#include <dynamics/q3Body.h>
+
+#include <iostream>
 
 void Grabber::Update(q3Vec3 & lookAt, q3Vec3 & from){
 	if (HasObject()){
@@ -15,19 +18,33 @@ GrabberRayCastCallBack::GrabberRayCastCallBack(Grabber & grabber)
 }
 
 bool GrabberRayCastCallBack::ReportShape(q3Box * b){
-	// Save the body
-	mGrabber.mObject = b->body;
+	if (b->body->IsStatic()){
+		std::cout << "Not grabbing static object" << std::endl;
+		return false;
+	}
+	else{
 
-	// Retrieve the point of contact
-	q3Vec3 worldPoint = mData.start + (mData.dir * mData.toi);
+		// Save the body
+		mGrabber.mObject = b->body;
 
-	// Save the point of contact in model space
-	mGrabber.mPoint = b->body->GetLocalPoint(worldPoint);
+		std::cout << "Grabbing object which is:"
+			<< "Static? " << mGrabber.mObject->IsStatic() << std::endl
+		<< "Kinematic? " << mGrabber.mObject->IsKinematic() << std::endl
+		<< "Dynamic? " << mGrabber.mObject->IsDynamic() << std::endl;
 
-	mGrabber.mIntegralError = { 0, 0, 0 };
 
-	// TODO could for example return false if you grab a bullet or something else not grabbable
-	return true;
+
+		// Retrieve the point of contact
+		q3Vec3 worldPoint = mData.start + (mData.dir * mData.toi);
+
+		// Save the point of contact in model space
+		mGrabber.mPoint = b->body->GetLocalPoint(worldPoint);
+
+		mGrabber.mIntegralError = { 0, 0, 0 };
+
+		// TODO could for example return false if you grab a bullet or something else not grabbable
+		return true;
+	}
 }
 
 
@@ -43,9 +60,12 @@ void Grabber::TryGrab(q3Vec3 & lookAt, q3Vec3 & from) {
 	mPhysics.RayCast(&mCallback, mCallback.mData);
 }
 
+#define GRABBER_USE_FORCE 0
+
 void Grabber::ApplyForce(q3Vec3 & lookAt, q3Vec3 & from){
 	assert(HasObject());
 
+#if GRABBER_USE_FORCE
 	q3Vec3 objectPoint = mObject->GetWorldPoint(mPoint);
 
 	q3Vec3 force = (from + (lookAt * mCallback.mData.t)) - objectPoint;
@@ -66,6 +86,20 @@ void Grabber::ApplyForce(q3Vec3 & lookAt, q3Vec3 & from){
 	force += mIntegralError;
 
 	mObject->ApplyForceAtWorldPoint(force, objectPoint);
+#else
+	// THIS BUGS WITH STATIC OBJECTS
+
+	auto tx = mObject->GetTransform();
+
+	tx.position = (from + (lookAt * mCallback.mData.t));
+
+	mObject->SetTransform(tx.position);
+	
+	auto v = mObject->GetLinearVelocity();
+
+	mObject->SetLinearVelocity({ 0, 0, 0 });
+	
+#endif
 }
 
 void Grabber::Drop(){
