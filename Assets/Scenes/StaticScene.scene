@@ -95,9 +95,31 @@ physics = dynamic
 scaling = 0.01 0.01 0.01 
 position = 10 20 -5
 
+[Object]
+name = prize
+3dsfile = ../Assets/Objects/lightbulb.3ds
+physics = none
+scaling = 0.5 0.5 0.5
+position = 0 2 0
+
 [Cube]
 name = smashy
-physics = dynamic
+physics = static
+breakable = true
+scaling = 2 2 2
+position = 0 8 0
+
+[Cube]
+name = smashy
+physics = static
+breakable = true
+scaling = 2 2 2
+position = 0 5 0
+
+
+[Cube]
+name = smashy
+physics = static
 breakable = true
 scaling = 2 2 2
 position = 0 2 0
