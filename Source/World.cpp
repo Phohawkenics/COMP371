@@ -47,7 +47,8 @@ lightColor(1.0f, 1.0f, 1.0f),
 lightKc(0.0f),
 lightKl(0.0f),
 lightKq(1.0f),
-lightPosition(0.0f, 10.0f, 0.0f, 1.0f)
+lightPosition(0.0f, 10.0f, 0.0f, 1.0f),
+mGrabber(*mPhysics)
 {
     instance = this;
 
@@ -201,11 +202,17 @@ void World::Update(float dt)
 }
 
 void World::Pickup(float dt){
+	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
 
+	vec3 camLookAt = cam->GetLookAt();
+	vec3 camPos = cam->GetPos();
+
+	mGrabber.Update(g2q(camLookAt), g2q(camPos));
+	
 }
 
 void World::Drop(float dt){
-
+	mGrabber.Drop();
 }
 
 void World::Shoot(float dt){
@@ -214,37 +221,43 @@ void World::Shoot(float dt){
 
 	time += dt;
 
-	if (time > COOLDOWN){
-		std::cout << "Shoot!!!" << std::endl;
-		time = 0;
-	}
-	else{
-		return;
-	}
-
 	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
 
 	vec3 camLookAt = cam->GetLookAt();
-	vec3 camPos    = cam->GetPos();
+	vec3 camPos = cam->GetPos();
 
-	// TODO move these settings to BulletModel ctor
+	if (mGrabber.HasObject()){
+		mGrabber.Throw(g2q(camLookAt * 50.0f));
+		time = 0;
+	}
+	else{
+		if (time > COOLDOWN){
+			std::cout << "Shoot!!!" << std::endl;
+			time = 0;
+		}
+		else{
+			return;
+		}
 
-	// Box attributes
-	BulletModel* bullet = new BulletModel();
-	bullet->SetPhysicsType(Model::Dynamic);
-	bullet->SetScaling(vec3(0.5, 0.5, 0.5));
-	bullet->SetPosition(camPos - vec3(0, 0.5, 0)); // shoot from slightly below the camera
-	mModel.push_back(bullet);
+		// TODO move these settings to BulletModel ctor
 
-	// We associate the Graphical Model to the Physical Body
-	q3BodyDef def = bullet->GetBodyDef();
-	def.linearVelocity = g2q(50.0f * camLookAt);
-	def.userData = bullet;
-	q3Body * body = mPhysics->CreateBody(def);
-	q3BoxDef box = bullet->GetBoxDef();
-	box.SetDensity(1000);
-	body->AddBox(box);
-	bullet->SetBody(body);
+		// Box attributes
+		BulletModel* bullet = new BulletModel();
+		bullet->SetPhysicsType(Model::Dynamic);
+		bullet->SetScaling(vec3(0.5, 0.5, 0.5));
+		bullet->SetPosition(camPos - vec3(0, 0.5, 0)); // shoot from slightly below the camera
+		mModel.push_back(bullet);
+
+		// We associate the Graphical Model to the Physical Body
+		q3BodyDef def = bullet->GetBodyDef();
+		def.linearVelocity = g2q(50.0f * camLookAt);
+		def.userData = bullet;
+		q3Body * body = mPhysics->CreateBody(def);
+		q3BoxDef box = bullet->GetBoxDef();
+		box.SetDensity(1000);
+		body->AddBox(box);
+		bullet->SetBody(body);
+	}
 }
 
 void World::Draw()

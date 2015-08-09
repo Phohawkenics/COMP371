@@ -14,6 +14,8 @@
 #include "Billboard.h"
 #include <vector>
 
+#include "Grabber.h"
+
 #include <q3.h>
 
 class Camera;
@@ -56,6 +58,8 @@ private:
     static World* instance;
     
 	q3Scene * mPhysics;
+
+	Grabber mGrabber;
 
 	void Shoot(float dt);
 
