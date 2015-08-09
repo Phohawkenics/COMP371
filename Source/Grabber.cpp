@@ -24,6 +24,8 @@ bool GrabberRayCastCallBack::ReportShape(q3Box * b){
 	// Save the point of contact in model space
 	mGrabber.mPoint = b->body->GetLocalPoint(worldPoint);
 
+	mGrabber.mIntegralError = { 0, 0, 0 };
+
 	// TODO could for example return false if you grab a bullet or something else not grabbable
 	return true;
 }
@@ -48,6 +50,9 @@ void Grabber::ApplyForce(q3Vec3 & lookAt, q3Vec3 & from){
 
 	q3Vec3 force = (from + (lookAt * mCallback.mData.t)) - objectPoint;
 
+	// Also integrate the error over time
+	mIntegralError += force * 0.1;
+
 	r32 distance = q3Distance({0,0,0},force);
 
 	q3Vec3 velocity = mObject->GetLinearVelocity();
@@ -58,6 +63,7 @@ void Grabber::ApplyForce(q3Vec3 & lookAt, q3Vec3 & from){
 	}
 	// Always pull it very hard toward us
 	force *= distance * distance;
+	force += mIntegralError;
 
 	mObject->ApplyForceAtWorldPoint(force, objectPoint);
 }
@@ -77,7 +83,11 @@ bool Grabber::HasObject(){
 	return mObject != NULL;
 }
 
-Grabber::Grabber(q3Scene & physics) : mPhysics(physics), mObject(NULL), mCallback(*this)
+Grabber::Grabber(q3Scene & physics)
+: mPhysics(physics)
+, mObject(NULL)
+, mCallback(*this)
+, mIntegralError(0,0,0)
 {
 }
 

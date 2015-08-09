@@ -96,6 +96,13 @@ scaling = 0.01 0.01 0.01
 position = 10 20 -5
 
 [Cube]
+name = smashy
+physics = dynamic
+breakable = true
+scaling = 2 2 2
+position = 0 2 0
+
+[Cube]
 name     = _Ground"
 physics = static
 scaling  = 100.0 1.0 100.0

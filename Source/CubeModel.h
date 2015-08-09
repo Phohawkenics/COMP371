@@ -22,7 +22,15 @@ public:
 	
 	virtual q3BoxDef  GetBoxDef();
 
+	virtual void handleBeginContact(q3Box * box);
+
+	void SetBreakable(bool breakable);
+
+	bool IsBreakable();
+
 protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
+
+	bool mBreakable;
 
 };

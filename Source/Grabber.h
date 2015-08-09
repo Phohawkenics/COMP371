@@ -34,6 +34,9 @@ private:
 	q3Body * mObject;
 	q3Vec3   mPoint;
 
+	// control systems yo
+	q3Vec3 mIntegralError;
+
 	const q3Scene & const mPhysics;
 
 	friend class GrabberRayCastCallBack;

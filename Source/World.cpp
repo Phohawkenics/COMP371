@@ -33,6 +33,8 @@
 
 #include "ContactListener.h"
 
+#include <tuple>
+
 #include <q3.h>
 
 using namespace std;
@@ -119,6 +121,7 @@ World* World::GetInstance()
 void World::Update(float dt)
 {
 	RemoveAllQueuedModels();
+	AddAllQueuedModels();
 	
 	// User Inputs
 	// 0 1 2 to change the Camera
@@ -239,22 +242,16 @@ void World::Shoot(float dt){
 			return;
 		}
 
-		// TODO move these settings to BulletModel ctor
-
 		// Box attributes
 		BulletModel* bullet = new BulletModel();
-		bullet->SetPhysicsType(Model::Dynamic);
-		bullet->SetScaling(vec3(0.5, 0.5, 0.5));
 		bullet->SetPosition(camPos - vec3(0, 0.5, 0)); // shoot from slightly below the camera
 		mModel.push_back(bullet);
 
 		// We associate the Graphical Model to the Physical Body
 		q3BodyDef def = bullet->GetBodyDef();
 		def.linearVelocity = g2q(50.0f * camLookAt);
-		def.userData = bullet;
 		q3Body * body = mPhysics->CreateBody(def);
 		q3BoxDef box = bullet->GetBoxDef();
-		box.SetDensity(1000);
 		body->AddBox(box);
 		bullet->SetBody(body);
 	}
@@ -470,26 +467,59 @@ void World::RemoveParticleSystem(ParticleSystem* particleSystem)
     mParticleSystemList.erase(it);
 }
 
-bool World::RemoveModel(Model * model){
-	mModelRemovalQueue.push_back(model);
-	return true;
+void World::AddModel(Model * model, q3BodyDef * body, q3BoxDef * box){
+	mModelAddQueue.push_back(  std::make_tuple( model, body, box )  );
+}
+
+void World::AddAllQueuedModels(){
+	for (
+		auto it = mModelAddQueue.begin(), end = mModelAddQueue.end();
+		it != end; ++it)
+	{
+		auto model = std::get<0>(*it);
+		auto body = std::get<1>(*it);
+		auto box = std::get<2>(*it);
+
+		mModel.push_back(model);
+
+		PhysicalModel * physModel = dynamic_cast<PhysicalModel*> (model);
+
+		if (physModel){
+			q3BoxDef  boxDef  = box ? *box : physModel->GetBoxDef();
+			q3BodyDef bodyDef = body ? *body : physModel->GetBodyDef();
+			q3Body * object = mPhysics->CreateBody(bodyDef);
+			object->AddBox(boxDef);
+			physModel->SetBody(object);
+		}
+		if (body) delete body;
+		if (box)  delete box;
+	}
+	mModelAddQueue.clear();
+}
+
+void World::RemoveModel(Model * model){
+		mModelRemovalQueue.push_back(model);
 }
 
 void World::RemoveAllQueuedModels(){
 
 	for (auto it = mModelRemovalQueue.begin(), end = mModelRemovalQueue.end(); it != end; ++it){
-		mModel.erase(
-			std::find(mModel.begin(), mModel.end(), *it));
+		auto erase_it = std::find(mModel.begin(), mModel.end(), *it);
+		if (erase_it != mModel.end()) {
+			mModel.erase(erase_it);
 
-		PhysicalModel * physModel = dynamic_cast<PhysicalModel *>(*it);
+			PhysicalModel * physModel = dynamic_cast<PhysicalModel *>(*it);
 
-		if (physModel){
-			q3Body * body = physModel->GetBody();
+			if (physModel){
+				q3Body * body = physModel->GetBody();
 
-			if (body) mPhysics->RemoveBody(body);
+				if (body) mPhysics->RemoveBody(body);
+			}
+			delete *it;
 		}
-
-		delete *it;
+		else{
+			std::cout << "Tried to erase non-existant model ...." << std::endl;
+		}
 	}
 
 	mModelRemovalQueue.clear();

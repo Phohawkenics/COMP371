@@ -60,7 +60,7 @@ glm::mat4 PhysicalModel::GetWorldMatrix() const{
 		q3Transform transform = mBody->GetTransform();
 
 		glm::mat4 t = glm::translate(glm::mat4(1.0f), q2g(transform.position));
-		glm::mat4 s = glm::scale(glm::mat4(1.0f), GetScaling());
+		glm::mat4 s = glm::scale(glm::mat4(1.0f), mScaling);
 		glm::mat4 r = q2g_mat3_2_mat4(transform.rotation);
 
 		return t * r * s;
@@ -98,7 +98,7 @@ q3BodyDef PhysicalModel::GetBodyDef(){
 	def.position = g2q(GetPosition());		// Initial world transformation.
 	def.angularVelocity.Set(0, 0, 0);
 	def.linearVelocity.Set(0, 0, 0);
-	def.userData = NULL;
+	def.userData = this;
 
 	return def;
 }

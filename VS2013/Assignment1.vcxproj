@@ -114,6 +114,8 @@
     <None Include="..\Assets\Shaders\PathLines.vertexshader" />
     <None Include="..\Assets\Shaders\SolidColor.fragmentshader" />
     <None Include="..\Assets\Shaders\SolidColor.vertexshader" />
+    <None Include="..\Assets\Shaders\SolidColor_Lighting.fragmentshader" />
+    <None Include="..\Assets\Shaders\SolidColor_Lighting.vertexshader" />
     <None Include="..\Assets\Shaders\Texture.fragmentshader" />
     <None Include="..\Assets\Shaders\Texture.vertexshader" />
     <None Include="q3_glm_conversions.h" />
