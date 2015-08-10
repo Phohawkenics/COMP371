@@ -234,6 +234,8 @@ void BillboardList::Draw()
 
 	// Get a handle for Light Attributes uniform
 	GLuint LightPositionID = glGetUniformLocation(programID, "WorldLightPosition");
+	GLuint LightPositionID1 = glGetUniformLocation(programID, "WorldLightPosition1");
+	GLuint LightPositionID2 = glGetUniformLocation(programID, "WorldLightPosition2");
 	GLuint LightColorID = glGetUniformLocation(programID, "lightColor");
 	GLuint LightAttenuationID = glGetUniformLocation(programID, "lightAttenuation");
 
@@ -257,9 +259,13 @@ void BillboardList::Draw()
 		world = World::GetInstance();
 
 	auto lightPosition = world->GetLightPosition();
+	auto lightPosition1 = world->GetLightPosition1();
+	auto lightPosition2 = world->GetLightPosition2();
 	auto lightColor = world->GetLightColor();
 
 	glUniform4f(LightPositionID, lightPosition.x, lightPosition.y, lightPosition.z, lightPosition.w);
+	glUniform4f(LightPositionID1, lightPosition1.x, lightPosition1.y, lightPosition1.z, lightPosition1.w);
+	glUniform4f(LightPositionID2, lightPosition2.x, lightPosition2.y, lightPosition2.z, lightPosition2.w);
 	glUniform3f(LightColorID, lightColor.r, lightColor.g, lightColor.b);
 	glUniform3f(LightAttenuationID, world->GetLightKc(), world->GetLightKl(), world->GetLightKq());
 

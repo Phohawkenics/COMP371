@@ -49,7 +49,9 @@ lightColor(1.0f, 1.0f, 1.0f),
 lightKc(0.0f),
 lightKl(0.0f),
 lightKq(1.0f),
-lightPosition(0.0f, 10.0f, 0.0f, 1.0f),
+lightPosition(0.0f, 2.0f, 0.0f, 1.0f),
+lightPosition1(-20.0f, 10.0f, 30.0f, 1.0f),
+lightPosition2(0.0f, 0.0f, 0.0f, 0.0f),
 mGrabber(*mPhysics)
 {
     instance = this;

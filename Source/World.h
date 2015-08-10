@@ -51,6 +51,8 @@ public:
 	float GetLightKl() { return lightKl; };
 	float GetLightKq() { return lightKq; };
 	const glm::vec4 & GetLightPosition() { return lightPosition; }; // If w = 1.0f, we have a point light
+	const glm::vec4 & GetLightPosition1() { return lightPosition1; }; // If w = 1.0f, we have a point light
+	const glm::vec4 & GetLightPosition2() { return lightPosition2; }; // If w = 1.0f, we have a point light
 
 	void RemoveModel(Model * model);
 	void AddModel(Model * model, q3BodyDef *body = NULL, q3BoxDef *box = NULL);
@@ -74,6 +76,8 @@ private:
 	float lightKl;
 	float lightKq;
 	glm::vec4 lightPosition; // If w = 1.0f, we have a point light
+	glm::vec4 lightPosition1;
+	glm::vec4 lightPosition2;
 
 	void RemoveAllQueuedModels();
 	void AddAllQueuedModels();

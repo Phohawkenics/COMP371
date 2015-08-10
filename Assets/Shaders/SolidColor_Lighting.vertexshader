@@ -10,7 +10,7 @@ out vec4 v_color;
 
 out vec3 normal;          // Transformed normal in View Space
 out vec3 eyeVector;       // Vector from the vertex to the Camera in View Space
-out vec4 lightVector;     // Vector from the vertex to the Light in View Space
+out vec4 lightVectorArray[3]; //out vec4 lightVector;     // Vector from the vertex to the Light in View Space
 						  // Length of lightVector is the distance between light and vertex
 
 // Uniform
@@ -21,7 +21,8 @@ uniform mat4 ProjectionTransform;
 
 // light position
 uniform vec4 WorldLightPosition; // if w = 1: Point light, if w = 0: directional light
-
+uniform vec4 WorldLightPosition1; // if w = 1: Point light, if w = 0: directional light
+uniform vec4 WorldLightPosition2; // if w = 1: Point light, if w = 0: directional light
 
 void main()
 {
@@ -56,7 +57,7 @@ void main()
                     )
                 ).xyz;
 	
-    
-    
-    lightVector = (ViewTransform * WorldLightPosition) + vec4(eyeVector, 1);
+	lightVectorArray[0] = (ViewTransform * WorldLightPosition) + vec4(eyeVector, 1);
+	lightVectorArray[1] = (ViewTransform * WorldLightPosition1) + vec4(eyeVector, 1);
+	lightVectorArray[2] = (ViewTransform * WorldLightPosition2) + vec4(eyeVector, 1);
 }
