@@ -36,9 +36,10 @@ int main(int argc, char*argv[])
 //		world.LoadScene("Scenes/CoordinateSystem.scene");
 #else
 //		world.LoadScene("../Assets/Scenes/StupidSimple.scene");
-		world.LoadScene("../Assets/Scenes/AnimatedSceneWithParticles.scene");
+//		world.LoadScene("../Assets/Scenes/AnimatedSceneWithParticles.scene");
 //		world.LoadScene("../Assets/Scenes/AnimatedScene.scene");
 //		world.LoadScene("../Assets/Scenes/MazeScene.scene");
+		world.LoadScene("../Assets/Scenes/MazeScene2.scene");
 //		world.LoadScene("../Assets/Scenes/StaticScene.scene");
 //		world.LoadScene("../Assets/Scenes/CoordinateSystem.scene");
 #endif
