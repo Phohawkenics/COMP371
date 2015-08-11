@@ -100,5 +100,3 @@ scaling  = 2.0 2.0 2.0
 position = 8.0 0.0 -6.0
 rotation = 0.0 1.0 0.0 270.0f
 physics  = static
-
-

@@ -21,7 +21,7 @@ using namespace glm;
 
 Model::Model() 
 : mName("UNNAMED"), mPosition(0.0f, 0.0f, 0.0f), mScaling(1.0f, 1.0f, 1.0f), mRotationAxis(0.0f, 1.0f, 0.0f),
-mRotationAngleInDegrees(0.0f), mAnimation(nullptr), mParticleSystem(nullptr), mPhysicsType(None)
+mRotationAngleInDegrees(0.0f), mAnimation(nullptr), mParticleSystem(nullptr), mPhysicsType(None),scene(nullptr)
 {
 }
 
@@ -42,7 +42,10 @@ void Model::Draw()
 {
 }
 
-
+void Model::setScene(const char * scene_path)
+{
+	scene = scene_path;
+}
 void Model::Load(ci_istringstream& iss)
 {
 	ci_string line;
@@ -193,7 +196,11 @@ glm::mat4 Model::GetWorldMatrix() const
     else
     {
         mat4 t = glm::translate(mat4(1.0f), mPosition);
-		mat4 r = glm::rotate(mat4(1.0f), mRotationAngleInDegrees, mRotationAxis) * glm::rotate(mat4(1.0f), -90.0f, vec3(1.0f,0.0f, 0.0f));
+		mat4 r;
+		if(scene=="../Assets/Scenes/MazeScene.scene")
+			r = glm::rotate(mat4(1.0f), mRotationAngleInDegrees, mRotationAxis);
+		else
+			r = glm::rotate(mat4(1.0f), mRotationAngleInDegrees, mRotationAxis) * glm::rotate(mat4(1.0f), -90.0f, vec3(1.0f,0.0f, 0.0f));
         mat4 s = glm::scale(mat4(1.0f), mScaling);
         worldMatrix = t * r * s;
     }

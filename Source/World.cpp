@@ -388,6 +388,7 @@ void World::LoadScene(const char * scene_path)
 				MazeCube* cube = new MazeCube();
 				cube->Load(iss);
 				mModel.push_back(cube);
+				cube->setScene(scene_path);
 
 				if (cube->hasPhysics()){
 					// We associate the Graphical Model to the Physical Body
@@ -403,6 +404,7 @@ void World::LoadScene(const char * scene_path)
 				RectModel* rectangle = new RectModel();
 				rectangle->Load(iss);
 				mModel.push_back(rectangle);
+				rectangle->setScene(scene_path);
 
 				if (rectangle->hasPhysics()){
 					// We associate the Graphical Model to the Physical Body
@@ -418,14 +420,15 @@ void World::LoadScene(const char * scene_path)
 				RectModel2* rectangle = new RectModel2();
 				rectangle->Load(iss);
 				mModel.push_back(rectangle);
+				rectangle->setScene(scene_path);
 
-				//if (cube->hasPhysics()){
-				//	// We associate the Graphical Model to the Physical Body
-				//	q3BodyDef def = cube->GetBodyDef();
-				//	q3Body * body = mPhysics->CreateBody(def);
-				//	body->AddBox(cube->GetBoxDef());
-				//	cube->SetBody(body);
-				//}
+				if (rectangle->hasPhysics()){
+					// We associate the Graphical Model to the Physical Body
+					q3BodyDef def = rectangle->GetBodyDef();
+					q3Body * body = mPhysics->CreateBody(def);
+					body->AddBox(rectangle->GetBoxDef());
+					rectangle->SetBody(body);
+				}
 			}
             else if( result == "sphere" )
             {

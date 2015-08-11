@@ -41,6 +41,8 @@ public:
 	float     GetRotationAngle() const	{ return mRotationAngleInDegrees; }
     ci_string GetName()                 { return mName; }
 
+	void setScene(const char * scene_path);
+
 	enum PhysicsType {
 		None,
 		Static,
@@ -67,4 +69,7 @@ protected:
     ParticleSystem* mParticleSystem;
     
 	friend class Animation;
+
+	//Fix for world rotation matrix
+	const char * scene;
 };
