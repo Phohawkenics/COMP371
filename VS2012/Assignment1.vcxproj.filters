@@ -222,6 +222,9 @@
     <None Include="..\Assets\Scenes\MazeScene.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
+    <None Include="..\Assets\Scenes\MazeScene2.scene">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Assets\Textures\BillboardTest.bmp">
