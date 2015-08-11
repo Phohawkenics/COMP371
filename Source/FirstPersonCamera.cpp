@@ -18,7 +18,7 @@
 
 using namespace glm;
 
-FirstPersonCamera::FirstPersonCamera(glm::vec3 position) :  Camera(), mPosition(position), mLookAt(0.0f, 0.0f, -1.0f), mHorizontalAngle(90.0f), mVerticalAngle(0.0f), mSpeed(4*5.0f), mAngularSpeed(2*2.5f)
+FirstPersonCamera::FirstPersonCamera(glm::vec3 position) :  Camera(), mPosition(position), mLookAt(1.0f, 0.0f, 0.0f), mHorizontalAngle(0.0f), mVerticalAngle(0.0f), mSpeed(4*5.0f), mAngularSpeed(45.0f)
 {
 }
 
@@ -60,15 +60,33 @@ void FirstPersonCamera::Update(float dt)
 	vec3 sideVector = glm::cross(mLookAt, vec3(0.0f, 1.0f, 0.0f));
 	glm::normalize(sideVector);
 
+	//Reset Cam Position
+	//Starting position
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_B ) == GLFW_PRESS)
+	{
+		mPosition=vec3(-14.0f, 0.0f, 5.0f);
+		mLookAt=vec3(0.0f, 0.0f, 1.0f);
+		mVerticalAngle=0.0f;
+		mHorizontalAngle=0.0f;
+	}
+	//Top View
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_X ) == GLFW_PRESS)
+	{
+		mPosition=vec3(3.0f, 30.0f, 5.0f);
+		mLookAt=vec3(0.0f, -1.0f, 0.0f);
+		mVerticalAngle=-90.0f;
+		mHorizontalAngle=0.0f;
+	}
+
 	// A S D W for motion along the camera basis vectors
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_W ) == GLFW_PRESS)
 	{
-		mPosition += mLookAt * dt * mSpeed;
+		mPosition += vec3(mLookAt.x, 0, mLookAt.z) * dt * mSpeed;
 	}
 
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_S ) == GLFW_PRESS)
 	{
-		mPosition -= mLookAt * dt * mSpeed;
+		mPosition -= vec3(mLookAt.x, 0, mLookAt.z) * dt * mSpeed;
 	}
 
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_D ) == GLFW_PRESS)
