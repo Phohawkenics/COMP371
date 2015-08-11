@@ -58,13 +58,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../ThirdParty/FreeImage-3170/Source;../ThirdParty/glew-1.10.0/include;../ThirdParty/glfw-3.0.4/include;../ThirdParty/glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../ThirdParty/FreeImage-3170/Source;../ThirdParty/glew-1.10.0/include;../ThirdParty/glfw-3.0.4/include;../ThirdParty/qu3e/src;../ThirdParty/lib3ds/src;../ThirdParty/glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../ThirdParty/FreeImage-3170/lib/Win32;../ThirdParty/glew-1.10.0/lib/Release/Win32;../ThirdParty/glfw-3.0.4/lib/Win32/lib-msvc110</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FreeImage.lib;opengl32.lib;glew32s.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../ThirdParty/lib3ds/Debug;../ThirdParty/qu3e/lib/Debug;../ThirdParty/FreeImage-3170/lib/Win32;../ThirdParty/glew-1.10.0/lib/Release/Win32;../ThirdParty/glfw-3.0.4/lib/Win32/lib-msvc110</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib;opengl32.lib;glew32s.lib;glfw3.lib;lib3ds.lib;qu3e.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <BuildLog>
       <Path>
@@ -98,11 +98,20 @@
   <ItemGroup>
     <ClCompile Include="..\Source\Animation.cpp" />
     <ClCompile Include="..\Source\Billboard.cpp" />
+    <ClCompile Include="..\Source\BulletModel.cpp" />
     <ClCompile Include="..\Source\Camera.cpp" />
+    <ClCompile Include="..\Source\ContactListener.cpp" />
+    <ClCompile Include="..\Source\MazeCube.cpp" />
     <ClCompile Include="..\Source\FirstPersonCamera.cpp" />
+    <ClCompile Include="..\Source\Grabber.cpp" />
+    <ClCompile Include="..\Source\Lib3dsModel.cpp" />
     <ClCompile Include="..\Source\ParticleDescriptor.cpp" />
     <ClCompile Include="..\Source\ParticleEmitter.cpp" />
     <ClCompile Include="..\Source\ParticleSystem.cpp" />
+    <ClCompile Include="..\Source\PhysicalModel.cpp" />
+    <ClCompile Include="..\Source\RectModel.cpp" />
+    <ClCompile Include="..\Source\RectModel2.cpp" />
+    <ClCompile Include="..\Source\SolidModel.cpp" />
     <ClCompile Include="..\Source\SphereModel.cpp" />
     <ClCompile Include="..\Source\StaticCamera.cpp" />
     <ClCompile Include="..\Source\EventManager.cpp" />
@@ -116,17 +125,27 @@
   <ItemGroup>
     <ClInclude Include="..\Source\Animation.h" />
     <ClInclude Include="..\Source\Billboard.h" />
+    <ClInclude Include="..\Source\BulletModel.h" />
     <ClInclude Include="..\Source\Camera.h" />
+    <ClInclude Include="..\Source\ContactListener.h" />
+    <ClInclude Include="..\Source\CubeModel.h" />
+    <ClInclude Include="..\Source\MazeCube.h" />
     <ClInclude Include="..\Source\FirstPersonCamera.h" />
+    <ClInclude Include="..\Source\Grabber.h" />
+    <ClInclude Include="..\Source\Lib3dsModel.h" />
     <ClInclude Include="..\Source\ParsingHelper.h" />
     <ClInclude Include="..\Source\ParticleDescriptor.h" />
     <ClInclude Include="..\Source\ParticleEmitter.h" />
     <ClInclude Include="..\Source\ParticleSystem.h" />
+    <ClInclude Include="..\Source\PhysicalModel.h" />
+    <ClInclude Include="..\Source\q3_glm_conversions.h" />
+    <ClInclude Include="..\Source\RectModel.h" />
+    <ClInclude Include="..\Source\RectModel2.h" />
+    <ClInclude Include="..\Source\SolidModel.h" />
     <ClInclude Include="..\Source\SphereModel.h" />
     <ClInclude Include="..\Source\StaticCamera.h" />
     <ClInclude Include="..\Source\EventManager.h" />
     <ClInclude Include="..\Source\Model.h" />
-    <ClInclude Include="..\Source\CubeModel.h" />
     <ClInclude Include="..\Source\Renderer.h" />
     <ClInclude Include="..\Source\TextureLoader.h" />
     <ClInclude Include="..\Source\World.h" />
@@ -135,7 +154,9 @@
     <None Include="..\Assets\Scenes\AnimatedScene.scene" />
     <None Include="..\Assets\Scenes\AnimatedSceneWithParticles.scene" />
     <None Include="..\Assets\Scenes\CoordinateSystem.scene" />
+    <None Include="..\Assets\Scenes\MazeScene.scene" />
     <None Include="..\Assets\Scenes\StaticScene.scene" />
+    <None Include="..\Assets\Scenes\StupidSimple.scene" />
     <None Include="..\Assets\Shaders\BlueColor.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.vertexshader" />
