@@ -21,13 +21,16 @@
 
 #include <memory>
 #include <algorithm>
+#include <limits.h>
 
 using namespace glm;
 
+float inf = std::numeric_limits<float>::infinity();
+
 Lib3dsModel::Lib3dsModel()
 	: SolidModel(GL_TRIANGLES, 0)
-	, mBBoxMin(INFINITY, INFINITY, INFINITY)
-	, mBBoxMax(-INFINITY, -INFINITY, -INFINITY)
+	, mBBoxMin(inf, inf, inf)
+	, mBBoxMax(-inf, -inf, -inf)
 {
 }
 
@@ -41,11 +44,11 @@ q3Vec3 Lib3dsModel::GetExtents(){
 
        // Object scale is {1,1,1} at this point
 
-return {
+return q3Vec3(
 		(mBBoxMax.x - mBBoxMin.x),
 		(mBBoxMax.y - mBBoxMin.y),
 		(mBBoxMax.z - mBBoxMin.z)
-	};
+	);
 }
 
 q3BoxDef  Lib3dsModel::GetBoxDef(){

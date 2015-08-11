@@ -40,7 +40,7 @@ bool GrabberRayCastCallBack::ReportShape(q3Box * b){
 		// Save the point of contact in model space
 		mGrabber.mPoint = b->body->GetLocalPoint(worldPoint);
 
-		mGrabber.mIntegralError = { 0, 0, 0 };
+		mGrabber.mIntegralError = q3Vec3( 0, 0, 0 );
 
 		// TODO could for example return false if you grab a bullet or something else not grabbable
 		return true;
@@ -97,7 +97,7 @@ void Grabber::ApplyForce(q3Vec3 & lookAt, q3Vec3 & from){
 	
 	auto v = mObject->GetLinearVelocity();
 
-	mObject->SetLinearVelocity({ 0, 0, 0 });
+	mObject->SetLinearVelocity(q3Vec3( 0, 0, 0 ));
 	
 #endif
 }

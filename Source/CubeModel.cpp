@@ -168,14 +168,14 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 						auto body = new q3BodyDef(shard->GetBodyDef());
 						auto box = new q3BoxDef(shard->GetBoxDef());
 
-						body->linearVelocity = {
+						body->linearVelocity = q3Vec3(
 							float(rand()) / float(RAND_MAX),
 							float(rand()) / float(RAND_MAX),
 							float(rand()) / float(RAND_MAX)
-						};
+						);
 
 						auto transform = mBody->GetTransform();
-						transform.position = { 0, 0, 0 };
+						transform.position = q3Vec3( 0, 0, 0 );
 
 						box->Set(transform, g2q(size));
 
