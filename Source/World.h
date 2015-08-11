@@ -15,6 +15,7 @@
 #include <vector>
 
 #include "Grabber.h"
+#include "LightModel.h"
 
 #include <q3.h>
 
@@ -45,15 +46,6 @@ public:
     void AddParticleSystem(ParticleSystem* particleSystem);
     void RemoveParticleSystem(ParticleSystem* particleSystem);
 
-	// Light Coefficients
-	const glm::vec3 & GetLightColor(){ return lightColor; };
-	float GetLightKc() { return lightKc; };
-	float GetLightKl() { return lightKl; };
-	float GetLightKq() { return lightKq; };
-	const glm::vec4 & GetLightPosition() { return lightPosition; }; // If w = 1.0f, we have a point light
-	const glm::vec4 & GetLightPosition1() { return lightPosition1; }; // If w = 1.0f, we have a point light
-	const glm::vec4 & GetLightPosition2() { return lightPosition2; }; // If w = 1.0f, we have a point light
-
 	void RemoveModel(Model * model);
 	void AddModel(Model * model, q3BodyDef *body = NULL, q3BoxDef *box = NULL);
 
@@ -70,17 +62,9 @@ private:
 
 	void Drop(float dt);
 
-	// Light Coefficients
-	glm::vec3 lightColor;
-	float lightKc;
-	float lightKl;
-	float lightKq;
-	glm::vec4 lightPosition; // If w = 1.0f, we have a point light
-	glm::vec4 lightPosition1;
-	glm::vec4 lightPosition2;
-
 	void RemoveAllQueuedModels();
 	void AddAllQueuedModels();
+	LightModel lights = LightModel();
 
 	std::vector<std::tuple<Model*,q3BodyDef*,q3BoxDef*> > mModelAddQueue;
 	std::vector<Model*> mModelRemovalQueue;

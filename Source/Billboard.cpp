@@ -255,20 +255,18 @@ void BillboardList::Draw()
 	glUniform1f(MaterialSpecularID, mMaterialSpecular);
 	glUniform1f(MaterialExponentID, mMaterialSpecularExponent);
 
-	World * // hip hop
-		world = World::GetInstance();
+	LightModel * lights = LightModel::GetInstance();
 
-	auto lightPosition = world->GetLightPosition();
-	auto lightPosition1 = world->GetLightPosition1();
-	auto lightPosition2 = world->GetLightPosition2();
-	auto lightColor = world->GetLightColor();
+	auto lightPosition = lights->GetLightSource(0).mPosition;
+	auto lightPosition1 = lights->GetLightSource(1).mPosition;
+	auto lightPosition2 = lights->GetLightSource(2).mPosition;
+	auto lightColor = lights->GetLightSource(0).mColor; // default white
 
 	glUniform4f(LightPositionID, lightPosition.x, lightPosition.y, lightPosition.z, lightPosition.w);
 	glUniform4f(LightPositionID1, lightPosition1.x, lightPosition1.y, lightPosition1.z, lightPosition1.w);
 	glUniform4f(LightPositionID2, lightPosition2.x, lightPosition2.y, lightPosition2.z, lightPosition2.w);
 	glUniform3f(LightColorID, lightColor.r, lightColor.g, lightColor.b);
-	glUniform3f(LightAttenuationID, world->GetLightKc(), world->GetLightKl(), world->GetLightKq());
-
+	glUniform3f(LightAttenuationID, lights->GetLightKc(), lights->GetLightKl(), lights->GetLightKq());
 
     // 1st attribute buffer : vertex Positions
     glEnableVertexAttribArray(0);
