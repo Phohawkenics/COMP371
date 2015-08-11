@@ -30,6 +30,9 @@
 #include "q3_glm_conversions.h"
 
 #include "BulletModel.h"
+#include "MazeCube.h"
+#include "RectModel.h"
+#include "RectModel2.h"
 
 #include "ContactListener.h"
 
@@ -59,7 +62,7 @@ mGrabber(*mPhysics)
 	mPhysics->SetContactListener(new ContactListener());
 
 	// Setup Camera
-	mCamera.push_back(new FirstPersonCamera(vec3(3.0f, 1.0f, 5.0f)));
+	mCamera.push_back(new FirstPersonCamera(vec3(-14.0f, 0.0f, 5.0f)));
 	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
 	mCamera.push_back(new StaticCamera(vec3(0.5f,  0.5f, 5.0f), vec3(0.0f, 0.5f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
 	mCurrentCamera = 0;
@@ -378,6 +381,51 @@ void World::LoadScene(const char * scene_path)
 					body->AddBox(cube->GetBoxDef());
 					cube->SetBody(body);
 				}
+			}
+			else if( result == "mcube" )
+			{
+				// Box attributes
+				MazeCube* cube = new MazeCube();
+				cube->Load(iss);
+				mModel.push_back(cube);
+
+				if (cube->hasPhysics()){
+					// We associate the Graphical Model to the Physical Body
+					q3BodyDef def = cube->GetBodyDef();
+					q3Body * body = mPhysics->CreateBody(def);
+					body->AddBox(cube->GetBoxDef());
+					cube->SetBody(body);
+				}
+			}
+			else if( result == "rect" )
+			{
+				// Box attributes
+				RectModel* rectangle = new RectModel();
+				rectangle->Load(iss);
+				mModel.push_back(rectangle);
+
+				if (rectangle->hasPhysics()){
+					// We associate the Graphical Model to the Physical Body
+					q3BodyDef def = rectangle->GetBodyDef();
+					q3Body * body = mPhysics->CreateBody(def);
+					body->AddBox(rectangle->GetBoxDef());
+					rectangle->SetBody(body);
+				}
+			}
+			else if( result == "rect2" )
+			{
+				// Box attributes
+				RectModel2* rectangle = new RectModel2();
+				rectangle->Load(iss);
+				mModel.push_back(rectangle);
+
+				//if (cube->hasPhysics()){
+				//	// We associate the Graphical Model to the Physical Body
+				//	q3BodyDef def = cube->GetBodyDef();
+				//	q3Body * body = mPhysics->CreateBody(def);
+				//	body->AddBox(cube->GetBoxDef());
+				//	cube->SetBody(body);
+				//}
 			}
             else if( result == "sphere" )
             {
