@@ -21,6 +21,9 @@ public:
     
     void SetFountainDescriptor();
     void SetFireDescriptor();
+	void SetTeleportDescriptor();
+	//ADD THIS
+	void SetRainDescriptor();
     
 private:
     

@@ -149,7 +149,7 @@ bool Model::ParseLine(const std::vector<ci_string> &token)
         {
 			assert(token.size() > 2);
 			assert(token[1] == "=");
-			assert(token[2] == "\"fire\"" || token[2] == "\"fountain\""); // only to hardcoded particle systems
+			assert(token[2] == "\"fire\"" || token[2] == "\"fountain\"" || token[2] == "\"teleport\""); // only to hardcoded particle systems
 
 
 			ParticleEmitter* emitter;
@@ -167,7 +167,13 @@ bool Model::ParseLine(const std::vector<ci_string> &token)
 				desc = new ParticleDescriptor();
 				desc->SetFountainDescriptor();
 			}
+			else if (token[2] == "\"teleport\"")
+			{
+				emitter = new ParticleEmitter(vec3(-15.5f, 8.0f, 0.0f), this);
 
+				desc = new ParticleDescriptor();
+				desc->SetTeleportDescriptor();
+			}
 			mParticleSystem = new ParticleSystem(emitter, desc);
 			World::GetInstance()->AddParticleSystem(mParticleSystem);
         }
@@ -223,4 +229,10 @@ void Model::SetRotation(glm::vec3 axis, float angleDegrees)
 {
 	mRotationAxis = axis;
 	mRotationAngleInDegrees = angleDegrees;
+}
+
+//ADD THIS
+void Model::SetName(ci_string name)
+{
+	mName = name;
 }

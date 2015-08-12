@@ -40,11 +40,15 @@
 
 #include <q3.h>
 
+#include <glm/gtx/rotate_vector.hpp>
+
 using namespace std;
 using namespace glm;
 
 World* World::instance;
 
+//ADD THIS
+bool rainSwitch = false;
 
 World::World()
  : mPhysics(new q3Scene(1.0f / 200.0f)), // this is the dt of one frame (I guess)
@@ -55,7 +59,7 @@ mGrabber(*mPhysics)
 	mPhysics->SetContactListener(new ContactListener());
 
 	// Setup Camera
-	mCamera.push_back(new FirstPersonCamera(vec3(-14.0f, 0.0f, 5.0f)));
+	mCamera.push_back(new FirstPersonCamera(vec3(3.0f, 1.0f, 5.0f)));
 	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
 	mCamera.push_back(new StaticCamera(vec3(0.5f,  0.5f, 5.0f), vec3(0.0f, 0.5f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
 	mCurrentCamera = 0;
@@ -159,7 +163,8 @@ void World::Update(float dt)
 	// Spacebar to change the shader
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_0 ) == GLFW_PRESS)
 	{
-		Renderer::SetShader(SHADER_SOLID_COLOR);
+		//ADD THIS
+		Rain(dt);
 	}
 	else if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_9 ) == GLFW_PRESS)
 	{
@@ -199,6 +204,9 @@ void World::Update(float dt)
     }
     
     mpBillboardList->Update(dt);
+
+	//ADD THIS
+	Teleport();
 
 }
 
@@ -315,6 +323,19 @@ void World::Draw()
     
     // Draw Billboards
     mpBillboardList->Draw();
+
+	//ADD THIS
+	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	vec3 camLookAt = cam->GetLookAt();
+	vec3 camPos = cam->GetPos();
+	//Update cloud position to camera position
+	for (int i = 0; i < mModel.size(); i++){
+		if (mModel[i]->GetName() == "cloud"){
+			//cout << "update cloud position" << endl;
+			mModel[i]->SetPosition(camPos);//does nothing...
+		}
+	}
+
 
 
 	// Restore previous shader
@@ -569,4 +590,85 @@ void World::RemoveAllQueuedModels(){
 	}
 
 	mModelRemovalQueue.clear();
+}
+
+//ADD THIS
+void World::Teleport(){
+	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	vec3 camLookAt = cam->GetLookAt();
+	vec3 camPos = cam->GetPos();
+	vec3 teleportPos;
+
+	for (int i = 0; i < mModel.size(); i++){
+		if (mModel[i]->GetName() == "Teleporter"){
+			teleportPos = mModel[i]->GetPosition();
+
+			if ((camPos.x >= teleportPos.x - 2 && camPos.x <= teleportPos.x + 2)
+				&& (camPos.z >= teleportPos.z - 2 && camPos.z <= teleportPos.z + 2)){
+				for (int i = 0; i < mModel.size(); i++){//Empty current scene
+
+					//keep cloud after teleporting
+					if (mModel[i]->GetName() != "cloud"){
+						RemoveModel(mModel[i]);
+					}
+
+				}
+				LoadScene("../Assets/Scenes/AnimatedSceneWithParticles.scene");
+			}
+			return;
+
+		}
+	}
+}
+
+
+//ADD THIS
+void World::Rain(float dt){
+	const float COOLDOWN = 0.25;
+	static float time = 0;
+	time += dt;
+
+	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+
+	vec3 camLookAt = normalize(cam->GetLookAt());
+	vec3 camPos = cam->GetPos();
+
+	if (time > COOLDOWN){
+
+
+		time = 0;
+		if (rainSwitch == false){
+			CubeModel * cloud = new CubeModel();
+			cloud->SetName("cloud");
+			cloud->SetPosition(vec3(camPos.x, camPos.y+1, camPos.z-1)); //initial cloud position near camera
+			cloud->SetScaling(vec3(0));
+			AddModel(cloud);
+
+			ParticleDescriptor * desc = new ParticleDescriptor();
+			desc->SetRainDescriptor();
+			ParticleEmitter * emitter = new ParticleEmitter(vec3(0), cloud);
+			ParticleSystem * rain = new ParticleSystem(emitter, desc);
+
+
+			std::cout << "Rain On" << std::endl;
+			AddParticleSystem(rain);
+			rainSwitch = true;
+		}
+		else{
+			for (int i = 0; i < mModel.size(); i++){
+				if (mModel[i]->GetName() == "cloud"){
+					RemoveParticleSystem( mParticleSystemList[mParticleSystemList.size() - 1]);
+					RemoveModel(mModel[i]);
+				}
+			}
+			rainSwitch = false;
+			std::cout << "Rain Off" << std::endl;
+
+		}
+
+
+	}
+	else{
+		return;
+	}
 }

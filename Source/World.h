@@ -62,6 +62,10 @@ private:
 
 	void Drop(float dt);
 
+	void Teleport();
+
+	//ADD THIS
+	void Rain(float dt);
 	void RemoveAllQueuedModels();
 	void AddAllQueuedModels();
 	LightModel lights = LightModel();

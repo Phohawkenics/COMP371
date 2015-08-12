@@ -105,3 +105,49 @@ void ParticleDescriptor::SetFireDescriptor()
 	totalLifetime = 0.7f;
 	totalLifetimeDelta = 0.0f;
 }
+
+//ADD THIS
+void ParticleDescriptor::SetTeleportDescriptor()
+{
+	velocity = vec3(0.0f, 5.0f, 0.0f);
+	velocityDeltaAngle = 15;
+
+	acceleration = vec3(0.0f, -2.0f, 0.0f);
+
+	initialSize = vec2(0.01f, 1.4f);
+	initialSizeDelta = vec2(0.1f, 0.1f);
+	sizeGrowthVelocity = vec2(0);
+
+	initialColor = vec4(0.0f, 1.0f, 0.0f, 0.0f);
+	midColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);
+	endColor = vec4(0.0f, 1.0f, 0.0f, 0.0f);
+
+	emissionRate = 25.0f;
+	fadeInTime = 0.2f;
+	fadeOutTime = 3.5f;
+	totalLifetime = 4.0f;
+	totalLifetimeDelta = 0.3f;
+}
+
+//ADD THIS
+void ParticleDescriptor::SetRainDescriptor()
+{
+	velocity = vec3(0.0f, 1.0f, 0.0f);
+	velocityDeltaAngle = 90;
+
+	acceleration = vec3(0.0f, -7.0f, 0.0f);
+
+	initialSize = vec2(0.01f, 0.5f);
+	initialSizeDelta = vec2(0);
+	sizeGrowthVelocity = vec2(0);
+
+	initialColor = vec4(0.0f, 0.0f, 1.0f, 0.0f);
+	midColor = vec4(0.0f, 1.0f, 1.0f, 1.0f);
+	endColor = vec4(0.0f, 0.0f, 1.0f, 0.0f);
+
+	emissionRate = 50.0f;
+	fadeInTime = 0.2f;
+	fadeOutTime = 4.5f;
+	totalLifetime = 5.0f;
+	totalLifetimeDelta = 0.3f;
+}
