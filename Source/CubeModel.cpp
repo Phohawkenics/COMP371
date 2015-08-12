@@ -142,7 +142,7 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 		// break into 8 evenly sized pieces
 		vec3 size = mScaling / 2.0f;
 		vec3 pos = size / 2.0f;
-		size *= 0.98; // add some space for gaps
+		size *= 0.75; // add some space for gaps
 
 //		bool sub_breakable = glm::dot(size, size) > 0.2;
 
@@ -210,6 +210,8 @@ bool CubeModel::ParseLine(const std::vector<ci_string> &token)
 		std::cout << "breakable model created" << std::endl;
 
 		mBreakable = token[2] == "true";
+
+		return true;
 	}
 	else
 	{

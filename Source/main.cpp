@@ -42,7 +42,7 @@ int main(int argc, char*argv[])
 //		world.LoadScene("../Assets/Scenes/MazeScene2.scene");
 //		world.LoadScene("../Assets/Scenes/StaticScene.scene");
 //		world.LoadScene("../Assets/Scenes/CoordinateSystem.scene");
-		world.LoadScene("../Assets/Scenes/Test.scene");
+		world.LoadScene("../Assets/Scenes/generated-maze.scene");
 
 #endif
 	}

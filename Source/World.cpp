@@ -59,7 +59,7 @@ mGrabber(*mPhysics)
 
 	mPhysics->SetContactListener(new ContactListener());
 
-	vec3 startingPosition = vec3(3.0f, 1.0f, 5.0f);
+	vec3 startingPosition = vec3(0.0f, 1.0f, 0.0f);
 	// Setup Camera
 	mCamera.push_back(new PhysicsCamera(startingPosition, *mPhysics));
 	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
