@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include "LightModel.h"
 
 #include "ParsingHelper.h"
 #include "Billboard.h"
@@ -68,7 +69,7 @@ private:
 	void Rain(float dt);
 	void RemoveAllQueuedModels();
 	void AddAllQueuedModels();
-	LightModel lights = LightModel();
+	LightModel lights;
 
 	std::vector<std::tuple<Model*,q3BodyDef*,q3BoxDef*> > mModelAddQueue;
 	std::vector<Model*> mModelRemovalQueue;

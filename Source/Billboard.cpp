@@ -6,6 +6,7 @@
 // Copyright (c) 2014-2015 Concordia University. All rights reserved.
 //
 
+#include "LightModel.h"
 #include "Billboard.h"
 #include "Renderer.h"
 #include "World.h"

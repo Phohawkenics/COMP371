@@ -1,6 +1,6 @@
 #include "SolidModel.h"
 #include "Renderer.h"
-
+#include "LightModel.h"
 #include "World.h"
 
 
