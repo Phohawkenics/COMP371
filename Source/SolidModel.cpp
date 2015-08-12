@@ -50,11 +50,23 @@ void SolidModel::Draw()
 	// Get a handle for our Transformation Matrices uniform
 	GLuint WorldMatrixID = glGetUniformLocation(programID, "WorldTransform");
 
+	// Send our transformation to the currently bound shader, 
+	// in the "World / View / Projection" uniform
+	glUniformMatrix4fv(WorldMatrixID, 1, GL_FALSE, &GetWorldMatrix()[0][0]);
+
 	// Get a handle for Light Attributes uniform
-	GLuint LightPositionID = glGetUniformLocation(programID, "WorldLightPosition");
 	GLuint LightPositionID1 = glGetUniformLocation(programID, "WorldLightPosition1");
+	GLuint LightColorID1 = glGetUniformLocation(programID, "lightColor1");
+	GLuint LightPowerID1 = glGetUniformLocation(programID, "lightPower1");
+
 	GLuint LightPositionID2 = glGetUniformLocation(programID, "WorldLightPosition2");
-	GLuint LightColorID = glGetUniformLocation(programID, "lightColor");
+	GLuint LightColorID2 = glGetUniformLocation(programID, "lightColor2");
+	GLuint LightPowerID2 = glGetUniformLocation(programID, "lightPower2");
+
+	GLuint LightPositionID3 = glGetUniformLocation(programID, "WorldLightPosition3");
+	GLuint LightColorID3 = glGetUniformLocation(programID, "lightColor3");
+	GLuint LightPowerID3 = glGetUniformLocation(programID, "lightPower3");
+	
 	GLuint LightAttenuationID = glGetUniformLocation(programID, "lightAttenuation");
 
 	// Get a handle for Material Attributes uniform
@@ -62,11 +74,6 @@ void SolidModel::Draw()
 	GLuint MaterialDiffuseID = glGetUniformLocation(programID, "materialDiffuse");
 	GLuint MaterialSpecularID = glGetUniformLocation(programID, "materialSpecular");
 	GLuint MaterialExponentID = glGetUniformLocation(programID, "materialExponent");
-
-	// Send our transformation to the currently bound shader, 
-	// in the "World / View / Projection" uniform
-	glUniformMatrix4fv(WorldMatrixID, 1, GL_FALSE, &GetWorldMatrix()[0][0]);
-
 
 	// Draw the Vertex Buffer
 	// Note this draws a unit Sphere
@@ -79,18 +86,26 @@ void SolidModel::Draw()
 	glUniform1f(MaterialExponentID, mMaterialSpecularExponent);
 
 	LightModel * lights = LightModel::GetInstance();
-
-	auto lightPosition = lights->GetLightSource(0).mPosition;
-	auto lightPosition1 = lights->GetLightSource(1).mPosition;
-	auto lightPosition2 = lights->GetLightSource(2).mPosition;
-	auto lightColor = lights->GetLightSource(0).mColor; // default white
-
-	glUniform4f(LightPositionID, lightPosition.x, lightPosition.y, lightPosition.z, lightPosition.w);
+	
+	auto lightPosition1 = lights->GetLightSource(0).mPosition;
+	auto lightColor1 = lights->GetLightSource(0).mColor;
 	glUniform4f(LightPositionID1, lightPosition1.x, lightPosition1.y, lightPosition1.z, lightPosition1.w);
-	glUniform4f(LightPositionID2, lightPosition2.x, lightPosition2.y, lightPosition2.z, lightPosition2.w);
-	glUniform3f(LightColorID, lightColor.r, lightColor.g, lightColor.b);
-	glUniform3f(LightAttenuationID, lights->GetLightKc(), lights->GetLightKl(), lights->GetLightKq());
+	glUniform3f(LightColorID1, lightColor1.r, lightColor1.g, lightColor1.b);
+	glUniform1f(LightPowerID1, lights->GetLightSource(0).mIntensity);
 
+	auto lightPosition2 = lights->GetLightSource(1).mPosition;
+	auto lightColor2 = lights->GetLightSource(1).mColor;
+	glUniform4f(LightPositionID2, lightPosition2.x, lightPosition2.y, lightPosition2.z, lightPosition2.w);
+	glUniform3f(LightColorID2, lightColor2.r, lightColor2.g, lightColor2.b);
+	glUniform1f(LightPowerID2, lights->GetLightSource(1).mIntensity);
+
+	auto lightPosition3 = lights->GetLightSource(2).mPosition;
+	auto lightColor3 = lights->GetLightSource(2).mColor;
+	glUniform4f(LightPositionID3, lightPosition3.x, lightPosition3.y, lightPosition3.z, lightPosition3.w);
+	glUniform3f(LightColorID3, lightColor3.r, lightColor3.g, lightColor3.b);
+	glUniform1f(LightPowerID3, lights->GetLightSource(2).mIntensity);
+	
+	glUniform3f(LightAttenuationID, lights->GetLightKc(), lights->GetLightKl(), lights->GetLightKq());
 
 	// 1st attribute buffer : vertex Positions
 	glEnableVertexAttribArray(0);

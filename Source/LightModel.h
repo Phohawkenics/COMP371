@@ -16,21 +16,29 @@ class LightModel
 	struct LightSource {
 		std::string mName;
 		bool mStatus;
-		// {AMBIENT = 1, FLASHLIGHT = 2, LAMP = 3}
 		int mType;
 		float mIntensity;
 		glm::vec3 mColor;
 		glm::vec4 mPosition;
-		LightSource(std::string name, int type, glm::vec4 position) {
+		LightSource(std::string name, int type, glm::vec4 position,
+			glm::vec3 color, float intensity) {
 			mStatus = 1; // Default ON
-			mColor = glm::vec3(1.0f, 1.0f, 1.0f); // Default white
-			mIntensity = 50; // Default
+			mColor = color; // Default white
+			mIntensity = intensity; // Default
 			mName = name;
 			mType = type;
 			mPosition = position;
 		};
 	};
-
+	struct LightContainer {
+		int mIndex;
+		float mIntensity;
+		LightContainer(int index, float intensity) {
+			mIndex = index;
+			mIntensity = intensity;
+		}
+	};
+	std::vector<LightContainer> LightOffStorage;
 	std::vector<LightSource> LightSources;
 	
 public:
@@ -49,7 +57,7 @@ public:
 
 	void SetLightPosition(glm::vec4 newPosition, int index) { LightSources[index].mPosition = newPosition; };
 	void SetLightColor(glm::vec3 newColor, int index) { LightSources[index].mColor = newColor; };
-	void SwitchLight(int index) { LightSources[index].mStatus = !LightSources[index].mStatus; };
+	void SwitchLight(int index);
 
-	enum Types {AMBIENT,FLASHLIGHT,LAMP};
+	enum Types {AMBIENT, CONE};
 };
