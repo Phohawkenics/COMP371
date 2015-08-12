@@ -70,8 +70,8 @@ vec3 calcColor(vec4 lightDirection,vec3 lightColor, float lightPower) {
 
 void main()
 {	
-	vec3 lightColors[NUM_LIGHTS] = {lightColor1, lightColor2, lightColor3};
-	float lightPowers[NUM_LIGHTS] = {lightPower1, lightPower2, lightPower3};
+	vec3 lightColors[NUM_LIGHTS] = vec3[](lightColor1, lightColor2, lightColor3);
+	float lightPowers[NUM_LIGHTS] = float[](lightPower1, lightPower2, lightPower3);
 
 	vec3 finalColor = vec3(0.f,0.f,0.f);
 	for (int i = 0; i < NUM_LIGHTS; i++) {

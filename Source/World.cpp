@@ -61,7 +61,7 @@ mGrabber(*mPhysics)
 
 	vec3 startingPosition = vec3(3.0f, 0.0f, 5.0f);
 	// Setup Camera
-	mCamera.push_back(new FirstPersonCamera(startingPosition));
+	mCamera.push_back(new PhysicsCamera(startingPosition, *mPhysics));
 	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
 	mCamera.push_back(new PhysicsCamera(startingPosition,*mPhysics));
 
@@ -213,7 +213,7 @@ void World::Update(float dt)
 }
 
 void World::Pickup(float dt){
-	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
 
 	vec3 camLookAt = cam->GetLookAt();
 	vec3 camPos = cam->GetPos();
@@ -232,7 +232,7 @@ void World::Shoot(float dt){
 
 	time += dt;
 
-	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
 
 	vec3 camLookAt = cam->GetLookAt();
 	vec3 camPos = cam->GetPos();
@@ -327,7 +327,7 @@ void World::Draw()
     mpBillboardList->Draw();
 
 	//ADD THIS
-	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
 	vec3 camLookAt = cam->GetLookAt();
 	vec3 camPos = cam->GetPos();
 	//Update cloud position to camera position
@@ -470,7 +470,8 @@ void World::LoadScene(const char * scene_path)
 			}
 			else
 			{
-				fprintf(stderr, "Error loading scene file... !");
+
+				fprintf(stderr, "Error loading scene file... %s !", result.c_str());
 				getchar();
 				exit(-1);
 			}
@@ -596,7 +597,7 @@ void World::RemoveAllQueuedModels(){
 
 //ADD THIS
 void World::Teleport(){
-	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
 	vec3 camLookAt = cam->GetLookAt();
 	vec3 camPos = cam->GetPos();
 	vec3 teleportPos;
@@ -630,7 +631,7 @@ void World::Rain(float dt){
 	static float time = 0;
 	time += dt;
 
-	FirstPersonCamera * cam = (FirstPersonCamera*)mCamera[0]; // Bad and dangerous but oh well
+	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
 
 	vec3 camLookAt = normalize(cam->GetLookAt());
 	vec3 camPos = cam->GetPos();

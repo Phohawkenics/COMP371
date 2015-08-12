@@ -59,9 +59,6 @@
     <None Include="..\Assets\Shaders\Texture.vertexshader">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="q3_glm_conversions.h">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="..\Assets\Scenes\StupidSimple.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
@@ -177,13 +174,19 @@
     <ClInclude Include="..\Source\MazeCube.h">
       <Filter>Source Files\models</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\RectModel.h">
-      <Filter>Source Files\models</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\RectModel2.h">
       <Filter>Source Files\models</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\LightModel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\CameraRayCastCallBack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\HalfMCube.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\PhysicsCamera.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -257,13 +260,19 @@
     <ClCompile Include="..\Source\MazeCube.cpp">
       <Filter>Source Files\models</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\RectModel.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\RectModel2.cpp">
       <Filter>Source Files\models</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\LightModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\CameraRayCastCallBack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\HalfMCube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\PhysicsCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
