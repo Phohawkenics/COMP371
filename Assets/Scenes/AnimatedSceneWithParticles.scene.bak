@@ -1,0 +1,579 @@
+# This is a comment
+[AnimationKey]
+name     = "KeyForth"
+position = -3.0 1.0 0.0
+rotation =  1.0f 0.0f 0.0f 0.0f
+
+
+[AnimationKey]
+name     = "KeyBack"
+position =  3.0 1.0 0.0
+rotation =  1.0f 0.0f 0.0f 90.0f
+
+[Animation]
+name     = "BackAndForth"
+key      = "KeyForth"     time = 0.0f
+key      = "KeyBack"      time = 2.0f
+key      = "KeyForth"     time = 4.0f
+
+[AnimationKey]
+name     = "KeyCycle1"
+position = 10.0 30.0 0.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+
+[AnimationKey]
+name     = "KeyCycle2"
+position = 7.07 30.0 7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+[AnimationKey]
+name     = "KeyCycle3"
+position = 0.0 30.0 10.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+[AnimationKey]
+name     = "KeyCycle4"
+position = -7.07 30.0 7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+[AnimationKey]
+name     = "KeyCycle5"
+position = -10.0 30.0 0.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+[AnimationKey]
+name     = "KeyCycle6"
+position = -7.07 30.0 -7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+[AnimationKey]
+name     = "KeyCycle7"
+position = 0.0 30.0 -10.0
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+[AnimationKey]
+name     = "KeyCycle8"
+position = 7.07 30.0 -7.07
+scaling = 0.1 0.1 0.1
+rotation =  1.0f 0.0f 0.0f -90.0f
+
+
+[Animation]
+name     = "CycleAnim"
+key      = "KeyCycle1"  time = 0.0f
+key      = "KeyCycle2"  time = 1.0f
+key      = "KeyCycle3"  time = 2.0f
+key      = "KeyCycle4"  time = 3.0f
+key      = "KeyCycle5"  time = 4.0f
+key      = "KeyCycle6"  time = 5.0f
+key      = "KeyCycle7"  time = 6.0f
+key      = "KeyCycle8"  time = 7.0f
+key      = "KeyCycle1"  time = 8.0f
+
+
+[Object]
+3dsfile = ../Assets/Objects/bird.3ds
+name     = "Bird"
+position = 10.0 20.0 0.0
+animation = "CycleAnim"
+
+##############Garage#############
+
+[Object]
+3dsfile = ../Assets/Objects/car.3ds
+name     = "Car"
+position = -18.0 0.5 15.0
+scaling  = 0.25 0.25 0.25
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = -19.0 10.0 0.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#############Outdoors#############
+[Cube]
+name     = _Ground"
+physics  = static
+restitution = 0
+friction = 10
+scaling  = 100.0 1.0 100.0
+position = 0.0 -1.0 0.0
+rotation = 0.0 0.0 1.0 0.0
+
+#13
+[Object]
+3dsfile = ../Assets/Objects/house.3ds
+position = 0.0 13.0 0.0 
+scaling = 0.5 0.5 0.5
+
+
+[Cube]
+position = -6.0 26.0 -4.0
+scaling = 0.0 0.0 0.0
+particleSystem = "fountain"
+
+[Cube]
+position = -12.5 26.0 8.0
+scaling = 0.0 0.0 0.0
+particleSystem = "fountain"
+
+[Cube]
+position = 15.0 23.0 -3.0
+scaling = 0.0 0.0 0.0
+particleSystem = "fountain"
+
+
+#############Fireplace#############
+[Object]
+3dsfile = ../Assets/Objects/fireplace.3ds
+position = -10.6 1.0 -18.0
+scaling = 0.05 0.05 0.05
+rotation = 0.0 1.0 0.0 90.0
+
+
+[Object]
+3dsfile = ../Assets/Objects/log.3ds
+position = -10 0.25 -18.3
+physics = dynamic
+scaling = 0.05 0.05 0.05
+particleSystem = "Fire"
+rotation = 0.0 1.0 0.0 90.0
+
+##################################################################Add light source
+
+[Object]
+3dsfile = ../Assets/Objects/log.3ds
+position = -10 1.0 -18.4
+physics = dynamic
+scaling = 0.05 0.05 0.05
+particleSystem = "Fire"
+rotation = 1.0 0.0 0.0 90.0
+##################################################################Add light source
+
+[Object]
+3dsfile = ../Assets/Objects/log.3ds
+position = -10 -0.3 -18.7
+physics = dynamic
+scaling = 0.05 0.05 0.05
+particleSystem = "Fire"
+rotation = 1.0 0.0 0.0 90.0
+##################################################################Add light source
+
+#############Living Room#############
+[Object]
+3dsfile = ../Assets/Objects/CoffeeTable.3ds
+physics = dynamic
+position = 0.0 2 -17.0
+scaling = 0.05 0.05 0.05
+
+
+
+[Object]
+3dsfile = ../Assets/Objects/Couch.3ds
+physics = dynamic
+position = 8.0 2 -17.0
+scaling = 0.01 0.01 0.01
+rotation = 0.0 1.0 0.0 -85
+
+
+[Object]
+3dsfile = ../Assets/Objects/Flatscreen.3ds
+position = -11.25 6.0 -18.3
+scaling = 0.03 0.03 0.03
+rotation = 0.0 1.0 0.0 90.0
+
+[Object]
+3dsfile = ../Assets/Objects/Bookshelf.3ds
+position = -8.0 2.0 -5.25
+physics = dynamic
+scaling = 0.03 0.03 0.03
+rotation = 0.0 1.0 0.0 180.0
+
+#Entrance
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 4.0 10.0 2.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Living room
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 0.0 10.0 -14.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+#############Kitchen#############
+[Object]
+3dsfile = ../Assets/Objects/kitchen.3ds
+position = -20.0 3.0 -11.6
+scaling = 1.2 1.2 1.2
+rotation = 0.0 1.0 0.0 90.0
+
+#Kitchen
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = -19.0 10.0 -12.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#############Bedrooms#############
+#Bedroom1
+[Object]
+3dsfile = ../Assets/Objects/Bed.3ds
+position = 21.0 1.0 10.0
+scaling = 0.004 0.004 0.004
+rotation = 0.0 1.0 0.0 -90.0
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 15.0 10.0 -14.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Bedroom2
+[Object]
+3dsfile = ../Assets/Objects/Bed.3ds
+position = 21.0 1.0 -13.0
+scaling = 0.004 0.004 0.004
+rotation = 0.0 1.0 0.0 -90.0
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 19.0 10.0 0.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Bedroom3
+[Object]
+3dsfile = ../Assets/Objects/Bed.3ds
+position = -7.0 1.0 10.0
+scaling = 0.004 0.004 0.004
+
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = -8.0 10.0 12.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#############Bathroom#############
+[Object]
+3dsfile = ../Assets/Objects/toilet.3ds
+position = 21.0 1.0 -2.0 
+scaling = 0.1 0.1 0.1
+rotation = 0.0 1.0 0.0 -90.0
+
+[Object]
+3dsfile = ../Assets/Objects/sink.3ds
+position = 24.5 1.0 4.25 
+scaling = 0.1 0.1 0.1
+rotation = 0.0 1.0 0.0 -135.0
+
+#Bathroom
+[Object]
+3dsfile = ../Assets/Objects/Light.3ds
+position = 19.0 10.0 11.0
+scaling = 0.01 0.01 0.01
+##################################################################Add light source
+
+
+#Walls
+#Hall L
+[Cube]
+position = 1.2 5 17.4
+scaling = 0.7 12 15
+physics = static 
+visible = false
+[Cube]
+position = 1.2 5 4.5
+scaling = 0.5 12 4
+physics = static 
+visible = false
+[Cube]
+position = 1.2 5 -2
+scaling = 0.5 12 3
+physics = static 
+visible = false
+#top
+[Cube]
+position = 1.2 10 8
+scaling = 0.5 2.25 5
+physics = static 
+visible = false
+
+#Closet
+[Cube]
+position = -3.5 5 1
+scaling = 0.7 12 9
+physics = static 
+visible = false
+#top
+[Cube]
+position = 1.2 10 0
+scaling = 0.5 2.25 5
+physics = static 
+visible = false
+
+
+#Hall R
+[Cube]
+position = 11.25 5 -12.7 
+scaling = 1.2 12 22
+physics = static 
+visible = false
+[Cube]
+position = 11.25 5 11.5 
+scaling = 1.2 12 15
+physics = static 
+visible = false
+#top
+[Cube]
+position = 11.25 10 1
+scaling = 1.2 2.25 6
+physics = static 
+visible = false
+
+#Bedroom3
+[Cube]
+position = -11.5 5 14.5
+scaling = 1.2 12 21
+physics = static 
+visible = false
+[Cube]
+position = -11.5 5 -5.5
+scaling = 1.2 12 12.3
+physics = static 
+visible = false
+#top
+[Cube]
+position = -11.5 10 1
+scaling = 1.2 2.25 6
+physics = static 
+visible = false
+
+#TV wall
+[Cube]
+position = -11.8 5 -20.3
+scaling = 2 12 10
+physics = static 
+visible = false
+#top
+[Cube]
+position = -11.5 10 -14
+scaling = 1.2 2.25 6
+physics = static 
+visible = false
+
+#Bathroom
+[Cube]
+position = 16.2 5 -2 
+scaling = 0.7 12 3
+physics = static 
+visible = false
+[Cube]
+position = 16.2 5 4 
+scaling = 0.7 12 2.7
+physics = static 
+visible = false
+#top
+[Cube]
+position = 16.2 10 1
+scaling = 0.7 2.25 6
+physics = static 
+visible = false
+
+
+##HORIZONTAL WALLS##
+#Outside Wall Right
+[Cube]
+position = 26.25 5 0 
+scaling = 2 12 40
+physics = static 
+visible = false
+
+#Outside Wall Left
+[Cube]
+position = -26.25 5 0 
+scaling = 2 12 40
+physics = static 
+visible = false
+
+#Outside Back Wall 
+[Cube]
+position = 0 5 -24.5 
+scaling = 25 12 2
+physics = static 
+visible = false
+
+#Outside wall Right
+[Cube]
+position = 18.5 5 -18.75
+scaling = 14 12 2
+physics = static 
+visible = false
+
+#Outside Kitchen back wall
+[Cube]
+position = -19 5 -18.75
+scaling = 13 12 2
+physics = static 
+visible = false
+
+#Kitchen inner wall
+[Cube]
+position = -18.5 5 -3.75
+scaling = 13 12 1
+physics = static 
+visible = false
+
+#Bedroom inner wall 
+[Cube]
+position = -5.25 5 5.5
+scaling = 13.5 12 0.5
+physics = static 
+visible = false
+
+#LR inner wall
+[Cube]
+position = -4.5 5 -3.5
+scaling = 14 12 1
+physics = static 
+visible = false
+[Cube]
+position = 10.6 5 -3.75
+scaling = 3.2 12 0.5
+physics = static 
+visible = false
+[Cube]
+position = 20.5 5 -3.75
+scaling = 10 12 0.5
+physics = static 
+visible = false
+
+#Bathroom inner wall
+[Cube]
+position = 20.5 5 5.5
+scaling = 10 12 0.6
+physics = static 
+visible = false
+[Cube]
+position = 12 5 5.5
+scaling = 0.5 10 0.7
+physics = static 
+visible = false
+
+#front bedroom top
+#top
+[Cube]
+position = 14 10 5.5
+scaling = 4.5 2.25 0.7
+physics = static 
+visible = false
+
+#rear bedroom top
+#top
+[Cube]
+position = 14 10 -3.8
+scaling = 4.5 2.25 0.6
+physics = static 
+visible = false
+
+#Front outside right
+[Cube]
+position = 13.5 5 18.5
+scaling = 24 12 2
+physics = static 
+visible = false
+
+#Front outside left
+[Cube]
+position = -5 5 24.5
+scaling = 15.5 12 2
+physics = static 
+visible = false
+
+#Entrance L
+[Cube]
+position = 2.7 5 12.4
+scaling = 2.5 12 0.7
+physics = static 
+visible = false
+
+#Entrance R
+[Cube]
+position = 9.5 5 12.4
+scaling = 3.5 12 0.7
+physics = static 
+visible = false
+
+#Entrance Top
+[Cube]
+position = 5.5 10 12.4
+scaling = 4.5 2.25 0.7
+physics = static 
+visible = false
+
+#LR Top
+[Cube]
+position = 6 10 -3.75
+scaling = 7 2.25 0.7
+physics = static 
+visible = false
+
+
+
+#Fixes#
+#LR Column
+[Cube]
+position = -5 5 -4.1
+scaling = 6 12 1.5
+physics = static 
+visible = false
+
+#Right of entrance outside
+[Cube]
+position = -11.8 5 21
+scaling = 2 12 6
+physics = static 
+visible = false
+#Left of entrance outside
+[Cube]
+position = 2 5 21
+scaling = 2 12 6
+physics = static 
+visible = false
+
+#RearBedroom outside
+[Cube]
+position = 12 5 -22
+scaling = 1 12 6
+physics = static 
+visible = false
+
+#Bathroom column
+[Cube]
+position = 17 5 -3
+scaling = 3 12 1
+physics = static 
+visible = false
+ 
+
+
+
+
+

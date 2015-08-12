@@ -14,7 +14,9 @@
 #include "ParsingHelper.h"
 #include "Billboard.h"
 #include <vector>
+#include "Lib3dsModel.h"
 
+#include "SphereModel.h"
 #include "StaticCamera.h"
 #include "PhysicsCamera.h"
 
@@ -59,6 +61,8 @@ private:
     
 	PhysicsCamera* player;  //1st person cam
 	StaticCamera* bev;		//3rd person cam following player
+	 Lib3dsModel * character;
+	 float mHorizontalAngle;
 
 	CubeModel * mTeleporter;
 

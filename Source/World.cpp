@@ -217,9 +217,35 @@ void World::Update(float dt)
 		vec3 pos = player->GetPos() + vec3(0.0, 10.0, 0.0);
 		bev->SetPosition(pos);
 		bev->SetLookAt(player->GetPos());
+		//Update character model
+		vec3 char_pos = player->GetPos();
+		character->SetPosition(vec3(char_pos.x, char_pos.y-0.5, char_pos.z+2.0f));
 
-		//Update player
-		//character->SetPosition(player->GetPos());		
+		/*float phi = 0.0;
+		
+		if(EventManager::GetMouseMotionX() != 0.0f){
+			mHorizontalAngle -= EventManager::GetMouseMotionX() * dt;
+			if (mHorizontalAngle > 360)
+			{
+				mHorizontalAngle -= 360;
+			}
+			else if (mHorizontalAngle < -360)
+			{
+				mHorizontalAngle += 360;
+			}
+		}
+		float theta = radians(mHorizontalAngle);
+		vec3 mLookAt = vec3(cosf(phi)*cosf(theta), sinf(phi), -cosf(phi)*sinf(theta));
+		
+		if(player->GetLookAt() != mLookAt){
+			if(EventManager::GetMouseMotionX() > 0.0f)
+				character->SetRotation(vec3(0.0, 1.0, 0.0),-theta);
+			if(EventManager::GetMouseMotionX() < 0.0f)
+				character->SetRotation(vec3(0.0, 1.0, 0.0),theta);
+		}*/
+	}
+	if(mCurrentCamera == 2){
+		mCamera[mCurrentCamera]->Update(dt);
 	}
 	// updatePhysics
 
@@ -415,7 +441,17 @@ void World::LoadScene(const char * scene_path)
 		ci_string result;
 		if( std::getline( iss, result, ']') )
 		{
-			if (result == "object")
+			if(result == "character")
+			{
+				character = new Lib3dsModel();
+				character->Load(iss);
+				character->LoadModel();
+				vec3 char_pos = player->GetPos();
+				character->SetPosition(vec3(char_pos));
+				mModel.push_back(character);
+			}
+
+			else if (result == "object")
 			{
 				Lib3dsModel * object = new Lib3dsModel();
 				object->Load(iss);
