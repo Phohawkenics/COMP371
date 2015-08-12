@@ -98,6 +98,7 @@
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\Assets\generated-maze.scene" />
     <None Include="..\Assets\Objects\broom.3DS" />
     <None Include="..\Assets\Objects\candy_cane.3ds" />
     <None Include="..\Assets\Objects\goblin_3ds.3ds" />

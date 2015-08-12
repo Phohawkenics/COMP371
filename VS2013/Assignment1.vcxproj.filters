@@ -98,6 +98,9 @@
     <None Include="..\Assets\Scenes\generated-maze.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
+    <None Include="..\Assets\generated-maze.scene">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Assets\Textures\BillboardTest.bmp">

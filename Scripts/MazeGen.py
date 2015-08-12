@@ -32,6 +32,22 @@ while len(stack) > 0:
         stack.append((cx, cy))
     else: stack.pop()
 
+middle = (mx/2, my/2)
+
+maze[middle[0]][middle[1]] = 2
+
+maze[middle[0]+1][middle[1]] = 1
+maze[middle[0]][middle[1]+1] = 1
+maze[middle[0]+1][middle[1]+1] = 1
+
+maze[middle[0]-1][middle[1]] = 1
+maze[middle[0]][middle[1]-1] = 1
+maze[middle[0]-1][middle[1]-1] = 1
+
+maze[middle[0]+1][middle[1]-1] = 1
+maze[middle[0]-1][middle[1]+1] = 1
+
+    
 def printmaze(showx, showy):
     out = "\n"
     for y in range(my):
@@ -65,9 +81,29 @@ position = 0 -0.5 0
 physics = dynamic
 scaling = 0.005 0.005 0.005 
 position = %d 1.1 %d
+particleSystem = "Fire"
 rotation = 1 0 0 %d
 """ % (4 + z*2, 4 + x*2, -90))#random.randint(-180, 180) ))
 
+
+            elif maze[z][x] == 2:
+                out.write("""
+[Cube]
+name = TeleporterDecoration
+physics = none
+scaling = 2 2 2
+position = %d -.5 %d
+rotation = 0 1 0 45
+particleSystem = "fire"
+
+[Cube]
+name = Teleporter
+physics = none
+scaling = 2 2 2
+position = %d -0.25 %d
+particleSystem = "teleport"
+    """% ( 4 + z*2, 4 + x*2,  4 + z*2, 4 + x*2))
+            
                 
             elif maze[z][x] == 0:
                 out.write(printmaze(x, z))
@@ -81,8 +117,8 @@ rotation = 1 0 0 %d
 position = %d 1 %d
 physics = static
 breakable = %s
-scaling = 2.2 2 0.5
-                """ % ( 4 + (z+0.5)*2, 4 + x*2, "false" ))
+scaling = 2 2 %f
+                """ % ( 4 + (z+0.5)*2, 4 + x*2, "false", 0.4 + (random.random()*0.2) ))
                 
                 if x+1 < mx and maze[z][x+1] == 0:
                     havedrawn = True
@@ -91,8 +127,8 @@ scaling = 2.2 2 0.5
 position = %d 1 %d
 physics = static
 breakable = %s
-scaling = 0.5 2 2.2
-                """ % ( 4 + z*2, 4 + (x+0.5)*2, "false" ))
+scaling = %f 2 2
+                """ % ( 4 + z*2, 4 + (x+0.5)*2, "false", 0.4 + (random.random()*0.2) ))
 
                 havedrawn = False
                 
@@ -104,8 +140,8 @@ position = %d 1 %d
 physics = static
 breakable = %s
 rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                """ % ( 4 + (z+0.5)*2, 4 + (x+0.5)*2, "false" ))
+scaling = %f 2 3.2
+                """ % ( 4 + (z+0.5)*2, 4 + (x+0.5)*2, "false", 0.4 + (random.random()*0.2) ))
 
                     if x+1 < mx and z-1 > 0 and maze[z-1][x+1] == 0:
                         out.write("""
@@ -114,8 +150,8 @@ position = %d 1 %d
 physics = static
 breakable = %s
 rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                """ % ( 4 + (z-0.5)*2, 4 + (x+0.5)*2, "false" ))
+scaling = %f 2 3.2
+                """ % ( 4 + (z-0.5)*2, 4 + (x+0.5)*2, "false", 0.4 + (random.random()*0.2) ))
                     
                 
 print printmaze(-1,-1)
