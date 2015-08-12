@@ -32,7 +32,7 @@
 
 #include "BulletModel.h"
 #include "MazeCube.h"
-#include "RectModel.h"
+#include "HalfMCube.h"
 #include "RectModel2.h"
 
 #include "ContactListener.h"
@@ -59,7 +59,7 @@ mGrabber(*mPhysics)
 
 	mPhysics->SetContactListener(new ContactListener());
 
-	vec3 startingPosition = vec3(3.0f, 1.0f, 5.0f);
+	vec3 startingPosition = vec3(3.0f, 0.0f, 5.0f);
 	// Setup Camera
 	mCamera.push_back(new FirstPersonCamera(startingPosition));
 	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
@@ -414,10 +414,10 @@ void World::LoadScene(const char * scene_path)
 					cube->SetBody(body);
 				}
 			}
-			else if( result == "rect" )
+			else if( result == "mcube2" )
 			{
 				// Box attributes
-				RectModel* rectangle = new RectModel();
+				HalfMCube* rectangle = new HalfMCube();
 				rectangle->Load(iss);
 				mModel.push_back(rectangle);
 				rectangle->setScene(scene_path);

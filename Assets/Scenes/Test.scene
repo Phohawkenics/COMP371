@@ -1,0 +1,35 @@
+[Cube]
+name     = Ground
+physics	 = static
+scaling  = 100 1 100
+position = 0 -10 0
+
+####EDGES####
+[mCube]
+name	 = 1x
+physics  = static
+scaling  = 10 10 10
+position = 5 0 0
+
+[mCube]
+name	 = 1x
+physics  = static
+scaling  = 10 10 10
+position = 15 0 0
+
+[mCube]
+name	 = 1x
+physics  = static
+scaling  = 10 10 10
+position = 0 0 5
+rotation = 0 1 0 -90f
+
+[mCube]
+name	 = 1x
+physics  = static
+scaling  = 10 10 10
+position = 15 0 15
+
+
+
+

@@ -12,11 +12,11 @@
 #include "PhysicalModel.h"
 #include "SolidModel.h"
 
-class RectModel : public PhysicalModel, public SolidModel
+class HalfMCube : public PhysicalModel, public SolidModel
 {
 public:
-	RectModel(glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f));
-    virtual ~RectModel(void);
+	HalfMCube(glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f));
+    virtual ~HalfMCube(void);
 
     virtual void Update(float dt);
 

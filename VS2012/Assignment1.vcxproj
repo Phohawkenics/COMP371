@@ -112,7 +112,7 @@
     <ClCompile Include="..\Source\ParticleSystem.cpp" />
     <ClCompile Include="..\Source\PhysicalModel.cpp" />
     <ClCompile Include="..\Source\PhysicsCamera.cpp" />
-    <ClCompile Include="..\Source\RectModel.cpp" />
+    <ClCompile Include="..\Source\HalfMCube.cpp" />
     <ClCompile Include="..\Source\RectModel2.cpp" />
     <ClCompile Include="..\Source\SolidModel.cpp" />
     <ClCompile Include="..\Source\SphereModel.cpp" />
@@ -145,7 +145,7 @@
     <ClInclude Include="..\Source\PhysicalModel.h" />
     <ClInclude Include="..\Source\PhysicsCamera.h" />
     <ClInclude Include="..\Source\q3_glm_conversions.h" />
-    <ClInclude Include="..\Source\RectModel.h" />
+    <ClInclude Include="..\Source\HalfMCube.h" />
     <ClInclude Include="..\Source\RectModel2.h" />
     <ClInclude Include="..\Source\SolidModel.h" />
     <ClInclude Include="..\Source\SphereModel.h" />
@@ -163,8 +163,8 @@
     <None Include="..\Assets\Scenes\MazeScene.scene" />
     <None Include="..\Assets\Scenes\MazeScene2.scene" />
     <None Include="..\Assets\Scenes\StaticScene.scene" />
-    <None Include="..\Assets\Scenes\StupidSimple.scene" />
     <None Include="..\Assets\Scenes\Test.scene" />
+    <None Include="..\Assets\Scenes\StupidSimple.scene" />
     <None Include="..\Assets\Shaders\BlueColor.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.vertexshader" />

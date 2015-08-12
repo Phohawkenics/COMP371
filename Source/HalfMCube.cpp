@@ -7,7 +7,7 @@
 // Copyright (c) 2014-2015 Concordia University. All rights reserved.
 //
 
-#include "RectModel.h"
+#include "HalfMCube.h"
 #include "Renderer.h"
 
 #include "q3_glm_conversions.h"
@@ -21,73 +21,73 @@
 
 using namespace glm;
 
-RectModel::RectModel(vec3 size) : PhysicalModel(),  SolidModel(GL_TRIANGLES, 36), mBreakable(false)
+HalfMCube::HalfMCube(vec3 size) : PhysicalModel(),  SolidModel(GL_TRIANGLES, 36), mBreakable(false)
 {
     // Create Vertex Buffer for all the verices of the Cube
-    vec3 halfSize = size * 1.0f;
+    vec3 halfSize = size * 0.5f;
     float x=halfSize.x;
     float y=halfSize.y;
-    float z=halfSize.z;
+    float z=0.044f;
     Vertex vertexBuffer[] = {  // position,                normal,                  color
                                 //left - red
 								{ vec3(-x,-y,-z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
-								{ vec3(-x,-y, 1.0+z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
-								{ vec3(-x, y, 1.0+z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
+								{ vec3(-x,-y, z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
+								{ vec3(-x, y, z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
         
 								{ vec3(-x,-y,-z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
-								{ vec3(-x, y, 1.0+z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
+								{ vec3(-x, y, z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
 								{ vec3(-x, y,-z), vec3(-1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f) },
                                 // far - blue
-								{ vec3( x, y,-1.0-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
-								{ vec3(-x,-y,-1.0-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
-								{ vec3(-x, y,-1.0-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f, y,-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
+								{ vec3(-x,-y,-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
+								{ vec3(-x, y,-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
         
-								{ vec3( x, y,-1.0-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
-								{ vec3( x,-y,-1.0-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
-								{ vec3(-x,-y,-1.0-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f, y,-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f,-y,-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
+								{ vec3(-x,-y,-z), vec3( 0.0f, 0.0f,-1.0f), vec3(0.0f, 0.0f, 1.0f) },
                                 // bottom - turquoise
-								//{ vec3( x,-y, 1.0+z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
-								//{ vec3(-x,-y,-1.0-z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
-								//{ vec3( x,-y,-1.0-z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
-        //
-								//{ vec3( x,-y, 1.0+z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
-								//{ vec3(-x,-y, 1.0+z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
-								//{ vec3(-x,-y,-1.0-z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
-                                // near - green
-								{ vec3(-x, y, 1.0+z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
-								{ vec3(-x,-y, 1.0+z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
-								{ vec3( x,-y, 1.0+z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+								{ vec3( 0.0f,-y, +z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
+								{ vec3(-x,-y,-z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
+								{ vec3( 0.0f,-y,-z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
         
-								{ vec3( x, y, 1.0+z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
-								{ vec3(-x, y, 1.0+z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
-								{ vec3( x,-y, 1.0+z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
-        //                        // right - purple
-								//{ vec3( x, y, z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
-								//{ vec3( x,-y,-z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
-								//{ vec3( x, y,-z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
-        //
-								//{ vec3( x,-y,-z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
-								//{ vec3( x, y, z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
-								//{ vec3( x,-y, z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
-        //                        // top - yellow
-								//{ vec3( x, y, z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
-								//{ vec3( x, y,-z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
-								//{ vec3(-x, y,-z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
+								{ vec3( 0.0f,-y, z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
+								{ vec3(-x,-y, z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
+								{ vec3(-x,-y,-z), vec3( 0.0f,-1.0f, 0.0f), vec3(0.0f, 1.0f, 1.0f) },
+                                // near - green
+								{ vec3(-x, y, z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+								{ vec3(-x,-y, z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+								{ vec3( 0.0f,-y, z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+        
+								{ vec3( 0.0f, y, z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+								{ vec3(-x, y, z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+								{ vec3( 0.0f,-y, z), vec3( 0.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 0.0f) },
+                                // right - purple
+								{ vec3( 0.0f, y, z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f,-y,-z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f, y,-z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
+        
+								{ vec3( 0.0f,-y,-z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f, y, z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
+								{ vec3( 0.0f,-y, z), vec3( 1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f) },
+                                // top - yellow
+								{ vec3( 0.0f, y, z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
+								{ vec3( 0.0f, y,-z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
+								{ vec3(-x, y,-z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
 
-								//{ vec3( x, y, z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
-								//{ vec3(-x, y,-z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
-								//{ vec3(-x, y, z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) }
+								{ vec3( 0.0f, y, z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
+								{ vec3(-x, y,-z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) },
+								{ vec3(-x, y, z), vec3( 0.0f, 1.0f, 0.0f), vec3(1.0f, 1.0f, 0.0f) }
     };
     
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexBuffer), vertexBuffer, GL_STATIC_DRAW);
 }
 
-RectModel::~RectModel()
+HalfMCube::~HalfMCube()
 {
 }
 
 // TODO getBoxDef*S*
-q3BoxDef RectModel::GetBoxDef(){
+q3BoxDef HalfMCube::GetBoxDef(){
 	q3BoxDef def;
 
 	q3Transform tx;
@@ -103,7 +103,7 @@ q3BoxDef RectModel::GetBoxDef(){
 	return def;
 }
 
-void RectModel::Update(float dt)
+void HalfMCube::Update(float dt)
 {
     // If you are curious, un-comment this line to have spinning cubes!
     // That will only work if your world transform is correct...
@@ -114,7 +114,7 @@ void RectModel::Update(float dt)
 
 // TODO - check kinetic energy of other object and only break above
 // some threshold
-void RectModel::handleBeginContact(const q3ContactConstraint *contact){
+void HalfMCube::handleBeginContact(const q3ContactConstraint *contact){
 	//box->body->GetLinearVelocity() * box->body->GetMass();
 	
 	//auto eKineticA = contact->
@@ -157,7 +157,7 @@ void RectModel::handleBeginContact(const q3ContactConstraint *contact){
 			for (int x = 0; x < 2; ++x){
 				for (int y = 0; y < 2; ++y){
 					for (int z = 0; z < 2; ++z){
-						RectModel *shard = new RectModel();
+						HalfMCube *shard = new HalfMCube();
 						
 						q3Vec3 parentPos = mBody->GetTransform().position;
 						
@@ -190,15 +190,15 @@ void RectModel::handleBeginContact(const q3ContactConstraint *contact){
 	}
 }
 
-void RectModel::SetBreakable(bool breakable){
+void HalfMCube::SetBreakable(bool breakable){
 	mBreakable = breakable;
 }
 
-bool RectModel::IsBreakable(){
+bool HalfMCube::IsBreakable(){
 	return mBreakable;
 }
 
-bool RectModel::ParseLine(const std::vector<ci_string> &token)
+bool HalfMCube::ParseLine(const std::vector<ci_string> &token)
 {
     if (token.empty())
     {
