@@ -13,14 +13,23 @@ uniform mat4 ProjectionTransform;
 
 // light position
 uniform vec4 WorldLightPosition1; // if w = 1: Point light, if w = 0: directional light
+uniform int lightType1;
+
 uniform vec4 WorldLightPosition2;
+uniform int lightType2;
+
 uniform vec4 WorldLightPosition3;
+uniform int lightType3;
+
+uniform vec4 WorldLightPosition4;
+uniform int lightType4;
 
 struct lightSettings {
 	vec4 lightPosition;
+	int lightType;
 };
 
-#define NUM_LIGHTS 3
+#define NUM_LIGHTS 4
 
 // output to Fragment Shader
 out vec4 v_color;
@@ -29,14 +38,38 @@ out vec3 normal;				// Transformed normal in View Space
 out vec3 eyeVector;				// Vector from the vertex to the Camera in View Space
 out vec4 lightVectors[NUM_LIGHTS]; // Vector from the vertex to the Light in View Space
 								// Length of lightVector is the distance between light and vertex
+out vec3 lightNormals[NUM_LIGHTS];
+
 
 void main()
 {   
+
+	lightSettings lights[NUM_LIGHTS];
+	lights[0].lightPosition = WorldLightPosition1;
+	lights[0].lightType = lightType1;
+
+	lights[1].lightPosition = WorldLightPosition2;
+	lights[1].lightType = lightType1;
+
+	lights[2].lightPosition = WorldLightPosition3;
+	lights[2].lightType = lightType2;
+
+	lights[3].lightPosition = WorldLightPosition4;
+	lights[3].lightType = lightType3;
+
 	mat4 MV = ViewTransform * WorldTransform;
 	mat4 MVP = ProjectionTransform * MV;
 
 	// Normal in view space
     normal = normalize(( MV * vec4(vertexNormal_modelspace, 0) ).xyz );
+
+	for (int i = 0 ; i < NUM_LIGHTS; i++) {
+		if(lights[i].lightType == 2) {
+			lightNormals[i] = normalize(( MV * -vec4(vertexNormal_modelspace, 0) ).xyz );
+		} else {
+			lightNormals[i] = normalize(( MV * vec4(vertexNormal_modelspace, 0) ).xyz );
+		}
+	}
 
 	// Output position of the vertex, in clip space : MVP * position
 	gl_Position =  MVP * vec4(vertexPosition_modelspace,1);
@@ -45,11 +78,6 @@ void main()
     //   - camera is the origin in view space
     //   - // camera position - vertex position
 	eyeVector =  vec3(0,0,0) - ( MV * vec4(vertexPosition_modelspace, 1)).xyz;
-
-	lightSettings lights[NUM_LIGHTS];
-	lights[0].lightPosition = WorldLightPosition1;
-	lights[1].lightPosition = WorldLightPosition2;
-	lights[2].lightPosition = WorldLightPosition3;
 
 	v_color = vec4(vertexColor, 1.0f);
 

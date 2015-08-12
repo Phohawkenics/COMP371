@@ -59,5 +59,5 @@ public:
 	void SetLightColor(glm::vec3 newColor, int index) { LightSources[index].mColor = newColor; };
 	void SwitchLight(int index);
 
-	enum Types {AMBIENT, CONE};
+	enum Types {AMBIENT, CONE, LAMP};
 };
