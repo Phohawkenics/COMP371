@@ -11,7 +11,7 @@ void PhysicsCamera::checkCollision(q3Vec3 & dir, q3Vec3 & from)
 {
 	mCallBack.mData.dir = q3Normalize(dir);
 	mCallBack.mData.start = from;
-	mCallBack.mData.t = 2.0;
+	mCallBack.mData.t = 0.5;
 
 	mPhysics.RayCast(&mCallBack, mCallBack.mData);
 }
@@ -28,10 +28,10 @@ void PhysicsCamera::Update(float dt)
 
 	// Mouse motion to get the variation in angle
 	mHorizontalAngle -= EventManager::GetMouseMotionX() * mAngularSpeed * dt;
-	mVerticalAngle   -= EventManager::GetMouseMotionY() * mAngularSpeed * dt;
+	//mVerticalAngle   -= EventManager::GetMouseMotionY() * mAngularSpeed * dt;
 
 	// Clamp vertical angle to [-85, 85] degrees
-	mVerticalAngle = std::max(-85.0f, std::min(85.0f, mVerticalAngle));
+	/*mVerticalAngle = std::max(-85.0f, std::min(85.0f, mVerticalAngle));
 	if (mHorizontalAngle > 360)
 	{
 		mHorizontalAngle -= 360;
@@ -39,7 +39,7 @@ void PhysicsCamera::Update(float dt)
 	else if (mHorizontalAngle < -360)
 	{
 		mHorizontalAngle += 360;
-	}
+	}*/
 
 	float theta = radians(mHorizontalAngle);
 	float phi = radians(mVerticalAngle);
