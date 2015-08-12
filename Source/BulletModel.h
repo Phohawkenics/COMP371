@@ -18,5 +18,5 @@ public:
 	virtual void handleBeginContact(const q3ContactConstraint *contact);
 protected:
 	q3Quaternion mRotation;
-
+	glm::vec3 mDirection;
 };

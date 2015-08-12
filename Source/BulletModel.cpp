@@ -5,19 +5,19 @@
 
 #include "q3_glm_conversions.h"
 
-BulletModel::BulletModel(glm::vec3 direction) : Lib3dsModel()
+BulletModel::BulletModel(glm::vec3 dir) : Lib3dsModel()
 {
 	SetPhysicsType(Model::Dynamic);
 	SetScaling(glm::vec3(0.5, 0.5, 0.5));
 
-	direction = glm::normalize(direction);
+	mDirection = glm::normalize(dir);
 
-	float verticalAngle = -glm::asin(direction.y); // approximately good
-	float horizontalAngle = - ((-3.14159 / 2.0) + glm::atan(direction.z / direction.x));
+	float verticalAngle = -glm::asin(mDirection.y); // approximately good
+	float horizontalAngle = -((-3.14159 / 2.0) + glm::atan(mDirection.z / mDirection.x));
 
 	// ATAN2
-	if (direction.x < 0){
-		if (direction.z >= 0){
+	if (mDirection.x < 0){
+		if (mDirection.z >= 0){
 			horizontalAngle -= 3.14159;
 		}
 		else{
@@ -25,7 +25,7 @@ BulletModel::BulletModel(glm::vec3 direction) : Lib3dsModel()
 		}
 	}
 
-	std::cout << "Bullet model vAngle: " << verticalAngle << " hAngle " << horizontalAngle  << " x:  " << direction.x << " z: " << direction.z << std::endl;
+	//std::cout << "Bullet model vAngle: " << verticalAngle << " hAngle " << horizontalAngle  << " x:  " << direction.x << " z: " << direction.z << std::endl;
 
 	q3Quaternion rot_vert( q3Vec3(1,0,0), verticalAngle);
 	q3Quaternion rot_horiz(q3Vec3(0,1,0), horizontalAngle);
@@ -47,7 +47,7 @@ BulletModel::BulletModel(glm::vec3 direction) : Lib3dsModel()
 q3BodyDef BulletModel::GetBodyDef(){
 	q3BodyDef body = Lib3dsModel::GetBodyDef();
 
-	//body.angularVelocity = q3Vec3(200, 200, 200);
+	body.angularVelocity = g2q(25.0f * mDirection);
 
 	return body;
 }
