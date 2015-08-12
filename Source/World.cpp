@@ -52,7 +52,7 @@ World* World::instance;
 bool rainSwitch = false;
 
 World::World()
- : mPhysics(new q3Scene(1.0f / 200.0f)), // this is the dt of one frame (I guess)
+ : mPhysics(new q3Scene(1.0f / 50.0f)), // this is the dt of one frame (I guess)
 mGrabber(*mPhysics),
 mTeleporter(NULL)
 {
@@ -253,7 +253,7 @@ void World::Shoot(float dt){
 
 		// Box attributes
 		BulletModel* bullet = new BulletModel();
-		bullet->SetPosition(camPos - vec3(0, 0.5, 0)); // shoot from slightly below the camera
+		bullet->SetPosition(camPos + vec3(0, 0.5, 0)); // shoot from slightly above the camera
 		mModel.push_back(bullet);
 
 		// We associate the Graphical Model to the Physical Body

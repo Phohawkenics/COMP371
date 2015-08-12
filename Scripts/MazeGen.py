@@ -2,7 +2,7 @@
 # http://en.wikipedia.org/wiki/Maze_generation_algorithm
 # FB - 20121214
 import random
-mx = 20; my = 20 # width and height of the maze
+mx = 25; my = 25 # width and height of the maze
 maze = [[0 for x in range(mx)] for y in range(my)]
 dx = [0, 1, 0, -1]; dy = [-1, 0, 1, 0] # 4 directions to move in the maze
 color = [(0,0, 0), (255, 255, 255)] # RGB colors of the maze
@@ -81,9 +81,24 @@ position = 0 -0.5 0
 physics = dynamic
 scaling = 0.005 0.005 0.005 
 position = %d 1.1 %d
-particleSystem = "Fire"
 rotation = 1 0 0 %d
+density = 500
 """ % (4 + z*2, 4 + x*2, -90))#random.randint(-180, 180) ))
+
+                elif random.random() > 0.95:
+                    for _x in [-1, 0, 1]:
+                        for _y in [-1, 0, 1]:
+                            for _z in [0, 1, 2]:
+                                out.write("""
+                
+[Cube]
+breakable = true
+physics = dynamic
+scaling = %f %f %f
+position = %f %f %f
+rotation = 1 1 1 45
+                """ % ((0.8 + random.random())/2.0, (0.8 + random.random())/2.0, (0.8 + random.random())/2.0,
+                      (4 + z*2) + _y, _z ,(4 + x*2) + _x))
 
 
             elif maze[z][x] == 2:

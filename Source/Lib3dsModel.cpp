@@ -155,12 +155,13 @@ static void prescale_vertices(float(*vertices)[3], int nvertices, const glm::vec
 }
 
 void Lib3dsModel::LoadModel(){
-	std::cout << "Loading 3DS object from file: '" << mFileName << "' ";
+	//std::cout << "Loading 3DS object from file: '" << mFileName << "' ";
 
 	Lib3dsFile * f =  lib3ds_file_open(mFileName.c_str());
 
 	if ( ! f ){
-		std::cout << "failed. :(" << std::endl;
+		std::cout << "Loading 3DS object from file: '" << mFileName << "' "
+		 << "failed. :(" << std::endl;
 		assert(!"Loading file failed");
 	}
 	else{

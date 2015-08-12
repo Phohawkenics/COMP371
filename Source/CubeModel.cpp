@@ -26,7 +26,7 @@ static float getRandomAround(float around, float delta){
 	return around - delta + 2*delta*(static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
 }
 
-CubeModel::CubeModel(vec3 size) : PhysicalModel(), SolidModel(GL_TRIANGLES, 36), mBreakable(false)
+CubeModel::CubeModel(vec3 size) : PhysicalModel(), SolidModel(GL_TRIANGLES, 36), mBreakable(false), mMaxAge(INFINITY), mAge(0)
 {
 	// Create Vertex Buffer for all the verices of the Cube
 	vec3 halfSize = size * 0.5f;
@@ -110,6 +110,10 @@ q3BoxDef CubeModel::GetBoxDef(){
 
 void CubeModel::Update(float dt)
 {
+	mAge += dt;
+	if (mAge > mMaxAge){
+		World::GetInstance()->RemoveModel(this);
+	}
 	Model::Update(dt);
 }
 
@@ -121,7 +125,7 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 	//auto eKineticA = contact->
 
 	if (mBreakable){
-#if 0
+#if 1
 		q3Vec3 eKineticA = contact->bodyA->GetLinearVelocity() * contact->bodyA->GetMass();
 		q3Vec3 eKineticB = contact->bodyB->GetLinearVelocity() * contact->bodyB->GetMass();
 
@@ -151,7 +155,7 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 		vec3 pos = size / 2.0f;
 		size *= 0.75; // add some space for gaps
 
-//		bool sub_breakable = glm::dot(size, size) > 0.2;
+		bool sub_breakable = glm::dot(size, size) > 0.2;
 
 		if (true/*sub_breakable*/){
 
@@ -170,21 +174,29 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 							));
 						shard->SetScaling(size);
 						shard->SetPhysicsType(Dynamic);
-						shard->SetBreakable(false/*sub_breakable*/);
+						shard->SetBreakable(sub_breakable);
 
 						auto body = new q3BodyDef(shard->GetBodyDef());
 						auto box = new q3BoxDef(shard->GetBoxDef());
 
-						body->linearVelocity = q3Vec3(
-							float(rand()) / float(RAND_MAX),
-							float(rand()) / float(RAND_MAX),
-							float(rand()) / float(RAND_MAX)
+						body->linearVelocity = mBody->GetLinearVelocity() + q3Vec3(
+							5.0f * float(rand()) / float(RAND_MAX),
+							5.0f * float(rand()) / float(RAND_MAX),
+							5.0f * float(rand()) / float(RAND_MAX)
 						);
+
+						body->angularVelocity = mBody->GetAngularVelocity() + q3Vec3(
+							5.0f * float(rand()) / float(RAND_MAX),
+							5.0f * float(rand()) / float(RAND_MAX),
+							5.0f * float(rand()) / float(RAND_MAX)
+							);
 
 						auto transform = mBody->GetTransform();
 						transform.position = q3Vec3( 0, 0, 0 );
 
 						box->Set(transform, g2q(size));
+
+						shard->mMaxAge = 5.0f + 5.0f * float(rand()) / float(RAND_MAX);
 
 						World::GetInstance()->AddModel(shard, body, box);
 					}

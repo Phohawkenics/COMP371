@@ -33,4 +33,7 @@ protected:
 
 	bool mBreakable;
 
+	float mMaxAge;
+	float mAge;
+
 };
