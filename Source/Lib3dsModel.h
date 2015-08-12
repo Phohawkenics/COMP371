@@ -34,8 +34,6 @@ public:
 protected:
 	virtual bool ParseLine(const std::vector<ci_string> &token);
 
-private:
-
 	q3Vec3 GetExtents();
 
 	void Reposition(Vertex * v);

@@ -357,6 +357,13 @@ void q3Body::SetTransform( const q3Vec3& position, const q3Vec3& axis, r32 angle
 	SynchronizeProxies( );
 }
 
+void q3Body::SetTransform(const q3Quaternion & rotation){
+        m_q = rotation;
+        m_tx.rotation = m_q.ToMat3( );
+        
+        SynchronizeProxies();
+}
+
 //--------------------------------------------------------------------------------------------------
 i32 q3Body::GetFlags( ) const
 {

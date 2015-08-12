@@ -252,7 +252,7 @@ void World::Shoot(float dt){
 		}
 
 		// Box attributes
-		BulletModel* bullet = new BulletModel();
+		BulletModel* bullet = new BulletModel(camLookAt);
 		bullet->SetPosition(camPos + vec3(0, 0.5, 0)); // shoot from slightly above the camera
 		mModel.push_back(bullet);
 

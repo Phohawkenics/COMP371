@@ -15,7 +15,7 @@ public:
 
 
 	// ---- Physics ----
-	void SetBody(q3Body * body);
+	virtual void SetBody(q3Body * body);
 	q3Body * GetBody() { return mBody; }
 
 	virtual q3BoxDef  GetBoxDef() = 0;
