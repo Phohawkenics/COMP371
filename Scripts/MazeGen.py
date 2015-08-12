@@ -2,7 +2,7 @@
 # http://en.wikipedia.org/wiki/Maze_generation_algorithm
 # FB - 20121214
 import random
-mx = 15; my = 15 # width and height of the maze
+mx = 20; my = 20 # width and height of the maze
 maze = [[0 for x in range(mx)] for y in range(my)]
 dx = [0, 1, 0, -1]; dy = [-1, 0, 1, 0] # 4 directions to move in the maze
 color = [(0,0, 0), (255, 255, 255)] # RGB colors of the maze
@@ -59,12 +59,68 @@ position = 0 -0.5 0
         for x in range(mx):
             if maze[z][x] == 0:
                 out.write(printmaze(x, z))
-                out.write("""
+ 
+                havedrawn = False
+                
+                if z+1 < my and maze[z+1][x] == 0:
+                    havedrawn = True
+                    out.write("""
 [Cube]
 position = %d 1 %d
 physics = static
 breakable = %s
-scaling = 2.2 2 2.2
-                """ % ( 4 + z*2, 4 + x*2, "true" if random.randint(0,5) == 1 else "false" ))
+scaling = 2.2 2 0.5
+                """ % ( 4 + (z+0.5)*2, 4 + x*2, "false" ))
+                
+                if x+1 < mx and maze[z][x+1] == 0:
+                    havedrawn = True
+                    out.write("""
+[Cube]
+position = %d 1 %d
+physics = static
+breakable = %s
+scaling = 0.5 2 2.2
+                """ % ( 4 + z*2, 4 + (x+0.5)*2, "false" ))
 
+                havedrawn = False
+                
+                if not havedrawn:                
+                    if x+1 < mx and z+1 < my and maze[z+1][x+1] == 0:
+                        out.write("""
+[Cube]
+position = %d 1 %d
+physics = static
+breakable = %s
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                """ % ( 4 + (z+0.5)*2, 4 + (x+0.5)*2, "false" ))
+
+                    if x+1 < mx and z-1 > 0 and maze[z-1][x+1] == 0:
+                        out.write("""
+[Cube]
+position = %d 1 %d
+physics = static
+breakable = %s
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                """ % ( 4 + (z-0.5)*2, 4 + (x+0.5)*2, "false" ))
+                    
+                
 print printmaze(-1,-1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
