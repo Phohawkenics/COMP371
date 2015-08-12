@@ -20,7 +20,7 @@ public:
 
 	virtual void Update(float dt);
 	virtual void SetPosition(glm::vec3 & pos);
-
+	virtual void SetLookAt(glm::vec3 & lookAtPt);
 	virtual glm::mat4 GetViewMatrix() const;
 
 private:

@@ -15,6 +15,9 @@
 #include "Billboard.h"
 #include <vector>
 
+#include "StaticCamera.h"
+#include "PhysicsCamera.h"
+
 #include "Grabber.h"
 #include "LightModel.h"
 
@@ -54,6 +57,9 @@ public:
 private:
     static World* instance;
     
+	PhysicsCamera* player;  //1st person cam
+	StaticCamera* bev;		//3rd person cam following player
+
 	CubeModel * mTeleporter;
 
 	q3Scene * mPhysics;
