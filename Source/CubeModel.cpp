@@ -180,15 +180,15 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 						auto box = new q3BoxDef(shard->GetBoxDef());
 
 						body->linearVelocity = mBody->GetLinearVelocity() + q3Vec3(
-							5.0f * float(rand()) / float(RAND_MAX),
-							5.0f * float(rand()) / float(RAND_MAX),
-							5.0f * float(rand()) / float(RAND_MAX)
+							-5.0f + 10.0f * float(rand()) / float(RAND_MAX),
+							-5.0f + 10.0f * float(rand()) / float(RAND_MAX),
+							-5.0f + 10.0f * float(rand()) / float(RAND_MAX)
 						);
 
 						body->angularVelocity = mBody->GetAngularVelocity() + q3Vec3(
-							5.0f * float(rand()) / float(RAND_MAX),
-							5.0f * float(rand()) / float(RAND_MAX),
-							5.0f * float(rand()) / float(RAND_MAX)
+							-5.0f + 10.0f * float(rand()) / float(RAND_MAX),
+							-5.0f + 10.0f * float(rand()) / float(RAND_MAX),
+							-5.0f + 10.0f * float(rand()) / float(RAND_MAX)
 							);
 
 						auto transform = mBody->GetTransform();

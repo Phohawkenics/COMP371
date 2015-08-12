@@ -20,6 +20,14 @@ bool PhysicalModel::ParseLine(const std::vector<ci_string> &token){
 	}
 	else
 	{
+		if (token[0] == "name")
+		{
+			assert(token.size() > 2);
+			assert(token[1] == "=");
+			if (token[2] != "Teleporter"){
+				mName = token[2];
+			}
+		}
 		if (token[0] == "restitution"){
 			assert(token[1] == "=");
 
@@ -63,6 +71,18 @@ glm::mat4 PhysicalModel::GetWorldMatrix() const{
 		glm::mat4 s = glm::scale(glm::mat4(1.0f), mScaling);
 		glm::mat4 r = q2g_mat3_2_mat4(transform.rotation);
 
+		if (mName == "\"couch\""){
+			r *= glm::rotate(glm::mat4(1.0f), -90.0f, glm::vec3(1,0,0));
+			t *= glm::translate(glm::mat4(1.0f), glm::vec3(0,-1.75,0));
+		}
+		else if (mName == "\"table\""){
+			r *= glm::rotate(glm::mat4(1.0f), -90.0f, glm::vec3(1, 0, 0));
+			t *= glm::translate(glm::mat4(1.0f), glm::vec3(0, -1, 0));
+		}
+		else if (mName == "\"bookshelf\""){
+			r *= glm::rotate(glm::mat4(1.0f), -90.0f, glm::vec3(1, 0, 0));
+			t *= glm::translate(glm::mat4(1.0f), glm::vec3(0, 0.75, 1));
+		}
 		return t * r * s;
 	}
 	else{
