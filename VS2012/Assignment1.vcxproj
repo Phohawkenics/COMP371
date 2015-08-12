@@ -100,7 +100,9 @@
     <ClCompile Include="..\Source\Billboard.cpp" />
     <ClCompile Include="..\Source\BulletModel.cpp" />
     <ClCompile Include="..\Source\Camera.cpp" />
+    <ClCompile Include="..\Source\CameraRayCastCallBack.cpp" />
     <ClCompile Include="..\Source\ContactListener.cpp" />
+    <ClCompile Include="..\Source\LightModel.cpp" />
     <ClCompile Include="..\Source\MazeCube.cpp" />
     <ClCompile Include="..\Source\FirstPersonCamera.cpp" />
     <ClCompile Include="..\Source\Grabber.cpp" />
@@ -109,6 +111,7 @@
     <ClCompile Include="..\Source\ParticleEmitter.cpp" />
     <ClCompile Include="..\Source\ParticleSystem.cpp" />
     <ClCompile Include="..\Source\PhysicalModel.cpp" />
+    <ClCompile Include="..\Source\PhysicsCamera.cpp" />
     <ClCompile Include="..\Source\RectModel.cpp" />
     <ClCompile Include="..\Source\RectModel2.cpp" />
     <ClCompile Include="..\Source\SolidModel.cpp" />
@@ -127,8 +130,10 @@
     <ClInclude Include="..\Source\Billboard.h" />
     <ClInclude Include="..\Source\BulletModel.h" />
     <ClInclude Include="..\Source\Camera.h" />
+    <ClInclude Include="..\Source\CameraRayCastCallBack.h" />
     <ClInclude Include="..\Source\ContactListener.h" />
     <ClInclude Include="..\Source\CubeModel.h" />
+    <ClInclude Include="..\Source\LightModel.h" />
     <ClInclude Include="..\Source\MazeCube.h" />
     <ClInclude Include="..\Source\FirstPersonCamera.h" />
     <ClInclude Include="..\Source\Grabber.h" />
@@ -138,6 +143,7 @@
     <ClInclude Include="..\Source\ParticleEmitter.h" />
     <ClInclude Include="..\Source\ParticleSystem.h" />
     <ClInclude Include="..\Source\PhysicalModel.h" />
+    <ClInclude Include="..\Source\PhysicsCamera.h" />
     <ClInclude Include="..\Source\q3_glm_conversions.h" />
     <ClInclude Include="..\Source\RectModel.h" />
     <ClInclude Include="..\Source\RectModel2.h" />
@@ -158,6 +164,7 @@
     <None Include="..\Assets\Scenes\MazeScene2.scene" />
     <None Include="..\Assets\Scenes\StaticScene.scene" />
     <None Include="..\Assets\Scenes\StupidSimple.scene" />
+    <None Include="..\Assets\Scenes\Test.scene" />
     <None Include="..\Assets\Shaders\BlueColor.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.vertexshader" />

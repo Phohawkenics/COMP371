@@ -13,6 +13,7 @@
 
 #include "StaticCamera.h"
 #include "FirstPersonCamera.h"
+#include "PhysicsCamera.h"
 
 #include "CubeModel.h"
 #include "SphereModel.h"
@@ -58,11 +59,13 @@ mGrabber(*mPhysics)
 
 	mPhysics->SetContactListener(new ContactListener());
 
+	vec3 startingPosition = vec3(3.0f, 1.0f, 5.0f);
 	// Setup Camera
-	mCamera.push_back(new FirstPersonCamera(vec3(3.0f, 1.0f, 5.0f)));
+	mCamera.push_back(new FirstPersonCamera(startingPosition));
 	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
-	mCamera.push_back(new StaticCamera(vec3(0.5f,  0.5f, 5.0f), vec3(0.0f, 0.5f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
-	mCurrentCamera = 0;
+	mCamera.push_back(new PhysicsCamera(startingPosition,*mPhysics));
+
+	mCurrentCamera = 2;
 
     
     // TODO: You can play with different textures by changing the billboardTest.bmp to another texture
@@ -205,7 +208,6 @@ void World::Update(float dt)
     
     mpBillboardList->Update(dt);
 
-	//ADD THIS
 	Teleport();
 
 }
