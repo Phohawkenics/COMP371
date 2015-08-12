@@ -16,22 +16,26 @@ uniform float lightPower2;
 uniform vec3 lightColor3;
 uniform float lightPower3;
 
+uniform vec3 lightColor4;
+uniform float lightPower4;
+
 uniform vec3 lightAttenuation; // x: Constant  y: Linear  z: Quadratic
 
 // Inputs
 in vec4 v_color;		 // vertex color: also diffuse color
-
-in vec3 normal;          // Transformed normal in View Space
 in vec3 eyeVector;       // Vector from the vertex to the Camera in View Space
   
 						 // Length of lightVector is the distance between light and vertex
-#define NUM_LIGHTS 3
+#define NUM_LIGHTS 4
 in vec4 lightVectors[NUM_LIGHTS]; // Vector from the vertex to the Light in View Space
+in vec3 lightNormals[NUM_LIGHTS];
+in int lightTypes[NUM_LIGHTS];
 
 // Ouput data
 out vec4 color;
 
-vec3 calcColor(vec4 lightDirection,vec3 lightColor, float lightPower) {
+vec3 calcColor(vec4 lightDirection, vec3 lightColor, float lightPower,
+		 vec3 lightNormal, int lightType) {
 	
 	if (lightPower == 0) {
 		return vec3(0.0f);
@@ -41,13 +45,13 @@ vec3 calcColor(vec4 lightDirection,vec3 lightColor, float lightPower) {
 	// Remember that directional light don't have attenuation
 	float attenuation;
 	vec3 surfaceToLight;
-	float costheta =clamp(dot(normal, normalize(lightDirection.xyz)), 0, 1);
+	float costheta =clamp(dot(lightNormal, normalize(lightDirection.xyz)), 0, 1);
 
 	 // Eye vector (towards the camera)
     vec3 eye_normal = normalize(eyeVector);
     
     // Direction in which the triangle reflects the light
-    vec3 reflected = normalize(reflect(-lightDirection.xyz, normal));
+    vec3 reflected = normalize(reflect(-lightDirection.xyz, lightNormal));
     // Cosine of the angle between the Eye vector and the Reflect vector,
     // clamped to 0
     //  - Looking into the reflection -> 1
@@ -70,12 +74,13 @@ vec3 calcColor(vec4 lightDirection,vec3 lightColor, float lightPower) {
 
 void main()
 {	
-	vec3 lightColors[NUM_LIGHTS] = vec3[](lightColor1, lightColor2, lightColor3);
-	float lightPowers[NUM_LIGHTS] = float[](lightPower1, lightPower2, lightPower3);
+	vec3 lightColors[NUM_LIGHTS] = vec3[](lightColor1, lightColor2, lightColor3, lightColor4);
+	float lightPowers[NUM_LIGHTS] = float[](lightPower1, lightPower2, lightPower3, lightPower4);
 
 	vec3 finalColor = vec3(0.f,0.f,0.f);
 	for (int i = 0; i < NUM_LIGHTS; i++) {
-			finalColor += calcColor(lightVectors[i], lightColors[i], lightPowers[i]);
+			finalColor += calcColor(lightVectors[i], lightColors[i],
+				 lightPowers[i], lightNormals[i], lightTypes[i]);
 	}
 	color =vec4(finalColor, 1);
 }

@@ -60,11 +60,35 @@ mTeleporter(NULL)
 
 	mPhysics->SetContactListener(new ContactListener());
 
-	vec3 startingPosition = vec3(0.0f, 1.0f, 0.0f);
 	// Setup Camera
-	mCamera.push_back(new PhysicsCamera(startingPosition, *mPhysics));
-	mCamera.push_back(new StaticCamera(vec3(3.0f, 30.0f, 5.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f)));
-	mCamera.push_back(new PhysicsCamera(startingPosition,*mPhysics));
+
+	//Player cam
+	vec3 startingPosition = vec3(0.0f, 1.0f, 0.0f);
+	player = new PhysicsCamera(startingPosition, *mPhysics);
+	mCamera.push_back(player);
+
+	//Bird's eye view follows player
+	vec3 pos = player->GetPos();
+	pos += (0.0, 20.0, 0.0);
+	vec3 lookHere = player->GetPos();
+	vec3 upVec = vec3(0.0f, 0.0f, 0.1f);
+	bev = new StaticCamera(pos, lookHere, upVec);
+	mCamera.push_back(bev);
+
+	//Dummy Cam
+	mCamera.push_back(new StaticCamera(vec3(0.0,0.0,0.0), vec3(0.0,0.0,0.0), vec3(0.0,0.0,0.0)));
+	mCurrentCamera = 0;
+
+//Trying to load player character
+	/*character = new PlayerModel;
+	character->SetPosition(player->GetPos());
+    mModel.push_back(character);
+
+	q3BodyDef def = character->GetBodyDef();
+	q3Body * body = mPhysics->CreateBody(def);
+	q3BoxDef box = character->GetBoxDef();
+	body->AddBox(box);
+	character->SetBody(body);*/
 
 	mCurrentCamera = 0;
 
@@ -188,8 +212,15 @@ void World::Update(float dt)
 
 
 	// Update current Camera
-	mCamera[mCurrentCamera]->Update(dt);
+	if(mCurrentCamera == 0){
+		player->Update(dt);
+		vec3 pos = player->GetPos() + vec3(0.0, 10.0, 0.0);
+		bev->SetPosition(pos);
+		bev->SetLookAt(player->GetPos());
 
+		//Update player
+		//character->SetPosition(player->GetPos());		
+	}
 	// updatePhysics
 
 	mPhysics->Step();

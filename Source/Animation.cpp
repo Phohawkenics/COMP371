@@ -217,6 +217,9 @@ glm::mat4 Animation::GetAnimationWorldMatrix() const
 	vec3 position = mix(mKey[key1].GetPosition(), mKey[key2].GetPosition(), normalizedTime);
 	vec3 scaling = mix(mKey[key1].GetScaling(), mKey[key2].GetScaling(), normalizedTime);
 
+	LightModel* lights = LightModel::GetInstance();
+	lights->SetLightPosition( vec4(position, 1), 3);
+
 	//2 rotation states
 	quat rotation1 = angleAxis(mKey[key1].GetRotationAngle(), mKey[key1].GetRotationAxis());
 	quat rotation2 = angleAxis(mKey[key2].GetRotationAngle(), mKey[key2].GetRotationAxis());

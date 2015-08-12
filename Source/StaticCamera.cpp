@@ -32,7 +32,10 @@ void StaticCamera::Update(float dt)
 void StaticCamera::SetPosition(glm::vec3 & pos){
 	mPosition = pos;
 }
-
+ 
+void StaticCamera::SetLookAt(glm::vec3 & lookAtPt){
+	mLookAtPoint = lookAtPt;
+}
 
 glm::mat4 StaticCamera::GetViewMatrix() const
 {
