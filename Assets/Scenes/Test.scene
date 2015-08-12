@@ -5,31 +5,47 @@ scaling  = 100 1 100
 position = 0 -10 0
 
 ####EDGES####
-[mCube]
-name	 = 1x
+[Cube]
 physics  = static
-scaling  = 10 10 10
+scaling  = 10 10 0.44
 position = 5 0 0
 
-[mCube]
-name	 = 1x
+[Cube]
 physics  = static
-scaling  = 10 10 10
+scaling  = 10 10 0.44
 position = 15 0 0
 
-[mCube]
-name	 = 1x
+[Cube]
 physics  = static
-scaling  = 10 10 10
+scaling  = 10 10 0.44
 position = 0 0 5
 rotation = 0 1 0 -90f
 
-[mCube]
-name	 = 1x
+[Cube]
 physics  = static
-scaling  = 10 10 10
+scaling  = 10 10 0.44
 position = 15 0 15
 
 
+[Cube]
+name = smashy
+physics = kinematic
+breakable = true
+scaling = 2 2 2
+position = 0 5 0
+
+
+[Cube]
+name = smashy
+physics = static
+breakable = true
+scaling = 2 2 2
+position = 0 2 0
+
+[Cube]
+name     = _Ground"
+physics = static
+scaling  = 100.0 1.0 100.0
+position = 0.0 -0.5 0.0
 
 

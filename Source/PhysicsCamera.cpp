@@ -28,10 +28,10 @@ void PhysicsCamera::Update(float dt)
 
 	// Mouse motion to get the variation in angle
 	mHorizontalAngle -= EventManager::GetMouseMotionX() * mAngularSpeed * dt;
-	//mVerticalAngle   -= EventManager::GetMouseMotionY() * mAngularSpeed * dt;
+	mVerticalAngle   -= EventManager::GetMouseMotionY() * mAngularSpeed * dt;
 
 	// Clamp vertical angle to [-85, 85] degrees
-	/*mVerticalAngle = std::max(-85.0f, std::min(85.0f, mVerticalAngle));
+	mVerticalAngle = std::max(-85.0f, std::min(85.0f, mVerticalAngle));
 	if (mHorizontalAngle > 360)
 	{
 		mHorizontalAngle -= 360;
@@ -39,12 +39,13 @@ void PhysicsCamera::Update(float dt)
 	else if (mHorizontalAngle < -360)
 	{
 		mHorizontalAngle += 360;
-	}*/
+	}
 
 	float theta = radians(mHorizontalAngle);
 	float phi = radians(mVerticalAngle);
 
 	mLookAt = vec3(cosf(phi)*cosf(theta), sinf(phi), -cosf(phi)*sinf(theta));
+	mForward = vec3(cosf(theta), 0, -sinf(theta));
 	
 	vec3 sideVector = glm::cross(mLookAt, vec3(0.0f, 1.0f, 0.0f));
 	glm::normalize(sideVector);
@@ -70,17 +71,17 @@ void PhysicsCamera::Update(float dt)
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_W ) == GLFW_PRESS)
 	{
 		mCallBack.impactBody = NULL;
-		checkCollision(g2q(mLookAt), g2q(mPosition));
+		checkCollision(g2q(mForward), g2q(mPosition));
 		if(mCallBack.impactBody==NULL)
-			mPosition += mLookAt * dt * mSpeed;
+			mPosition += mForward * dt * mSpeed;
 	}
 
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_S ) == GLFW_PRESS)
 	{
 		mCallBack.impactBody = NULL;
-		checkCollision(g2q(-mLookAt), g2q(mPosition));
+		checkCollision(g2q(-mForward), g2q(mPosition));
 		if(mCallBack.impactBody==NULL)
-			mPosition -= mLookAt * dt * mSpeed;
+			mPosition -= mForward * dt * mSpeed;
 	}
 
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_D ) == GLFW_PRESS)
@@ -107,8 +108,9 @@ PhysicsCamera::PhysicsCamera(vec3 position, q3Scene & physics)
 	mVerticalAngle(0.0f),
 	mHorizontalAngle(0.0f),
 	mSpeed(20.0f),
-	mAngularSpeed(50.0f),
-	mLookAt(0.0f,0.0f,0.0f)
+	mAngularSpeed(15.0f),
+	mLookAt(0.0f,0.0f,0.0f),
+	mForward(mLookAt)
 {
 }
 

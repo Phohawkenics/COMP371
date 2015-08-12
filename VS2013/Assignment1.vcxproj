@@ -111,6 +111,7 @@
     <None Include="..\Assets\Scenes\MazeScene2.scene" />
     <None Include="..\Assets\Scenes\StaticScene.scene" />
     <None Include="..\Assets\Scenes\StupidSimple.scene" />
+    <None Include="..\Assets\Scenes\Test.scene" />
     <None Include="..\Assets\Shaders\BlueColor.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.fragmentshader" />
     <None Include="..\Assets\Shaders\PathLines.vertexshader" />
