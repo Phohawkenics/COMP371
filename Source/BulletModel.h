@@ -15,8 +15,12 @@ public:
 
 	virtual void SetBody(q3Body * body);
 
+	virtual void Update(float dt);
+
 	virtual void handleBeginContact(const q3ContactConstraint *contact);
 protected:
 	q3Quaternion mRotation;
 	glm::vec3 mDirection;
+
+	float mAge;
 };

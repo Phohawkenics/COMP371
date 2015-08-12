@@ -259,7 +259,7 @@ void World::Drop(float dt){
 }
 
 void World::Shoot(float dt){
-	const float COOLDOWN = 0.25;
+	const float COOLDOWN = 0.75;
 	static float time = 0;
 
 	time += dt;

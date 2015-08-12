@@ -1,11 +1,13 @@
 #include "BulletModel.h"
 #include "World.h"
 
+#include <iostream>
+
 #include <glm/gtx/rotate_vector.hpp>
 
 #include "q3_glm_conversions.h"
 
-BulletModel::BulletModel(glm::vec3 dir) : Lib3dsModel()
+BulletModel::BulletModel(glm::vec3 dir) : Lib3dsModel(), mAge(0)
 {
 	SetPhysicsType(Model::Dynamic);
 	SetScaling(glm::vec3(0.5, 0.5, 0.5));
@@ -66,6 +68,14 @@ q3BoxDef  BulletModel::GetBoxDef(){
 	box.SetDensity(1000);
 	
 	return box;
+}
+
+void BulletModel::Update(float dt){
+	mAge += dt;
+	if (mAge > 10){
+		std::cout << "Removing bullet " << std::endl;
+		World::GetInstance()->RemoveModel(this);
+	}
 }
 
 BulletModel::~BulletModel()
