@@ -53,7 +53,7 @@ void PhysicsCamera::Update(float dt)
 	//Starting position
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_B ) == GLFW_PRESS)
 	{
-			mPosition=vec3(-14.0f, 1.0f, 5.0f);
+			mPosition=vec3(0.0f, 1.0f, 0.0f);
 			mLookAt=vec3(0.0f, 0.0f, 1.0f);
 			mVerticalAngle=0.0f;
 			mHorizontalAngle=0.0f;
@@ -100,6 +100,11 @@ void PhysicsCamera::Update(float dt)
 			mPosition -= sideVector * dt * mSpeed;
 	}
 }
+
+void PhysicsCamera::SetPosition(vec3 & pos){
+	mPosition = pos;
+}
+
 
 PhysicsCamera::PhysicsCamera(vec3 position, q3Scene & physics) 
 	: Camera(), 

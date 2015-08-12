@@ -17,6 +17,8 @@ public:
 
 	void checkCollision(q3Vec3 & dir, q3Vec3 & from);
 
+	virtual void SetPosition(glm::vec3 & pos);
+
 private:
 	glm::vec3 mPosition;	
 	float mHorizontalAngle; // horizontal angle

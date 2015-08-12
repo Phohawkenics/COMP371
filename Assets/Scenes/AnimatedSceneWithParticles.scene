@@ -172,14 +172,16 @@ rotation = 1.0 0.0 0.0 90.0
 #############Living Room#############
 [Object]
 3dsfile = ../Assets/Objects/CoffeeTable.3ds
-position = 0.0 0.25 -17.0
+physics = dynamic
+position = 0.0 2 -17.0
 scaling = 0.05 0.05 0.05
 
 
 
 [Object]
 3dsfile = ../Assets/Objects/Couch.3ds
-position = 8.0 0.25 -17.0
+physics = dynamic
+position = 8.0 2 -17.0
 scaling = 0.01 0.01 0.01
 rotation = 0.0 1.0 0.0 -85
 
@@ -192,7 +194,8 @@ rotation = 0.0 1.0 0.0 90.0
 
 [Object]
 3dsfile = ../Assets/Objects/Bookshelf.3ds
-position = -8.0 1.0 -5.25
+position = -8.0 2.0 -5.25
+physics = dynamic
 scaling = 0.03 0.03 0.03
 rotation = 0.0 1.0 0.0 180.0
 

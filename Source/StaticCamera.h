@@ -19,6 +19,7 @@ public:
 	virtual ~StaticCamera();
 
 	virtual void Update(float dt);
+	virtual void SetPosition(glm::vec3 & pos);
 
 	virtual glm::mat4 GetViewMatrix() const;
 

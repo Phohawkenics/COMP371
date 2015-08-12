@@ -82,6 +82,11 @@ void FirstPersonCamera::Update(float dt)
 	}
 }
 
+void FirstPersonCamera::SetPosition(vec3 & pos){
+	mPosition = pos;
+}
+
+
 glm::mat4 FirstPersonCamera::GetViewMatrix() const
 {
 	return glm::lookAt(	mPosition, mPosition + mLookAt, vec3(0.0f, 1.0f, 0.0f) );

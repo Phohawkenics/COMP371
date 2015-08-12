@@ -29,6 +29,11 @@ void StaticCamera::Update(float dt)
 	EventManager::EnableMouseCursor();
 }
 
+void StaticCamera::SetPosition(glm::vec3 & pos){
+	mPosition = pos;
+}
+
+
 glm::mat4 StaticCamera::GetViewMatrix() const
 {
 	return glm::lookAt(	mPosition,		// Camera position

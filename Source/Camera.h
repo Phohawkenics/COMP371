@@ -19,6 +19,8 @@ public:
 
 	virtual void Update(float dt) = 0;
 
+	virtual void SetPosition(glm::vec3 & pos) = 0;
+
 	virtual glm::mat4 GetViewMatrix() const = 0;
 	virtual glm::mat4 GetProjectionMatrix() const;
 	glm::mat4 GetViewProjectionMatrix() const;

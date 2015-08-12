@@ -360,6 +360,10 @@ void World::LoadScene(const char * scene_path)
 	}
 	mTeleporter = NULL;
 
+	mCamera[0]->SetPosition(vec3(0, 1, 0));
+	mCamera[1]->SetPosition(vec3(0, 1, 0));
+	mCamera[2]->SetPosition(vec3(0, 1, 0));
+
 	// Using case-insensitive strings and streams for easier parsing
 	ci_ifstream input;
 	input.open(scene_path, ios::in);
