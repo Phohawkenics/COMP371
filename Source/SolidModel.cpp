@@ -23,7 +23,7 @@ SolidModel::SolidModel(GLenum mode, GLsizei size, float materialAmbient,
 	glGenBuffers(1, &mVertexBufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, mVertexBufferID);
 
-	std::cout << "Solidmodel made" << std::endl;
+	//std::cout << "Solidmodel made" << std::endl;
 
 }
 

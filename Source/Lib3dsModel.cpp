@@ -164,11 +164,11 @@ void Lib3dsModel::LoadModel(){
 		assert(!"Loading file failed");
 	}
 	else{
-		std::cout
+		/*std::cout
 			<< "Successful!" << std::endl
 			<< "  name: " << f->name << std::endl
 			<< "  meshes: " << f->nmeshes << std::endl;
-
+			*/
 		int nmeshes = f->nmeshes;
 		Lib3dsMesh ** meshes = f->meshes;
 
@@ -180,7 +180,7 @@ void Lib3dsModel::LoadModel(){
 		// Count the number of vertices needed for the meshes
 		mNVertices = count_vertices(meshes, mMeshes);
 		
-		std::cout << "  vertices: " << mNVertices << std::endl;
+		//std::cout << "  vertices: " << mNVertices << std::endl;
 
 		// Allocate a vertexBuffer big enough for all of those vertices
 		std::unique_ptr<Vertex[]>  vertexBuffer (new Vertex[mNVertices]);
@@ -190,7 +190,7 @@ void Lib3dsModel::LoadModel(){
 
 		// Write all of the vertices into the vertexBuffer
 		for (auto m = mMeshes.begin(); m != mMeshes.end(); ++m){
-			std::cout << "    mesh " << *m << std::endl;
+			//std::cout << "    mesh " << *m << std::endl;
 			
 			RenderMesh(
 				meshes[*m],         // the m-th mesh
@@ -243,9 +243,9 @@ void Lib3dsModel::RenderMesh(Lib3dsMesh * mesh, Lib3dsMaterial ** materials, Ver
 	Lib3dsFace * faces = mesh->faces;
 	int nfaces = mesh->nfaces;
 
-	std::cout << "      name: " << mesh->name << std::endl;
-	std::cout << "      faces: " << nfaces << std::endl;
-	std::cout << "      transform:" << std::endl;
+	//std::cout << "      name: " << mesh->name << std::endl;
+	//std::cout << "      faces: " << nfaces << std::endl;
+	//std::cout << "      transform:" << std::endl;
 
 	// Allocate an arry to store the vertex normals
 	std::unique_ptr<float[][3]> normals(new float[nfaces * 3][3]);

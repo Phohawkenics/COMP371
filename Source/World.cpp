@@ -53,7 +53,8 @@ bool rainSwitch = false;
 
 World::World()
  : mPhysics(new q3Scene(1.0f / 200.0f)), // this is the dt of one frame (I guess)
-mGrabber(*mPhysics)
+mGrabber(*mPhysics),
+mTeleporter(NULL)
 {
     instance = this;
 
@@ -243,7 +244,7 @@ void World::Shoot(float dt){
 	}
 	else{
 		if (time > COOLDOWN){
-			std::cout << "Shoot!!!" << std::endl;
+			//std::cout << "Shoot!!!" << std::endl;
 			time = 0;
 		}
 		else{
@@ -348,6 +349,17 @@ void World::Draw()
 
 void World::LoadScene(const char * scene_path)
 {
+	// Clear everything
+	mPhysics->RemoveAllBodies();
+	for (auto it = mModel.begin(), end = mModel.end(); it != end; ++it){
+		delete *it;
+	}
+	mModel.clear();
+	for (auto it = mParticleSystemList.begin(), end = mParticleSystemList.end(); it != end; ++it){
+		RemoveParticleSystem(*it);
+	}
+	mTeleporter = NULL;
+
 	// Using case-insensitive strings and streams for easier parsing
 	ci_ifstream input;
 	input.open(scene_path, ios::in);
@@ -397,6 +409,11 @@ void World::LoadScene(const char * scene_path)
 					body->AddBox(cube->GetBoxDef());
 					cube->SetBody(body);
 				}
+
+				if (cube->GetName() == "Teleporter"){
+					mTeleporter = cube;
+				}
+
 			}
 			else if( result == "mcube" )
 			{
@@ -588,7 +605,7 @@ void World::RemoveAllQueuedModels(){
 			delete *it;
 		}
 		else{
-			std::cout << "Tried to erase non-existant model ...." << std::endl;
+			//std::cout << "Tried to erase non-existant model ...." << std::endl;
 		}
 	}
 
@@ -597,29 +614,14 @@ void World::RemoveAllQueuedModels(){
 
 //ADD THIS
 void World::Teleport(){
-	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
-	vec3 camLookAt = cam->GetLookAt();
-	vec3 camPos = cam->GetPos();
-	vec3 teleportPos;
+	if (mTeleporter){
+		PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
+		vec3 camPos = cam->GetPos();
+		vec3 teleportPos = mTeleporter->GetPosition();
 
-	for (int i = 0; i < mModel.size(); i++){
-		if (mModel[i]->GetName() == "Teleporter"){
-			teleportPos = mModel[i]->GetPosition();
-
-			if ((camPos.x >= teleportPos.x - 2 && camPos.x <= teleportPos.x + 2)
-				&& (camPos.z >= teleportPos.z - 2 && camPos.z <= teleportPos.z + 2)){
-				for (int i = 0; i < mModel.size(); i++){//Empty current scene
-
-					//keep cloud after teleporting
-					if (mModel[i]->GetName() != "cloud"){
-						RemoveModel(mModel[i]);
-					}
-
-				}
-				LoadScene("../Assets/Scenes/AnimatedSceneWithParticles.scene");
-			}
-			return;
-
+		if ((camPos.x >= teleportPos.x - 2 && camPos.x <= teleportPos.x + 2)
+			&& (camPos.z >= teleportPos.z - 2 && camPos.z <= teleportPos.z + 2)){
+			LoadScene("../Assets/Scenes/AnimatedSceneWithParticles.scene");
 		}
 	}
 }

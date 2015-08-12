@@ -130,13 +130,13 @@ void CubeModel::handleBeginContact(const q3ContactConstraint *contact){
 		r32 explosion_power = q3Dot(eKineticDelta, eKineticDelta);
 		const r32 threshold = 5000;
 		/*
-		std::cout << "eKineticA: " << std::endl
+		//std::cout << "eKineticA: " << std::endl
 			<< "   " << eKineticA.x << ", " << eKineticA.y << ", " << eKineticA.z << std::endl
 			<< "   " << eKineticB.x << ", " << eKineticB.y << ", " << eKineticB.z << std::endl
 			<< "   power: " << explosion_power << std::endl;
 
 
-		std::cout << "Breakable model contact" << std::endl;
+		//std::cout << "Breakable model contact" << std::endl;
 		*/
 		if (explosion_power < threshold){
 			return;
@@ -214,7 +214,7 @@ bool CubeModel::ParseLine(const std::vector<ci_string> &token)
 		assert(token[1] == "=");
 		assert(token[2] == "true" || token[2] == "false");
 
-		std::cout << "breakable model created" << std::endl;
+		//std::cout << "breakable model created" << std::endl;
 
 		mBreakable = token[2] == "true";
 

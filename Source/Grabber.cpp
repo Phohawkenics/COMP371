@@ -19,19 +19,19 @@ GrabberRayCastCallBack::GrabberRayCastCallBack(Grabber & grabber)
 
 bool GrabberRayCastCallBack::ReportShape(q3Box * b){
 	if (b->body->IsStatic()){
-		std::cout << "Not grabbing static object" << std::endl;
+		//std::cout << "Not grabbing static object" << std::endl;
 		return false;
 	}
 	else{
 
 		// Save the body
 		mGrabber.mObject = b->body;
-
+		/*
 		std::cout << "Grabbing object which is:"
 			<< "Static? " << mGrabber.mObject->IsStatic() << std::endl
 		<< "Kinematic? " << mGrabber.mObject->IsKinematic() << std::endl
 		<< "Dynamic? " << mGrabber.mObject->IsDynamic() << std::endl;
-
+		*/
 
 
 		// Retrieve the point of contact

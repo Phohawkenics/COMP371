@@ -25,6 +25,7 @@ class Model;
 class Animation;
 class AnimationKey;
 class ParticleSystem;
+class CubeModel;
 
 class World
 {
@@ -53,6 +54,8 @@ public:
 private:
     static World* instance;
     
+	CubeModel * mTeleporter;
+
 	q3Scene * mPhysics;
 
 	Grabber mGrabber;
