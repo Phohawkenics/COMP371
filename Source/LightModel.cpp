@@ -21,7 +21,7 @@ lightKq(1.0f)
 		LightSource("Test3", AMBIENT, vec4(10.0f, 1.0f, -30.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 40)
 		);
 	LightSources.push_back(
-		LightSource("Test4", LAMP, vec4(0.0f, 10.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 40)
+		LightSource("Test4", LAMP, vec4(0.0f, 10.0f, 0.0f, 0.0f), vec3(1.0f, 1.0f, 1.0f), 40)
 		);
 
 }

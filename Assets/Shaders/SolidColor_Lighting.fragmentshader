@@ -29,11 +29,13 @@ in vec3 eyeVector;       // Vector from the vertex to the Camera in View Space
 #define NUM_LIGHTS 4
 in vec4 lightVectors[NUM_LIGHTS]; // Vector from the vertex to the Light in View Space
 in vec3 lightNormals[NUM_LIGHTS];
+in int lightTypes[NUM_LIGHTS];
 
 // Ouput data
 out vec4 color;
 
-vec3 calcColor(vec4 lightDirection,vec3 lightColor, float lightPower, vec3 lightNormal) {
+vec3 calcColor(vec4 lightDirection, vec3 lightColor, float lightPower,
+		 vec3 lightNormal, int lightType) {
 	
 	if (lightPower == 0) {
 		return vec3(0.0f);
@@ -78,7 +80,7 @@ void main()
 	vec3 finalColor = vec3(0.f,0.f,0.f);
 	for (int i = 0; i < NUM_LIGHTS; i++) {
 			finalColor += calcColor(lightVectors[i], lightColors[i],
-				 lightPowers[i], lightNormals[i]);
+				 lightPowers[i], lightNormals[i], lightTypes[i]);
 	}
 	color =vec4(finalColor, 1);
 }

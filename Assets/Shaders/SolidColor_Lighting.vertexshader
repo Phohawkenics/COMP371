@@ -34,12 +34,11 @@ struct lightSettings {
 // output to Fragment Shader
 out vec4 v_color;
 
-out vec3 normal;				// Transformed normal in View Space
-out vec3 eyeVector;				// Vector from the vertex to the Camera in View Space
+out vec3 eyeVector;					// Vector from the vertex to the Camera in View Space
 out vec4 lightVectors[NUM_LIGHTS]; // Vector from the vertex to the Light in View Space
-								// Length of lightVector is the distance between light and vertex
+								  // Length of lightVector is the distance between light and vertex
 out vec3 lightNormals[NUM_LIGHTS];
-
+out int lightTypes[NUM_LIGHTS];
 
 void main()
 {   
@@ -60,17 +59,6 @@ void main()
 	mat4 MV = ViewTransform * WorldTransform;
 	mat4 MVP = ProjectionTransform * MV;
 
-	// Normal in view space
-    normal = normalize(( MV * vec4(vertexNormal_modelspace, 0) ).xyz );
-
-	for (int i = 0 ; i < NUM_LIGHTS; i++) {
-		if(lights[i].lightType == 2) {
-			lightNormals[i] = normalize(( MV * -vec4(vertexNormal_modelspace, 0) ).xyz );
-		} else {
-			lightNormals[i] = normalize(( MV * vec4(vertexNormal_modelspace, 0) ).xyz );
-		}
-	}
-
 	// Output position of the vertex, in clip space : MVP * position
 	gl_Position =  MVP * vec4(vertexPosition_modelspace,1);
 
@@ -85,9 +73,19 @@ void main()
 		if (lights[i].lightPosition.w == 0.0f) {
 		// If Directional Light
 			lightVectors[i] = -lights[i].lightPosition;
+			lightNormals[i] = normalize(( MV * vec4(vertexNormal_modelspace, 0) ).xyz );
 		} else {
 		// If Point Light
 			lightVectors[i] = (ViewTransform * lights[i].lightPosition) + vec4(eyeVector, 0);
+
+			if(lights[i].lightType == 2) {
+			// If LAMP
+				lightNormals[i] = normalize(( MV * -vec4(vertexNormal_modelspace, 0) ).xyz );
+			} else {
+				lightNormals[i] = normalize(( MV * vec4(vertexNormal_modelspace, 0) ).xyz );
+			}
 		}
+
+		lightTypes[i] = lights[i].lightType;
 	}
 }
