@@ -2,6 +2,8 @@ Build/
 Bin/
 *.log
 
+*.lib
+
 *.opensdf
 *.suo
 *.sdf

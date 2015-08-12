@@ -177,6 +177,9 @@
     <ClInclude Include="..\Source\RectModel2.h">
       <Filter>Source Files\models</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\LightModel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\EventManager.cpp">
@@ -253,6 +256,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\RectModel2.cpp">
       <Filter>Source Files\models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\LightModel.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
