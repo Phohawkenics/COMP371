@@ -5,270 +5,585 @@ physics = static
 scaling = 200 1 200
 position = 0 -0.5 0
     
-#    O   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   O   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    OX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 5 1 18
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   OX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 4 1 27
+position = 4 1 11
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XO X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XO     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
-#    X   X   XX O     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     O   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
-#    X   X   XX X     
-#  O   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 4 1.1 30
+rotation = 1 0 0 -90
 
-#    X   X   XX X     
-#  X   O X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   O     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 7 1 14
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X O X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X O      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 7 1 23
+position = 5 1 33
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      OXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  O    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 6 1 37
+position = 7 1 7
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 6 1.1 10
+rotation = 1 0 0 -90
+
+#    XX     X   X     
+#  X    O XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 7 1 16
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X OX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 6 1 21
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XOX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Cube]
+position = 7 1 21
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XO  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 6 1 39
+position = 7 1 22
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  O  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 7 1 29
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  OX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 6 1 35
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XO X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 7 1 37
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX O 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 7 1 40
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   OXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 8 1 9
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XOXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 8 1 11
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXOXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 8 1 13
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXOX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 8 1 15
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+[Cube]
+position = 7 1 15
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXO  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  O X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X O X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 9 1 26
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 7 1 27
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X O   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 9 1 31
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   OX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 8 1 39
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
@@ -277,1413 +592,1081 @@ scaling = 0.5 2 2.2
 position = 7 1 39
 physics = static
 breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXO 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 7 1 40
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# O  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 9 1 5
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-[Cube]
-position = 7 1 5
-physics = static
-breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  OXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XO 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  O      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 8 1 11
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XOX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 8 1 13
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 7 1 13
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXO    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 9 1 15
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    O X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 9 1 24
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X O XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 9 1 29
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X OX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 8 1 33
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XO  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 9 1 35
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-[Cube]
-position = 7 1 35
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  O 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  OX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 10 1 7
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XO   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 9 1 9
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   OX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 11 1 16
+position = 11 1 6
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
 [Cube]
-position = 10 1 17
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XO XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX OX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 10 1 23
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 9 1 23
+position = 9 1 7
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XO  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 10 1.1 18
+rotation = 1 0 0 -90
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      O  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 9 1 21
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  O  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  OXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 10 1 33
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XOX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 10 1 35
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXO   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 9 1 37
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  O XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X OXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 13 1 10
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 12 1 11
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XOX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 12 1 13
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXO X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX O  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 13 1 18
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 11 1 19
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  O  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 11 1 25
 physics = static
 breakable = false
-rotation = 0 1 0 45
+rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  O  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  O    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 11 1 31
 physics = static
 breakable = false
-rotation = 0 1 0 45
+rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    O 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# O  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
 [Cube]
-position = 9 1 31
+position = 13 1 5
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  O   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  O   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 11 1 36
+position = 15 1 10
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     O X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 13 1 12
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X O    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 13 1 16
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 11 1 17
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    O  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  O X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X O XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 13 1 36
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X OX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 13 1 40
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 12 1 41
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XO
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# OXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 14 1 5
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XOX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 14 1 7
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXO X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 15 1 9
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX O X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X O XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 15 1 16
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X OXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 15 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 14 1 21
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XOX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 14 1 23
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXO  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 13 1 25
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  O  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 15 1 31
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-[Cube]
-position = 13 1 31
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  O X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 15 1 36
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X O 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 13 1 41
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    O  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
 [Cube]
 position = 15 1 11
 physics = static
 breakable = false
-rotation = 0 1 0 -45
+rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  O X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
 [Cube]
-position = 17 1 16
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X O   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 17 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 15 1 21
+position = 13 1 11
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   O X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   O X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X O  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 15 1 22
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 13 1 23
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  O  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 15 1 29
 physics = static
 breakable = false
-rotation = 0 1 0 -45
+rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X O X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X O   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
 [Cube]
-position = 17 1 36
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# O X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 19 1 4
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X O  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 17 1 9
+position = 13 1 29
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  OX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  O X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X O  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 19 1 14
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 18 1 15
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 17 1 15
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XO X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX O XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 19 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X OX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 18 1 25
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XO    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 19 1 27
+position = 15 1 39
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
 [Cube]
-position = 17 1 27
+position = 13 1 39
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    O X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   OXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 16 1 9
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+[Cube]
+position = 17 1 9
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+[Cube]
+position = 15 1 9
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XOXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 17 1 10
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 16 1 11
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXOXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 16 1 13
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXOX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 16 1 15
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXO  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 15 1 17
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  O X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X O XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 15 1 27
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X OX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 16 1 31
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XO   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 17 1 33
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+[Cube]
+position = 15 1 33
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 16 1.1 34
+rotation = 1 0 0 -90
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   O 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 17 1 40
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  O X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 17 1 7
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X O    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 19 1 10
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 17 1 11
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    O      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 17 1 21
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      OX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 19 1 34
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 18 1 35
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+[Cube]
+position = 19 1 35
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XO X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 19 1 36
@@ -1691,415 +1674,394 @@ physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X O 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX O 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 19 1 41
+position = 19 1 40
 physics = static
 breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
+scaling = 2.2 2 0.5
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# O   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    O XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   OX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X OXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 21 1 12
+position = 21 1 14
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
 [Cube]
-position = 20 1 13
+position = 20 1 15
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XOX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 20 1 17
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXO  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 19 1 19
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  OX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 21 1 24
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 20 1 25
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XO X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX O XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 21 1 30
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X OX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 20 1 35
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
 [Cube]
-position = 19 1 13
+position = 19 1 35
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XO  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XO X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX O 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 19 1 15
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  O   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 21 1 20
+position = 21 1 40
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-[Cube]
-position = 21 1 21
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   O X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  O   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 21 1 28
+position = 23 1 6
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X O X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   O   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 21 1 32
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X O  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 21 1 36
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 21 1 37
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  O
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   O X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X O  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 23 1 12
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 21 1 13
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  OXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 22 1 19
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 23 1 19
+position = 23 1 15
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
 [Cube]
-position = 21 1 19
+position = 21 1 15
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XOXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 22 1.1 18
+rotation = 1 0 0 -90
 
-[Cube]
-position = 23 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 22 1 21
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXOX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   OX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 22 1 23
@@ -2107,259 +2069,241 @@ physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXO X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX O X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Cube]
+position = 21 1 23
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XO  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 23 1 28
+position = 21 1 25
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  O    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 23 1 30
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
 [Cube]
-position = 23 1 29
+position = 23 1 31
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X O XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    O 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 23 1 32
+position = 23 1 40
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X OX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  O XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 22 1 37
+position = 25 1 7
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X OX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 24 1 11
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XO X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
 [Cube]
-position = 23 1 37
+position = 23 1 13
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 24 1.1 14
+rotation = 1 0 0 -90
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX O X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 25 1 17
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XO  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X O   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
-[Cube]
-position = 23 1 38
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  O  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 23 1 7
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  O X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X O X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 25 1 16
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 23 1 17
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X O   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 25 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
 [Cube]
 position = 23 1 21
 physics = static
@@ -2367,87 +2311,106 @@ breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   OXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   OXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
+[Cube]
+position = 25 1 28
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
 [Cube]
 position = 24 1 29
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XOX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Cube]
+position = 25 1 29
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+[Cube]
+position = 23 1 29
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XOX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
+[Cube]
+position = 25 1 30
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
 [Cube]
 position = 24 1 31
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-[Cube]
-position = 23 1 31
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXO  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXO XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 25 1 33
@@ -2456,231 +2419,225 @@ breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  O X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX OXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 25 1 38
+position = 24 1 37
 physics = static
 breakable = false
-scaling = 2.2 2 0.5
+scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X O
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# O  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XOX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 25 1 5
+position = 24 1 39
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+[Cube]
+position = 23 1 39
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  O  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXO 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   O    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 27 1 10
+position = 27 1 8
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
 [Cube]
-position = 27 1 11
+position = 27 1 9
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
 [Cube]
-position = 25 1 11
+position = 25 1 9
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  O X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    O  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 27 1 16
+position = 27 1 19
 physics = static
 breakable = false
-scaling = 2.2 2 0.5
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X O XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
 [Cube]
-position = 27 1 20
+position = 25 1 19
 physics = static
 breakable = false
-scaling = 2.2 2 0.5
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X OX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  OXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
-[Cube]
-position = 27 1 24
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
 [Cube]
 position = 26 1 25
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XO   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XOXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
+[Cube]
+position = 26 1 27
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+[Cube]
+position = 27 1 27
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
 [Cube]
 position = 25 1 27
 physics = static
@@ -2688,75 +2645,155 @@ breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   O X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X O  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXOX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 27 1 39
+position = 27 1 28
 physics = static
 breakable = false
-rotation = 0 1 0 45
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 26 1 29
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+[Cube]
+position = 25 1 29
+physics = static
+breakable = false
+rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   OXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXO X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 25 1 31
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX O    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 27 1 34
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 25 1 35
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# O XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 29 1 4
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X OX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 28 1 9
@@ -2764,232 +2801,219 @@ physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XO X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
 [Cube]
-position = 29 1 9
+position = 29 1 11
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-[Cube]
-position = 27 1 9
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XOX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX O  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 29 1 10
+position = 29 1 14
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
 [Cube]
-position = 28 1 11
+position = 29 1 15
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  O   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   O  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 29 1 28
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 27 1 29
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  O XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X OX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 28 1 39
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXO X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX O X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X O X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XO 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 29 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X O  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 29 1 25
+position = 29 1 41
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-[Cube]
-position = 27 1 25
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  O    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 29 1 30
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 29 1 31
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    O 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# O  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# O   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 31 1 5
@@ -2998,596 +3022,577 @@ breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  O    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   OXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 31 1 10
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 29 1 11
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    O  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 31 1 20
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 31 1 21
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  O XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 31 1 26
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X OXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 30 1 31
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XOX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 30 1 33
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXO X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 31 1 35
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX O  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 29 1 39
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  O X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 33 1 6
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X O X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 33 1 11
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X O XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X OXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 32 1 19
+position = 30 1 13
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
 [Cube]
-position = 33 1 19
+position = 31 1 13
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
 [Cube]
-position = 31 1 19
+position = 29 1 13
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XOX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XOX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 33 1 20
+position = 31 1 14
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
+[Cube]
+position = 30 1 15
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXO   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   O X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X O X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 31 1 28
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X O    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 31 1 33
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+[Cube]
+position = 29 1 33
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    O
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  OX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 32 1 7
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XO  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 33 1 9
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  O  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 33 1 15
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+[Cube]
+position = 31 1 15
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  OX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
 [Cube]
 position = 32 1 21
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXO X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX O    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 33 1 26
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    O  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 31 1 37
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  O
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  O  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 35 1 7
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  O   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 35 1 12
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 35 1 13
-physics = static
-breakable = false
-rotation = 0 1 0 45
-scaling = 0.5 2 3.2
-                
-[Cube]
-position = 33 1 13
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   O  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
 [Cube]
 position = 33 1 21
 physics = static
 breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XO  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 33 1 22
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 31 1 23
+physics = static
+breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  O XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  O  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X OX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+[Cube]
+position = 33 1 29
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  O X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 33 1 34
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X O  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 33 1 39
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    O  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 35 1 11
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  O  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 35 1 17
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  O X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 35 1 22
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X O X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 33 1 27
+physics = static
+breakable = false
+rotation = 0 1 0 -45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X O X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 35 1 30
@@ -3595,271 +3600,220 @@ physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-[Cube]
-position = 34 1 31
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XO   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X O  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 35 1 33
+position = 35 1 34
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 35 1 35
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   O 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  O 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 35 1 40
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 33 1 41
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   O XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X OXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 36 1 13
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XOXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 36 1 15
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXOX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 36 1 17
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 37 1 17
+position = 35 1 41
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXO  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  OX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 37 1 18
+position = 36 1 7
 physics = static
 breakable = false
-scaling = 2.2 2 0.5
+scaling = 0.5 2 2.2
                 
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XO X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
 [Cube]
-position = 35 1 19
+position = 35 1 9
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  O  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX O  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 37 1 24
+position = 37 1 13
 physics = static
 breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 35 1 25
-physics = static
-breakable = false
-rotation = 0 1 0 -45
+rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  O XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  O X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 37 1 19
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X O   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   O XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 37 1 30
@@ -3867,33 +3821,26 @@ physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-[Cube]
-position = 35 1 31
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X OXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X OX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 36 1 35
@@ -3901,265 +3848,184 @@ physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XOXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
 [Cube]
-position = 36 1 37
+position = 37 1 35
 physics = static
 breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXOX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 36 1 39
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 35 1 39
-physics = static
-breakable = false
-rotation = 0 1 0 -45
+rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXO 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  O     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XO  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 39 1 7
+position = 37 1 36
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 37 1 37
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  O
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      O  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 39 1 15
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  O  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 39 1 20
+physics = static
+breakable = false
+scaling = 2.2 2 0.5
+                
+[Cube]
+position = 39 1 21
 physics = static
 breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
 [Cube]
-position = 37 1 7
+position = 37 1 21
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     O XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  O X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 39 1 18
+position = 39 1 26
 physics = static
 breakable = false
 scaling = 2.2 2 0.5
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X OX XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 39 1 22
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 38 1 23
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 37 1 23
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XO XX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX OX      
-#   XXXX X X    XX XX 
-# X        X XX    X  
-
-[Cube]
-position = 38 1 29
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-[Cube]
-position = 37 1 29
-physics = static
-breakable = false
-rotation = 0 1 0 -45
-scaling = 0.5 2 3.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XO      
-#   XXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X O  XX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 39 1 31
@@ -4168,26 +4034,109 @@ breakable = false
 rotation = 0 1 0 45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   OXXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  OX  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 38 1 37
+physics = static
+breakable = false
+scaling = 0.5 2 2.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XO  
+# X XX  X XXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 39 1 39
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# O XX  X XXXX  X   X 
+#     X        X  X   
+
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 40 1.1 6
+rotation = 1 0 0 -90
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X OX  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
 position = 40 1 9
@@ -4195,353 +4144,279 @@ physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XOXX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XO  X XXXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 40 1 11
+position = 41 1 11
+physics = static
+breakable = false
+rotation = 0 1 0 45
+scaling = 0.5 2 3.2
+                
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  O XXXX  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X OXXX  X   X 
+#     X        X  X   
+
+[Cube]
+position = 40 1 21
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXOX X X    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XOXX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 40 1 13
+position = 40 1 23
 physics = static
 breakable = false
 scaling = 0.5 2 2.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXO X X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX O X    XX XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X O    XX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXOX  X   X 
+#     X        X  X   
 
 [Cube]
-position = 41 1 22
+position = 40 1 25
 physics = static
 breakable = false
-scaling = 2.2 2 0.5
+scaling = 0.5 2 2.2
                 
 [Cube]
-position = 39 1 23
+position = 39 1 25
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    OX XX 
-# X        X XX    X  
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXO  X   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  O   X 
+#     X        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   O 
+#     X        X  X   
+
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = 40 1.1 42
+rotation = 1 0 0 -90
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     O        X  X   
+
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        O  X   
 
 [Cube]
-position = 40 1 33
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XO XX 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX OX 
-# X        X XX    X  
-
-[Cube]
-position = 41 1 38
-physics = static
-breakable = false
-scaling = 2.2 2 0.5
-                
-[Cube]
-position = 40 1 39
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XO 
-# X        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# O        X XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        O XX    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X OX    X  
-
-[Cube]
-position = 42 1 27
-physics = static
-breakable = false
-scaling = 0.5 2 2.2
-                
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XO    X  
-
-#    X   X   XX X     
-#  X   X X X      XXX 
-# X  XXX    X X XX  X 
-#  XX   XX XX  X  X   
-#     X X    X  X X XX
-# XXX X X XXX  X  X X 
-#    X  X X   X X X   
-# X X  XX X XX    X X 
-# X   XX  X   X X X  X
-#   X X  XXXX X X XX  
-#  X  X X X   XXX  X X
-# X  X  X X XX   X X  
-#   XXX X X X  X    X 
-# X  X    X  X XXX X  
-#  X X X XXX X    X  X
-#  X  X   X  X XX   X 
-#   X XXXX  X  X XXXX 
-#  X     X XX XX      
-#   XXXX X X    XX XX 
-# X        X XX    O  
-
-[Cube]
-position = 41 1 39
+position = 41 1 31
 physics = static
 breakable = false
 rotation = 0 1 0 -45
 scaling = 0.5 2 3.2
                 
+#    XX     X   X     
+#  X    X XX  X  XX X 
+#   XXXXX  X X X   XX 
+#  X      X  X  XXX   
+#  X XXX X  X  X    X 
+# X  X   X X  X  X X  
+#   XXXXX  X X XX   X 
+#  X X    X      XX X 
+#    X XXX  XX X XX X 
+#  X   X   XX  X    X 
+#  X XX X X   XXX XXX 
+#   X    X  XXXX X    
+# X XX X  X   X  X XX 
+# X   XXX   X X X    X
+#  XX  X  XX  X  X X  
+#    X  X  X X X X  X 
+#  XX X  X X   X XX  X
+#      X  X  X X  XX  
+# X XX  X XXXX  X   X 
+#     X        X  O   

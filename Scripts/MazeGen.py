@@ -57,7 +57,19 @@ position = 0 -0.5 0
     
     for z in range(my):
         for x in range(mx):
-            if maze[z][x] == 0:
+            if maze[z][x] == 1:
+                if random.random() > 0.95:
+                    out.write("""
+[Object]
+3dsfile = ../Assets/Objects/goblin_3ds.3ds
+physics = dynamic
+scaling = 0.005 0.005 0.005 
+position = %d 1.1 %d
+rotation = 1 0 0 %d
+""" % (4 + z*2, 4 + x*2, -90))#random.randint(-180, 180) ))
+
+                
+            elif maze[z][x] == 0:
                 out.write(printmaze(x, z))
  
                 havedrawn = False
