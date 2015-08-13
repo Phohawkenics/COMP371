@@ -54,7 +54,8 @@ bool rainSwitch = false;
 World::World()
  : mPhysics(new q3Scene(1.0f / 50.0f)), // this is the dt of one frame (I guess)
 mGrabber(*mPhysics),
-mTeleporter(NULL)
+mTeleporter(NULL),
+mShootCooldown(0)
 {
     instance = this;
 
@@ -174,6 +175,8 @@ void World::Update(float dt)
 		}
 	}
 
+	mShootCooldown += dt;
+
 	//if (glfwGetKey(EventManager::GetWindow(), GLFW_) == GLFW_PRESS)
 	if (glfwGetMouseButton(EventManager::GetWindow(), GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 	{
@@ -186,7 +189,6 @@ void World::Update(float dt)
 	{
 		Shoot(dt);
 	}
-
 
 	// Spacebar to change the shader
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_0 ) == GLFW_PRESS)
@@ -218,8 +220,31 @@ void World::Update(float dt)
 		bev->SetPosition(pos);
 		bev->SetLookAt(player->GetPos());
 		//Update character model
+		
+		vec3 lookAt = ((PhysicsCamera*)mCamera[0])->GetLookAt();
+
+		float verticalAngle = -glm::asin(lookAt.y); // approximately good
+		float horizontalAngle = -((-3.14159 / 2.0) + glm::atan(lookAt.z / lookAt.x));
+
+		// ATAN2
+		if (lookAt.x < 0){
+			if (lookAt.z >= 0){
+				horizontalAngle -= 3.14159;
+			}
+			else{
+				horizontalAngle += 3.14159;
+			}
+		}
+
+		//q3Quaternion rot_vert(q3Vec3(1, 0, 0), verticalAngle);
+		//q3Quaternion rot_horiz(q3Vec3(0, 1, 0), horizontalAngle);
+
+		character->SetRotation(glm::vec3(0, 1, 0), horizontalAngle * (180.0 / 3.14159));
+
+		//GetBody()->SetTransform(q3Quaternion(q3Vec3(0, 1, 0), horizontalAngle));
+		
 		vec3 char_pos = player->GetPos();
-		character->SetPosition(vec3(char_pos.x, char_pos.y-0.5, char_pos.z+2.0f));
+		character->SetPosition(char_pos + glm::vec3(2*lookAt.x, -1, 2*lookAt.z));
 
 		/*float phi = 0.0;
 		
@@ -285,10 +310,12 @@ void World::Drop(float dt){
 }
 
 void World::Shoot(float dt){
-	const float COOLDOWN = 0.75;
-	static float time = 0;
 
-	time += dt;
+	LightModel* lights = LightModel::GetInstance();
+	lights->StartFlash();
+
+	const float COOLDOWN = 0.75;
+
 
 	PhysicsCamera * cam = (PhysicsCamera*)mCamera[0]; // Bad and dangerous but oh well
 
@@ -297,12 +324,12 @@ void World::Shoot(float dt){
 
 	if (mGrabber.HasObject()){
 		mGrabber.Throw(g2q(camLookAt * 50.0f));
-		time = 0;
+		mShootCooldown = 0;
 	}
 	else{
-		if (time > COOLDOWN){
+		if (mShootCooldown > COOLDOWN){
 			//std::cout << "Shoot!!!" << std::endl;
-			time = 0;
+			mShootCooldown = 0;
 		}
 		else{
 			return;
@@ -310,7 +337,7 @@ void World::Shoot(float dt){
 
 		// Box attributes
 		BulletModel* bullet = new BulletModel(camLookAt);
-		bullet->SetPosition(camPos + vec3(0, 0.5, 0)); // shoot from slightly above the camera
+		bullet->SetPosition(camPos + glm::vec3(2 * camLookAt.x, 0, 2 * camLookAt.z + 0.5)); // shoot from slightly above the camera
 		mModel.push_back(bullet);
 
 		// We associate the Graphical Model to the Physical Body

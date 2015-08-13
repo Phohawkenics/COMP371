@@ -272,6 +272,10 @@ void BillboardList::Draw()
 	glUniform3f(LightColorID1, lightColor1.r, lightColor1.g, lightColor1.b);
 	glUniform1f(LightPowerID1, lights->GetLightSource(0).mIntensity);
 
+	if (lights->GetLightSource(0).mIntensity > 0){
+		lights->SetLightIntensity(lights->GetLightSource(0).mIntensity - 2, 0);
+	}
+
 	auto lightPosition2 = lights->GetLightSource(1).mPosition;
 	auto lightColor2 = lights->GetLightSource(1).mColor;
 	glUniform4f(LightPositionID2, lightPosition2.x, lightPosition2.y, lightPosition2.z, lightPosition2.w);

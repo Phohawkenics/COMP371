@@ -94,5 +94,7 @@ private:
     std::vector<ParticleSystem*> mParticleSystemList;
 	unsigned int mCurrentCamera;
 
+	float mShootCooldown;
+
     BillboardList* mpBillboardList;
 };

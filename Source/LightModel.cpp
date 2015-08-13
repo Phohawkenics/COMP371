@@ -12,10 +12,10 @@ lightKq(1.0f)
 	instance = this;
 
 	LightSources.push_back(
-		LightSource("Test1", AMBIENT, vec4(0.0f, 10.0f, 0.0f, 1.0f), vec3(2.0f, 0.0f, 0.0f),50)
+		LightSource("Test2", AMBIENT, vec4(0.0f, 0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 10.0f), 0)
 		);
 	LightSources.push_back(
-		LightSource("Test2", AMBIENT, vec4(-20.0f, 2.0f, 30.0f, 1.0f), vec3(0.0f, 0.0f, 10.0f), 30)
+		LightSource("Test1", AMBIENT, vec4(0.0f, 10.0f, 0.0f, 1.0f), vec3(2.0f, 0.0f, 0.0f),50)
 		);
 	LightSources.push_back(
 		LightSource("Test3", AMBIENT, vec4(0.0f, 0.0f, 0.0f, 0.0f), vec3(1.0f, 1.0f, 1.0f), 40)

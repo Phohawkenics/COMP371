@@ -55,6 +55,8 @@ public:
 	const LightSource GetLightSource(int index) { return LightSources[index]; };
 	const int GetLightType(int index) { return LightSources[index].mType; };
 
+	void StartFlash() { if (GetLightSource(0).mIntensity < 100) SetLightIntensity(600, 0); };
+	void SetLightIntensity(float intensity, int index) { LightSources[index].mIntensity = intensity; };
 	void SetLightPosition(glm::vec4 newPosition, int index) { LightSources[index].mPosition = newPosition; };
 	void SetLightColor(glm::vec3 newColor, int index) { LightSources[index].mColor = newColor; };
 	void SwitchLight(int index);
