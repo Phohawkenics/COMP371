@@ -59,9 +59,6 @@
     <None Include="..\Assets\Shaders\Texture.vertexshader">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="..\Assets\Scenes\StupidSimple.scene">
-      <Filter>Resource Files\Scenes</Filter>
-    </None>
     <None Include="..\Assets\Objects\goblin_3ds.3ds">
       <Filter>Resource Files\Objects</Filter>
     </None>
@@ -99,6 +96,9 @@
       <Filter>Resource Files\Scenes</Filter>
     </None>
     <None Include="..\Assets\generated-maze.scene">
+      <Filter>Resource Files\Scenes</Filter>
+    </None>
+    <None Include="..\Assets\Scenes\StupidSimple.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
   </ItemGroup>

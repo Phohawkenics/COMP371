@@ -64,7 +64,7 @@ mShootCooldown(0)
 	// Setup Camera
 
 	//Player cam
-	vec3 startingPosition = vec3(0.0f, 1.0f, 0.0f);
+	vec3 startingPosition = vec3(0.0f, 1.5f, 0.0f);
 	player = new PhysicsCamera(startingPosition, *mPhysics);
 	mCamera.push_back(player);
 
@@ -79,17 +79,6 @@ mShootCooldown(0)
 	//Dummy Cam
 	mCamera.push_back(new StaticCamera(vec3(0.0,0.0,0.0), vec3(0.0,0.0,0.0), vec3(0.0,0.0,0.0)));
 	mCurrentCamera = 0;
-
-//Trying to load player character
-	/*character = new PlayerModel;
-	character->SetPosition(player->GetPos());
-    mModel.push_back(character);
-
-	q3BodyDef def = character->GetBodyDef();
-	q3Body * body = mPhysics->CreateBody(def);
-	q3BoxDef box = character->GetBoxDef();
-	body->AddBox(box);
-	character->SetBody(body);*/
 
 	mCurrentCamera = 0;
 
@@ -220,54 +209,34 @@ void World::Update(float dt)
 		bev->SetPosition(pos);
 		bev->SetLookAt(player->GetPos());
 		//Update character model
-		
-		vec3 lookAt = ((PhysicsCamera*)mCamera[0])->GetLookAt();
+			vec3 lookAt = ((PhysicsCamera*)mCamera[0])->GetLookAt();
 
-		float verticalAngle = -glm::asin(lookAt.y); // approximately good
-		float horizontalAngle = -((-3.14159 / 2.0) + glm::atan(lookAt.z / lookAt.x));
+			float verticalAngle = -glm::asin(lookAt.y); // approximately good
+			float horizontalAngle = -((-3.14159 / 2.0) + glm::atan(lookAt.z / lookAt.x));
 
-		// ATAN2
-		if (lookAt.x < 0){
-			if (lookAt.z >= 0){
-				horizontalAngle -= 3.14159;
+			// ATAN2
+			if (lookAt.x < 0){
+				if (lookAt.z >= 0){
+					horizontalAngle -= 3.14159;
+				}
+				else{
+					horizontalAngle += 3.14159;
+				}
 			}
-			else{
-				horizontalAngle += 3.14159;
+
+			//q3Quaternion rot_vert(q3Vec3(1, 0, 0), verticalAngle);
+			//q3Quaternion rot_horiz(q3Vec3(0, 1, 0), horizontalAngle);
+
+			character->SetRotation(glm::vec3(0, 1, 0), horizontalAngle * (180.0 / 3.14159));
+
+			//GetBody()->SetTransform(q3Quaternion(q3Vec3(0, 1, 0), horizontalAngle));
+
+			vec3 char_pos = player->GetPos();
+			if (player->GetPos().y < 5.0){
+				character->SetPosition(char_pos + glm::vec3(2 * lookAt.x, -1, 2 * lookAt.z));
 			}
-		}
-
-		//q3Quaternion rot_vert(q3Vec3(1, 0, 0), verticalAngle);
-		//q3Quaternion rot_horiz(q3Vec3(0, 1, 0), horizontalAngle);
-
-		character->SetRotation(glm::vec3(0, 1, 0), horizontalAngle * (180.0 / 3.14159));
-
-		//GetBody()->SetTransform(q3Quaternion(q3Vec3(0, 1, 0), horizontalAngle));
-		
-		vec3 char_pos = player->GetPos();
-		character->SetPosition(char_pos + glm::vec3(2*lookAt.x, -1, 2*lookAt.z));
-
-		/*float phi = 0.0;
-		
-		if(EventManager::GetMouseMotionX() != 0.0f){
-			mHorizontalAngle -= EventManager::GetMouseMotionX() * dt;
-			if (mHorizontalAngle > 360)
-			{
-				mHorizontalAngle -= 360;
-			}
-			else if (mHorizontalAngle < -360)
-			{
-				mHorizontalAngle += 360;
-			}
-		}
-		float theta = radians(mHorizontalAngle);
-		vec3 mLookAt = vec3(cosf(phi)*cosf(theta), sinf(phi), -cosf(phi)*sinf(theta));
-		
-		if(player->GetLookAt() != mLookAt){
-			if(EventManager::GetMouseMotionX() > 0.0f)
-				character->SetRotation(vec3(0.0, 1.0, 0.0),-theta);
-			if(EventManager::GetMouseMotionX() < 0.0f)
-				character->SetRotation(vec3(0.0, 1.0, 0.0),theta);
-		}*/
+			else
+				character->SetPosition(vec3(char_pos.x, 1.5f, char_pos.z) + glm::vec3(2 * lookAt.x, -1, 2 * lookAt.z));
 	}
 	if(mCurrentCamera == 2){
 		mCamera[mCurrentCamera]->Update(dt);
@@ -337,7 +306,7 @@ void World::Shoot(float dt){
 
 		// Box attributes
 		BulletModel* bullet = new BulletModel(camLookAt);
-		bullet->SetPosition(camPos + glm::vec3(2 * camLookAt.x, 0, 2 * camLookAt.z + 0.5)); // shoot from slightly above the camera
+		bullet->SetPosition(camPos + glm::vec3(2 * camLookAt.x, 0, 2 * camLookAt.z )); // shoot from slightly above the camera
 		mModel.push_back(bullet);
 
 		// We associate the Graphical Model to the Physical Body

@@ -246,6 +246,10 @@ void BillboardList::Draw()
 	GLuint LightColorID3 = glGetUniformLocation(programID, "lightColor3");
 	GLuint LightPowerID3 = glGetUniformLocation(programID, "lightPower3");
 
+	GLuint LightPositionID4 = glGetUniformLocation(programID, "WorldLightPosition4");
+	GLuint LightColorID4 = glGetUniformLocation(programID, "lightColor4");
+	GLuint LightPowerID4 = glGetUniformLocation(programID, "lightPower4");
+
 	GLuint LightAttenuationID = glGetUniformLocation(programID, "lightAttenuation");
 
 	// Get a handle for Material Attributes uniform
@@ -287,6 +291,12 @@ void BillboardList::Draw()
 	glUniform4f(LightPositionID3, lightPosition3.x, lightPosition3.y, lightPosition3.z, lightPosition3.w);
 	glUniform3f(LightColorID3, lightColor3.r, lightColor3.g, lightColor3.b);
 	glUniform1f(LightPowerID3, lights->GetLightSource(2).mIntensity);
+
+	auto lightPosition4 = lights->GetLightSource(3).mPosition;
+	auto lightColor4 = lights->GetLightSource(3).mColor;
+	glUniform4f(LightPositionID4, lightPosition4.x, lightPosition4.y, lightPosition4.z, lightPosition4.w);
+	glUniform3f(LightColorID4, lightColor4.r, lightColor4.g, lightColor4.b);
+	glUniform1f(LightPowerID4, lights->GetLightSource(3).mIntensity);
 
 	glUniform3f(LightAttenuationID, lights->GetLightKc(), lights->GetLightKl(), lights->GetLightKq());
 

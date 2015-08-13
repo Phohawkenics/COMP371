@@ -15,12 +15,13 @@ uniform mat4 ProjectionTransform;
 uniform vec4 WorldLightPosition1; // if w = 1: Point light, if w = 0: directional light
 uniform vec4 WorldLightPosition2;
 uniform vec4 WorldLightPosition3;
+uniform vec4 WorldLightPosition4;
 
 struct lightSettings {
 	vec4 lightPosition;
 };
 
-#define NUM_LIGHTS 3
+#define NUM_LIGHTS 4
 
 // output to Fragment Shader
 out vec4 v_color;
@@ -50,6 +51,7 @@ void main()
 	lights[0].lightPosition = WorldLightPosition1;
 	lights[1].lightPosition = WorldLightPosition2;
 	lights[2].lightPosition = WorldLightPosition3;
+	lights[3].lightPosition = WorldLightPosition4;
 
 	v_color = vec4(vertexColor, 1.0f);
 
