@@ -280,9 +280,6 @@ void World::Drop(float dt){
 
 void World::Shoot(float dt){
 
-	LightModel* lights = LightModel::GetInstance();
-	lights->StartFlash();
-
 	const float COOLDOWN = 0.75;
 
 
@@ -298,6 +295,8 @@ void World::Shoot(float dt){
 	else{
 		if (mShootCooldown > COOLDOWN){
 			//std::cout << "Shoot!!!" << std::endl;
+			LightModel* lights = LightModel::GetInstance();
+			lights->StartFlash();
 			mShootCooldown = 0;
 		}
 		else{
