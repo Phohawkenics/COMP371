@@ -55,7 +55,8 @@ World::World()
  : mPhysics(new q3Scene(1.0f / 50.0f)), // this is the dt of one frame (I guess)
 mGrabber(*mPhysics),
 mTeleporter(NULL),
-mShootCooldown(0)
+mShootCooldown(0),
+mLightSwitchCooldown(0)
 {
     instance = this;
 
@@ -165,6 +166,7 @@ void World::Update(float dt)
 	}
 
 	mShootCooldown += dt;
+	mLightSwitchCooldown += dt;
 
 	//if (glfwGetKey(EventManager::GetWindow(), GLFW_) == GLFW_PRESS)
 	if (glfwGetMouseButton(EventManager::GetWindow(), GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
@@ -185,10 +187,33 @@ void World::Update(float dt)
 		//ADD THIS
 		Rain(dt);
 	}
+
+	// Light Keypress Switch
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_5) == GLFW_PRESS)
+	{
+		SwitchLight(0);
+	}
+
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_6) == GLFW_PRESS)
+	{
+		SwitchLight(1);
+	}
+
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_7) == GLFW_PRESS)
+	{
+		SwitchLight(2);
+	}
+
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_8) == GLFW_PRESS)
+	{
+		SwitchLight(3);
+	}
+
+	/*
 	else if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_9 ) == GLFW_PRESS)
 	{
 		Renderer::SetShader(SHADER_BLUE);
-	}
+	} */
 
     // Update animation and keys
     for (vector<Animation*>::iterator it = mAnimation.begin(); it < mAnimation.end(); ++it)
@@ -262,6 +287,14 @@ void World::Update(float dt)
 
 	Teleport();
 
+}
+
+void World::SwitchLight(int index) {
+	const float COOLDOWN = 0.3;
+	if (mLightSwitchCooldown > COOLDOWN){
+		lights.SwitchLight(index);
+		mLightSwitchCooldown = 0;
+	}
 }
 
 void World::Pickup(float dt){

@@ -18,7 +18,7 @@ lightKq(1.0f)
 		LightSource("RedLight", AMBIENT, vec4(10.0f, 40.0f, 30.0f, 1.0f), vec3(15.0f, 0.0f, 0.0f),50)
 		);
 	LightSources.push_back(
-		LightSource("DoubleSided", LAMP, vec4(10.0f, 10.0f, 10.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 4)
+		LightSource("DoubleSided", LAMP, vec4(5.0f, 1.0f, 10.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 4)
 		);
 	LightSources.push_back(
 		LightSource("GreenLight", AMBIENT,vec4(24.0f, 12.0f, 24.0f, 1.0f), vec3(0.0f, 3.0f, 0.0f), 100)
@@ -44,16 +44,15 @@ void LightModel::varyingFlicker(int index) {
 }
 
 void LightModel::SwitchLight(int index) {
-	LightSource currentLight = GetLightSource(index);
-	if (currentLight.mStatus) {
-		LightOffStorage.push_back(LightContainer(index, currentLight.mIntensity));
-		currentLight.mStatus = 0;
-		currentLight.mIntensity = 0;
+	if (LightSources[index].mStatus) {
+		LightOffStorage.push_back(LightContainer(index, LightSources[index].mIntensity));
+		LightSources[index].mStatus = 0;
+		LightSources[index].mIntensity = 0;
 	} else {
 		for (int i = LightOffStorage.size() - 1; i >= 0; i --) {
 			if (index == LightOffStorage.at(i).mIndex) {
-				currentLight.mIntensity = LightOffStorage.at(i).mIntensity;
-				currentLight.mStatus = 1;
+				LightSources[index].mIntensity = LightOffStorage.at(i).mIntensity;
+				LightSources[index].mStatus = 1;
 				LightOffStorage.erase(LightOffStorage.begin() + i);
 				break;
 			}

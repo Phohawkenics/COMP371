@@ -94,7 +94,7 @@ animation = "BackAndForth"
 
 [Sphere]
 name     = "Sphere"
-position = 10.0 10.0 10.0
+position = 5.0 1.0 10.0
 
 [Sphere]
 name     = "Sphere"

@@ -70,6 +70,8 @@ private:
 
 	Grabber mGrabber;
 
+	void SwitchLight(int index);
+
 	void Shoot(float dt);
 
 	void Pickup(float dt);
@@ -95,6 +97,7 @@ private:
 	unsigned int mCurrentCamera;
 
 	float mShootCooldown;
+	float mLightSwitchCooldown;
 
     BillboardList* mpBillboardList;
 };
