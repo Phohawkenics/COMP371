@@ -17,8 +17,14 @@ uniform vec4 WorldLightPosition2;
 uniform vec4 WorldLightPosition3;
 uniform vec4 WorldLightPosition4;
 
+uniform int WorldLightType1; // if w = 1: Point light, if w = 0: directional light
+uniform int WorldLightType2;
+uniform int WorldLightType3;
+uniform int WorldLightType4;
+
 struct lightSettings {
 	vec4 lightPosition;
+	int lightType;
 };
 
 #define NUM_LIGHTS 4
@@ -48,10 +54,18 @@ void main()
 	eyeVector =  vec3(0,0,0) - ( MV * vec4(vertexPosition_modelspace, 1)).xyz;
 
 	lightSettings lights[NUM_LIGHTS];
+
 	lights[0].lightPosition = WorldLightPosition1;
+	lights[0].lightType = WorldLightType1;
+
 	lights[1].lightPosition = WorldLightPosition2;
+	lights[1].lightType = WorldLightType2;
+
 	lights[2].lightPosition = WorldLightPosition3;
+	lights[2].lightType = WorldLightType3;
+
 	lights[3].lightPosition = WorldLightPosition4;
+	lights[3].lightType = WorldLightType4;
 
 	v_color = vec4(vertexColor, 1.0f);
 
@@ -61,7 +75,15 @@ void main()
 			lightVectors[i] = -lights[i].lightPosition;
 		} else {
 		// If Point Light
-			lightVectors[i] = (ViewTransform * lights[i].lightPosition) + vec4(eyeVector, 0);
+			if(lights[i].lightType == 2) {
+			// If LAMP
+				//lightVectors[i] = (ViewTransform * lights[i].lightPosition) + vec4(eyeVector, 0);
+				normal = -normal;
+				lightVectors[i] = -((ViewTransform * lights[i].lightPosition)+ vec4(eyeVector, 0));
+			} else {
+			// Default AMBIENT
+				lightVectors[i] = (ViewTransform * lights[i].lightPosition) + vec4(eyeVector, 0);
+			}
 		}
 	}
 }

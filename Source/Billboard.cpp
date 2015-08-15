@@ -235,18 +235,22 @@ void BillboardList::Draw()
 
 	// Get a handle for Light Attributes uniform
 	GLuint LightPositionID1 = glGetUniformLocation(programID, "WorldLightPosition1");
+	GLuint LightTypeID1 = glGetUniformLocation(programID, "WorldLightType1");
 	GLuint LightColorID1 = glGetUniformLocation(programID, "lightColor1");
 	GLuint LightPowerID1 = glGetUniformLocation(programID, "lightPower1");
 
 	GLuint LightPositionID2 = glGetUniformLocation(programID, "WorldLightPosition2");
+	GLuint LightTypeID2 = glGetUniformLocation(programID, "WorldLightType2");
 	GLuint LightColorID2 = glGetUniformLocation(programID, "lightColor2");
 	GLuint LightPowerID2 = glGetUniformLocation(programID, "lightPower2");
 
 	GLuint LightPositionID3 = glGetUniformLocation(programID, "WorldLightPosition3");
+	GLuint LightTypeID3 = glGetUniformLocation(programID, "WorldLightType3");
 	GLuint LightColorID3 = glGetUniformLocation(programID, "lightColor3");
 	GLuint LightPowerID3 = glGetUniformLocation(programID, "lightPower3");
 
 	GLuint LightPositionID4 = glGetUniformLocation(programID, "WorldLightPosition4");
+	GLuint LightTypeID4 = glGetUniformLocation(programID, "WorldLightType4");
 	GLuint LightColorID4 = glGetUniformLocation(programID, "lightColor4");
 	GLuint LightPowerID4 = glGetUniformLocation(programID, "lightPower4");
 
@@ -273,6 +277,7 @@ void BillboardList::Draw()
 	auto lightPosition1 = lights->GetLightSource(0).mPosition;
 	auto lightColor1 = lights->GetLightSource(0).mColor;
 	glUniform4f(LightPositionID1, lightPosition1.x, lightPosition1.y, lightPosition1.z, lightPosition1.w);
+	glUniform1i(LightTypeID1, lights->GetLightSource(0).mType);
 	glUniform3f(LightColorID1, lightColor1.r, lightColor1.g, lightColor1.b);
 	glUniform1f(LightPowerID1, lights->GetLightSource(0).mIntensity);
 
@@ -283,18 +288,23 @@ void BillboardList::Draw()
 	auto lightPosition2 = lights->GetLightSource(1).mPosition;
 	auto lightColor2 = lights->GetLightSource(1).mColor;
 	glUniform4f(LightPositionID2, lightPosition2.x, lightPosition2.y, lightPosition2.z, lightPosition2.w);
+	glUniform1i(LightTypeID2, lights->GetLightSource(1).mType);
 	glUniform3f(LightColorID2, lightColor2.r, lightColor2.g, lightColor2.b);
 	glUniform1f(LightPowerID2, lights->GetLightSource(1).mIntensity);
 
 	auto lightPosition3 = lights->GetLightSource(2).mPosition;
 	auto lightColor3 = lights->GetLightSource(2).mColor;
 	glUniform4f(LightPositionID3, lightPosition3.x, lightPosition3.y, lightPosition3.z, lightPosition3.w);
+	glUniform1i(LightTypeID3, lights->GetLightSource(2).mType);
 	glUniform3f(LightColorID3, lightColor3.r, lightColor3.g, lightColor3.b);
 	glUniform1f(LightPowerID3, lights->GetLightSource(2).mIntensity);
+
+	lights->varyingFlicker(2);
 
 	auto lightPosition4 = lights->GetLightSource(3).mPosition;
 	auto lightColor4 = lights->GetLightSource(3).mColor;
 	glUniform4f(LightPositionID4, lightPosition4.x, lightPosition4.y, lightPosition4.z, lightPosition4.w);
+	glUniform1i(LightTypeID4, lights->GetLightSource(3).mType);
 	glUniform3f(LightColorID4, lightColor4.r, lightColor4.g, lightColor4.b);
 	glUniform1f(LightPowerID4, lights->GetLightSource(3).mIntensity);
 

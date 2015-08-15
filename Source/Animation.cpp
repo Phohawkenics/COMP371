@@ -192,23 +192,23 @@ ci_string Animation::GetName() const
 
 glm::mat4 Animation::GetAnimationWorldMatrix() const
 {
-    // @TODO 3 - Find the 2 keys to interpolate the transformation
-    //           Interpolate the position, scaling and rotation separately
-    //           Finally concatenate the interpolated transforms into a single
-    //           world transform and return it.
-    
-    mat4 worldMatrix(1.0f);
+	// @TODO 3 - Find the 2 keys to interpolate the transformation
+	//           Interpolate the position, scaling and rotation separately
+	//           Finally concatenate the interpolated transforms into a single
+	//           world transform and return it.
+
+	mat4 worldMatrix(1.0f);
 	int key1 = 0;
 	int key2 = 0;
 	float normalizedTime = 0.0f;
 
-	float progress = mCurrentTime/mDuration;
+	float progress = mCurrentTime / mDuration;
 
-	for( int i =0; i<mKey.size(); i++){
-		if(mCurrentTime < mKeyTime[i]){
-			key1 = i-1;
+	for (int i = 0; i < mKey.size(); i++){
+		if (mCurrentTime < mKeyTime[i]){
+			key1 = i - 1;
 			key2 = i;
-			normalizedTime = (mCurrentTime - mKeyTime[key1])/(mKeyTime[key2] - mKeyTime[key1]);
+			normalizedTime = (mCurrentTime - mKeyTime[key1]) / (mKeyTime[key2] - mKeyTime[key1]);
 			break;
 		}
 	}
@@ -216,6 +216,11 @@ glm::mat4 Animation::GetAnimationWorldMatrix() const
 	//Interpolate between 2 keys
 	vec3 position = mix(mKey[key1].GetPosition(), mKey[key2].GetPosition(), normalizedTime);
 	vec3 scaling = mix(mKey[key1].GetScaling(), mKey[key2].GetScaling(), normalizedTime);
+
+	/*if (mKey.size() == 9) {
+		LightModel * lights = LightModel::GetInstance();
+		lights->SetLightPosition(vec4(position, 1.0f), 2);
+	}*/
 
 	//2 rotation states
 	quat rotation1 = angleAxis(mKey[key1].GetRotationAngle(), mKey[key1].GetRotationAxis());

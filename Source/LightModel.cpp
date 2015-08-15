@@ -12,22 +12,35 @@ lightKq(1.0f)
 	instance = this;
 
 	LightSources.push_back(
-		LightSource("Test2", AMBIENT, vec4(0.0f, 0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 10.0f), 0)
+		LightSource("GunFlash", AMBIENT, vec4(0.0f, 0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 10.0f), 0)
 		);
 	LightSources.push_back(
-		LightSource("Test1", AMBIENT, vec4(10.0f, 40.0f, 30.0f, 1.0f), vec3(15.0f, 0.0f, 0.0f),50)
+		LightSource("RedLight", AMBIENT, vec4(10.0f, 40.0f, 30.0f, 1.0f), vec3(15.0f, 0.0f, 0.0f),50)
 		);
 	LightSources.push_back(
-		LightSource("Test3", AMBIENT, vec4(0.0f, 0.0f, 0.0f, 0.0f), vec3(1.0f, 1.0f, 1.0f), 40)
+		LightSource("DoubleSided", LAMP, vec4(10.0f, 10.0f, 10.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 4)
 		);
 	LightSources.push_back(
-		LightSource("Test4", AMBIENT, vec4(24.0f, 12.0f, 24.0f, 1.0f), vec3(0.0f, 3.0f, 0.0f), 10)
+		LightSource("GreenLight", AMBIENT,vec4(24.0f, 12.0f, 24.0f, 1.0f), vec3(0.0f, 3.0f, 0.0f), 100)
 		);
 }
 
 LightModel::~LightModel()
 {
 	
+}
+
+void LightModel::varyingFlicker(int index) {
+	// Get Random float between a range
+	if (LightSources[index].mIntensity != 0) {
+		float min = 1;
+		float max = 5;
+		float random = ((float)rand()) / (float)RAND_MAX;
+		float range = max - min;
+		random = (random*range) + min;
+
+		LightSources[index].mIntensity = random;
+	}
 }
 
 void LightModel::SwitchLight(int index) {
