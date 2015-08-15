@@ -72,12 +72,16 @@ void main()
 	for (int i = 0 ; i < NUM_LIGHTS; i++) {
 		if (lights[i].lightPosition.w == 0.0f) {
 		// If Directional Light
-			lightVectors[i] = -lights[i].lightPosition;
+			if(lights[i].lightType == 1) {
+			// If CONE
+				lightVectors[i] = (ViewTransform * lights[i].lightPosition) + vec4(eyeVector, 0);
+			} else {
+				lightVectors[i] = -lights[i].lightPosition;
+			}
 		} else {
 		// If Point Light
 			if(lights[i].lightType == 2) {
 			// If LAMP
-				//lightVectors[i] = (ViewTransform * lights[i].lightPosition) + vec4(eyeVector, 0);
 				normal = -normal;
 				lightVectors[i] = -((ViewTransform * lights[i].lightPosition)+ vec4(eyeVector, 0));
 			} else {

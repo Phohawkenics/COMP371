@@ -11,17 +11,21 @@ lightKq(1.0f)
 {
 	instance = this;
 
+	// Flashes on right click
 	LightSources.push_back(
 		LightSource("GunFlash", AMBIENT, vec4(0.0f, 0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 10.0f), 0)
 		);
+	// No real point to this light yet
 	LightSources.push_back(
-		LightSource("RedLight", AMBIENT, vec4(10.0f, 40.0f, 30.0f, 1.0f), vec3(15.0f, 0.0f, 0.0f),50)
+		LightSource("Light", AMBIENT, vec4(10.0f, 40.0f, 30.0f, 1.0f), vec3(0.0f, 1.0f, 1.0f),10)
 		);
+	// Lamp to indicate the goal location of the maze
 	LightSources.push_back(
-		LightSource("DoubleSided", LAMP, vec4(5.0f, 1.0f, 10.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 4)
+		LightSource("CenterSun", LAMP, vec4(24.0f, 10.0f, 24.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 3)
 		);
+	// Spotlight on character, ensures that what ever is near you is visible
 	LightSources.push_back(
-		LightSource("GreenLight", AMBIENT,vec4(24.0f, 12.0f, 24.0f, 1.0f), vec3(0.0f, 3.0f, 0.0f), 100)
+		LightSource("SpotLight", CONE, vec4(0.0f, -1.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f), 1)
 		);
 }
 
@@ -33,8 +37,8 @@ LightModel::~LightModel()
 void LightModel::varyingFlicker(int index) {
 	// Get Random float between a range
 	if (LightSources[index].mIntensity != 0) {
-		float min = 1;
-		float max = 5;
+		float min = 10;
+		float max = 20;
 		float random = ((float)rand()) / (float)RAND_MAX;
 		float range = max - min;
 		random = (random*range) + min;

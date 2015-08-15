@@ -6,6 +6,12 @@ physics = static
 scaling = 0.05 0.05 0.05
 position = 0.0 0.0 0.0
 
+[Sphere]
+name     = lamp
+physics = static
+scaling = 2 2 2
+position = 24 10 24
+
 [Cube]
 name = floor
 physics = static

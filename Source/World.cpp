@@ -188,12 +188,7 @@ void World::Update(float dt)
 		Rain(dt);
 	}
 
-	// Light Keypress Switch
-	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_5) == GLFW_PRESS)
-	{
-		SwitchLight(0);
-	}
-
+	// Light Keypress Switch 
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_6) == GLFW_PRESS)
 	{
 		SwitchLight(1);
