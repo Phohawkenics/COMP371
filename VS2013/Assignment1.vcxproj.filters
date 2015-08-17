@@ -86,19 +86,13 @@
     <None Include="..\Assets\Scenes\MazeScene.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
-    <None Include="..\Assets\Scenes\MazeScene2.scene">
-      <Filter>Resource Files\Scenes</Filter>
-    </None>
     <None Include="..\Assets\Scenes\Test.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
-    <None Include="..\Assets\Scenes\generated-maze.scene">
+    <None Include="..\Assets\Scenes\StupidSimple.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
     <None Include="..\Assets\generated-maze.scene">
-      <Filter>Resource Files\Scenes</Filter>
-    </None>
-    <None Include="..\Assets\Scenes\StupidSimple.scene">
       <Filter>Resource Files\Scenes</Filter>
     </None>
   </ItemGroup>
@@ -180,19 +174,10 @@
     <ClInclude Include="..\Source\Grabber.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\MazeCube.h">
-      <Filter>Source Files\models</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\RectModel2.h">
-      <Filter>Source Files\models</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\LightModel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\CameraRayCastCallBack.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\HalfMCube.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\PhysicsCamera.h">
@@ -266,19 +251,10 @@
     <ClCompile Include="..\Source\Grabber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\MazeCube.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\RectModel2.cpp">
-      <Filter>Source Files\models</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\LightModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\CameraRayCastCallBack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\HalfMCube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\PhysicsCamera.cpp">

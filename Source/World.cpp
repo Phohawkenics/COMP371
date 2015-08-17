@@ -31,9 +31,6 @@
 #include "q3_glm_conversions.h"
 
 #include "BulletModel.h"
-#include "MazeCube.h"
-#include "HalfMCube.h"
-#include "RectModel2.h"
 
 #include "ContactListener.h"
 
@@ -62,27 +59,25 @@ mLightSwitchCooldown(0)
 
 	mPhysics->SetContactListener(new ContactListener());
 
-	// Setup Camera
+	character = NULL;
 
+	// Setup Camera
 	//Player cam
-	vec3 startingPosition = vec3(0.0f, 1.5f, 0.0f);
+	vec3 startingPosition = vec3(0.0f, 5.0f, 0.0f);
 	player = new PhysicsCamera(startingPosition, *mPhysics);
 	mCamera.push_back(player);
-
 	//Bird's eye view follows player
-	vec3 pos = player->GetPos();
-	pos += (0.0, 20.0, 0.0);
+	startingPosition += vec3(0.0, 10.0, 0.0);
 	vec3 lookHere = player->GetPos();
 	vec3 upVec = vec3(0.0f, 0.0f, 0.1f);
-	bev = new StaticCamera(pos, lookHere, upVec);
+	bev = new StaticCamera(startingPosition, lookHere, upVec);
 	mCamera.push_back(bev);
+	//Godmode camera
+	startingPosition = vec3(0.0, 50.0, 0.0);
+	god = new FirstPersonCamera(startingPosition);
+	mCamera.push_back(god);
 
-	//Dummy Cam
-	mCamera.push_back(new StaticCamera(vec3(0.0,0.0,0.0), vec3(0.0,0.0,0.0), vec3(0.0,0.0,0.0)));
 	mCurrentCamera = 0;
-
-	mCurrentCamera = 0;
-
     
     // TODO: You can play with different textures by changing the billboardTest.bmp to another texture
 #if defined(PLATFORM_OSX)
@@ -229,7 +224,8 @@ void World::Update(float dt)
 		bev->SetPosition(pos);
 		bev->SetLookAt(player->GetPos());
 		//Update character model
-			vec3 lookAt = ((PhysicsCamera*)mCamera[0])->GetLookAt();
+		if (character){
+			vec3 lookAt = player->GetLookAt(); 
 
 			float verticalAngle = -glm::asin(lookAt.y); // approximately good
 			float horizontalAngle = -((-3.14159 / 2.0) + glm::atan(lookAt.z / lookAt.x));
@@ -244,22 +240,18 @@ void World::Update(float dt)
 				}
 			}
 
-			//q3Quaternion rot_vert(q3Vec3(1, 0, 0), verticalAngle);
-			//q3Quaternion rot_horiz(q3Vec3(0, 1, 0), horizontalAngle);
-
 			character->SetRotation(glm::vec3(0, 1, 0), horizontalAngle * (180.0 / 3.14159));
-
-			//GetBody()->SetTransform(q3Quaternion(q3Vec3(0, 1, 0), horizontalAngle));
 
 			vec3 char_pos = player->GetPos();
 			if (player->GetPos().y < 5.0){
-				character->SetPosition(char_pos + glm::vec3(2 * lookAt.x, -1, 2 * lookAt.z));
+				character->SetPosition(char_pos + glm::vec3(0.5*lookAt.x, -1.0, 0.5*lookAt.z));
 			}
 			else
-				character->SetPosition(vec3(char_pos.x, 1.5f, char_pos.z) + glm::vec3(2 * lookAt.x, -1, 2 * lookAt.z));
+				character->SetPosition(vec3(char_pos.x, 1.5f, char_pos.z) + glm::vec3(0.5 * lookAt.x, -1.0, 0.5 * lookAt.z));
+		}
 	}
 	if(mCurrentCamera == 2){
-		mCamera[mCurrentCamera]->Update(dt);
+		god->Update(dt);
 	}
 	// updatePhysics
 
@@ -470,8 +462,8 @@ void World::LoadScene(const char * scene_path)
 				character->Load(iss);
 				character->LoadModel();
 				vec3 char_pos = player->GetPos();
-				character->SetPosition(vec3(char_pos));
-				mModel.push_back(character);
+				character->SetPosition(vec3(char_pos) + glm::vec3(0.5, -0.5, 0.5));
+				mModel.push_back(character);				
 			}
 
 			else if (result == "object")
@@ -506,55 +498,6 @@ void World::LoadScene(const char * scene_path)
 
 				if (cube->GetName() == "Teleporter"){
 					mTeleporter = cube;
-				}
-
-			}
-			else if( result == "mcube" )
-			{
-				// Box attributes
-				MazeCube* cube = new MazeCube();
-				cube->Load(iss);
-				mModel.push_back(cube);
-				cube->setScene(scene_path);
-
-				if (cube->hasPhysics()){
-					// We associate the Graphical Model to the Physical Body
-					q3BodyDef def = cube->GetBodyDef();
-					q3Body * body = mPhysics->CreateBody(def);
-					body->AddBox(cube->GetBoxDef());
-					cube->SetBody(body);
-				}
-			}
-			else if( result == "mcube2" )
-			{
-				// Box attributes
-				HalfMCube* rectangle = new HalfMCube();
-				rectangle->Load(iss);
-				mModel.push_back(rectangle);
-				rectangle->setScene(scene_path);
-
-				if (rectangle->hasPhysics()){
-					// We associate the Graphical Model to the Physical Body
-					q3BodyDef def = rectangle->GetBodyDef();
-					q3Body * body = mPhysics->CreateBody(def);
-					body->AddBox(rectangle->GetBoxDef());
-					rectangle->SetBody(body);
-				}
-			}
-			else if( result == "rect2" )
-			{
-				// Box attributes
-				RectModel2* rectangle = new RectModel2();
-				rectangle->Load(iss);
-				mModel.push_back(rectangle);
-				rectangle->setScene(scene_path);
-
-				if (rectangle->hasPhysics()){
-					// We associate the Graphical Model to the Physical Body
-					q3BodyDef def = rectangle->GetBodyDef();
-					q3Body * body = mPhysics->CreateBody(def);
-					body->AddBox(rectangle->GetBoxDef());
-					rectangle->SetBody(body);
 				}
 			}
             else if( result == "sphere" )

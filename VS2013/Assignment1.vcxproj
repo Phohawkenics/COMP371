@@ -108,9 +108,7 @@
     <None Include="..\Assets\Scenes\AnimatedScene.scene" />
     <None Include="..\Assets\Scenes\AnimatedSceneWithParticles.scene" />
     <None Include="..\Assets\Scenes\CoordinateSystem.scene" />
-    <None Include="..\Assets\Scenes\generated-maze.scene" />
     <None Include="..\Assets\Scenes\MazeScene.scene" />
-    <None Include="..\Assets\Scenes\MazeScene2.scene" />
     <None Include="..\Assets\Scenes\StaticScene.scene" />
     <None Include="..\Assets\Scenes\StupidSimple.scene" />
     <None Include="..\Assets\Scenes\Test.scene" />
@@ -139,10 +137,8 @@
     <ClInclude Include="..\Source\EventManager.h" />
     <ClInclude Include="..\Source\FirstPersonCamera.h" />
     <ClInclude Include="..\Source\Grabber.h" />
-    <ClInclude Include="..\Source\HalfMCube.h" />
     <ClInclude Include="..\Source\Lib3dsModel.h" />
     <ClInclude Include="..\Source\LightModel.h" />
-    <ClInclude Include="..\Source\MazeCube.h" />
     <ClInclude Include="..\Source\Model.h" />
     <ClInclude Include="..\Source\ParsingHelper.h" />
     <ClInclude Include="..\Source\ParticleDescriptor.h" />
@@ -151,7 +147,6 @@
     <ClInclude Include="..\Source\PhysicalModel.h" />
     <ClInclude Include="..\Source\PhysicsCamera.h" />
     <ClInclude Include="..\Source\q3_glm_conversions.h" />
-    <ClInclude Include="..\Source\RectModel2.h" />
     <ClInclude Include="..\Source\Renderer.h" />
     <ClInclude Include="..\Source\SolidModel.h" />
     <ClInclude Include="..\Source\SphereModel.h" />
@@ -172,18 +167,15 @@
     <ClCompile Include="..\Source\EventManager.cpp" />
     <ClCompile Include="..\Source\FirstPersonCamera.cpp" />
     <ClCompile Include="..\Source\Grabber.cpp" />
-    <ClCompile Include="..\Source\HalfMCube.cpp" />
     <ClCompile Include="..\Source\Lib3dsModel.cpp" />
     <ClCompile Include="..\Source\LightModel.cpp" />
     <ClCompile Include="..\Source\main.cpp" />
-    <ClCompile Include="..\Source\MazeCube.cpp" />
     <ClCompile Include="..\Source\Model.cpp" />
     <ClCompile Include="..\Source\ParticleDescriptor.cpp" />
     <ClCompile Include="..\Source\ParticleEmitter.cpp" />
     <ClCompile Include="..\Source\ParticleSystem.cpp" />
     <ClCompile Include="..\Source\PhysicalModel.cpp" />
     <ClCompile Include="..\Source\PhysicsCamera.cpp" />
-    <ClCompile Include="..\Source\RectModel2.cpp" />
     <ClCompile Include="..\Source\Renderer.cpp" />
     <ClCompile Include="..\Source\SolidModel.cpp" />
     <ClCompile Include="..\Source\SphereModel.cpp" />

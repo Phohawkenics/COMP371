@@ -19,6 +19,7 @@
 #include "SphereModel.h"
 #include "StaticCamera.h"
 #include "PhysicsCamera.h"
+#include "FirstPersonCamera.h"
 
 #include "Grabber.h"
 #include "LightModel.h"
@@ -47,6 +48,7 @@ public:
     Animation* FindAnimation(ci_string animName);
 	AnimationKey* FindAnimationKey(ci_string keyName);
 
+	const int returnCamNum() { return mCurrentCamera; };
     const Camera* GetCurrentCamera() const;
     void AddBillboard(Billboard* b);
     void RemoveBillboard(Billboard* b);
@@ -61,8 +63,8 @@ private:
     
 	PhysicsCamera* player;  //1st person cam
 	StaticCamera* bev;		//3rd person cam following player
-	 Lib3dsModel * character;
-	 float mHorizontalAngle;
+	Lib3dsModel * character;
+	FirstPersonCamera * god;
 
 	CubeModel * mTeleporter;
 

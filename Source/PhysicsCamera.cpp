@@ -1,5 +1,6 @@
 #include "PhysicsCamera.h"
 #include "EventManager.h"
+#include "World.h"
 #include <glm/gtc/matrix_transform.hpp>
 #include <dynamics/q3Body.h>
 #include "q3_glm_conversions.h"
@@ -7,11 +8,11 @@
 
 using namespace glm;
 
-void PhysicsCamera::checkCollision(q3Vec3 & dir, q3Vec3 & from)
+void PhysicsCamera::checkCollision(q3Vec3 & dir, q3Vec3 & from, r32 dist)
 {
 	mCallBack.mData.dir = q3Normalize(dir);
 	mCallBack.mData.start = from;
-	mCallBack.mData.t = 0.5;
+	mCallBack.mData.t = dist;
 
 	mPhysics.RayCast(&mCallBack, mCallBack.mData);
 }
@@ -50,6 +51,15 @@ void PhysicsCamera::Update(float dt)
 	vec3 sideVector = glm::cross(mLookAt, vec3(0.0f, 1.0f, 0.0f));
 	glm::normalize(sideVector);
 	
+	//Top View
+	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_X) == GLFW_PRESS)
+	{
+		mPosition += vec3(0.0f, 30.0f, 0.0f);
+		mLookAt = vec3(0.0f, -1.0f, 0.0f);
+		mVerticalAngle = -90.0f;
+		mHorizontalAngle = 0.0f;
+	}
+
 	//Starting position
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_B ) == GLFW_PRESS)
 	{
@@ -58,20 +68,11 @@ void PhysicsCamera::Update(float dt)
 			mVerticalAngle=0.0f;
 			mHorizontalAngle=0.0f;
 	}
-	//Top View
-	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_X ) == GLFW_PRESS)
-	{
-		mPosition=vec3(3.0f, 30.0f, 5.0f);
-		mLookAt=vec3(0.0f, -1.0f, 0.0f);
-		mVerticalAngle=-90.0f;
-		mHorizontalAngle=0.0f;
-	}
-
 	// A S D W for motion along the camera basis vectors
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_W ) == GLFW_PRESS)
 	{
 		mCallBack.impactBody = NULL;
-		checkCollision(g2q(mForward), g2q(mPosition));
+		checkCollision(g2q(mForward), g2q(mPosition), 2.0);
 		if(mCallBack.impactBody==NULL)
 			mPosition += mForward * dt * mSpeed;
 	}
@@ -79,7 +80,7 @@ void PhysicsCamera::Update(float dt)
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_S ) == GLFW_PRESS)
 	{
 		mCallBack.impactBody = NULL;
-		checkCollision(g2q(-mForward), g2q(mPosition));
+		checkCollision(g2q(-mForward), g2q(mPosition), 2.0);
 		if(mCallBack.impactBody==NULL)
 			mPosition -= mForward * dt * mSpeed;
 	}
@@ -87,7 +88,7 @@ void PhysicsCamera::Update(float dt)
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_D ) == GLFW_PRESS)
 	{
 		mCallBack.impactBody = NULL;
-		checkCollision(g2q(sideVector), g2q(mPosition));
+		checkCollision(g2q(sideVector), g2q(mPosition), 2.0);
 		if(mCallBack.impactBody==NULL)
 			mPosition += sideVector * dt * mSpeed;
 	}
@@ -95,7 +96,7 @@ void PhysicsCamera::Update(float dt)
 	if (glfwGetKey(EventManager::GetWindow(), GLFW_KEY_A ) == GLFW_PRESS)
 	{
 		mCallBack.impactBody = NULL;
-		checkCollision(g2q(-sideVector), g2q(mPosition));
+		checkCollision(g2q(-sideVector), g2q(mPosition), 2.0);
 		if(mCallBack.impactBody==NULL)
 			mPosition -= sideVector * dt * mSpeed;
 	}
@@ -112,7 +113,7 @@ PhysicsCamera::PhysicsCamera(vec3 position, q3Scene & physics)
 	mPosition(position),
 	mVerticalAngle(0.0f),
 	mHorizontalAngle(0.0f),
-	mSpeed(10.0f),
+	mSpeed(5.0f),
 	mAngularSpeed(2.0f),
 	mLookAt(0.0f,0.0f,0.0f),
 	mForward(mLookAt)

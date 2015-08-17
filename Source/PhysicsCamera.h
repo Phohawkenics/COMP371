@@ -15,7 +15,7 @@ public:
 	virtual glm::vec3 GetPos() { return mPosition; };
 	virtual glm::vec3 GetLookAt() { return mLookAt; };
 
-	void checkCollision(q3Vec3 & dir, q3Vec3 & from);
+	void checkCollision(q3Vec3 & dir, q3Vec3 & from, r32 dist);
 
 	virtual void SetPosition(glm::vec3 & pos);
 
